@@ -22,9 +22,13 @@ Twitter [@moov_io](https://twitter.com/moov_io)	| You can follow Moov.IO's Twitt
 
 ## Contributing
 
-Yes please! Please review our [Contributing guide](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) to get started!
+Yes please! Please start by reviewing our [Code of Conduct](https://github.com/moov-io/ach/blob/master/CODE_OF_CONDUCT.md).
 
-Note: This project uses Go Modules, which requires Go 1.11 or higher, but we ship the vendor directory in our repository.
+You only have a fresh set of eyes once! The easiest way to contribute is to give feedback on the documentation that you are reading right now. This can be as simple as sending a message to our Google Group with your feedback or updating the markdown in this documentation and issuing a pull request.
+
+- [moov.io](https://moov.io/) (This project)
+- [api.moov.io](https://api.moov.io/)
+- [docs.moov.io](https://docs.moov.io/)
 
 ## License
 
