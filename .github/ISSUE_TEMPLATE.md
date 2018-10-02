@@ -4,6 +4,8 @@
 
 **What did you expect to see?**
 
+**What browser(s) and operating system(s) did you use?**
+
 **What did you see?**
 
 **How can we reproduce the problem?**
