@@ -14,6 +14,10 @@
     return out
   }
 
+  window.onload = function(e) {
+    moov.checkLogin();
+  };
+
   window.moov = {
     baseUrl: "https://api.moov.io/v1",
     get: function(path, callback) {
@@ -27,10 +31,7 @@
         callback(req.response);
       };
       req.onerror = function(e) {
-        var elm = document.querySelector("#signup-error")
-        console.dir(e);
-        elm.innerHTML = "Whoops! Something went wrong...";
-        elm.style.display = 'inherit';
+        moov.error("Whoops! Something went wrong...");
       };
       req.send(null);
     },
@@ -59,14 +60,23 @@
 
     // update error element
     error: function(msg) {
-      var elm = document.querySelector("#signup-error")
+      var elm = document.querySelector("#dialog")
       elm.innerHTML = msg
       elm.style.display = 'inherit';
+      elm.classList = ['moov-pink'];
     },
     clearError: function() {
-      var elm = document.querySelector("#signup-error")
+      var elm = document.querySelector("#dialog")
       elm.style.display = 'none';
       elm.innerHTML = "";
+    },
+
+    // update 'success' element
+    success: function(msg) {
+      var elm = document.querySelector("#dialog")
+      elm.innerHTML = msg;
+      elm.style.display = 'inherit';
+      elm.classList = ['moov-blue'];
     },
 
     // userland methods
@@ -114,34 +124,72 @@
         if (js.error) {
           moov.error(js.error);
         } else {
-          // happy path
-
+          // happy path, trigger login
+          moov.login();
         }
       })
     },
 
-    createOAuth2Client: function(cookie) {
-      moov.post('/oauth2/clients', null, function (resp) {
-        var js = JSON.parse(resp)
+    login: function() {
+      // TODO: abstract validation / value getter
+      var email = document.querySelector("#signup-email");
+      var password = document.querySelector("#signup-password");
+
+      var body = {
+        "email": email.value,
+        "password": password.value,
+      };
+      moov.post('/users/login', JSON.stringify(body), function (resp) {
+        var js = JSON.parse(resp);
         if (js.error) {
           moov.error(js.error);
+        } else {
+          moov.success("Logged in! Loading ach files...");
+          moov.getACHFiles();
         }
       });
     },
 
-    createOAuthToken: function(clientId, clientSecret) {
-      moov.post(
-        '/oauth/token?grant_type=client_credentials&client_id='+clientId+'&client_secret='+clientSecret,
-        null, // body
-        function (resp) {
-          console.log(resp);
-        }
-      );
+    checkLogin: function() {
+      moov.get('/users/login', function(resp) {
+        // var js = JSON.parse(resp);
+        // if (js.error) {
+        //   moov.error(js.error);
+        // } else {
+          moov.success("Already logged in. Loading ach files...");
+          moov.getACHFiles();
+        // }
+      });
     },
+
+    // createOAuth2Client: function(cookie) {
+    //   moov.post('/oauth2/clients', null, function (resp) {
+    //     var js = JSON.parse(resp)
+    //     if (js.error) {
+    //       moov.error(js.error);
+    //     }
+    //   });
+    // },
+
+    // createOAuthToken: function(clientId, clientSecret) {
+    //   moov.post(
+    //     '/oauth/token?grant_type=client_credentials&client_id='+clientId+'&client_secret='+clientSecret,
+    //     null, // body
+    //     function (resp) {
+    //       console.log(resp);
+    //     }
+    //   );
+    // },
 
     getACHFiles: function() {
       moov.get('/ach/files', function (resp) {
-        console.log(resp);
+        var js = JSON.parse(resp);
+        if (js.error) {
+          moov.error(js.error);
+        } else {
+          console.dir(js);
+          moov.success("Found "+js.files.length+" files");
+        }
       });
     },
 
