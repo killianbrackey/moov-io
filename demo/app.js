@@ -13,15 +13,15 @@
     }
     return out
   }
-  
+
   window.moov = {
-    // baseUrl: "https://api.moov.io/v1",
-    baseUrl: "http://localhost:8080",
+    baseUrl: "https://api.moov.io/v1",
     get: function(path, callback) {
       var req = new XMLHttpRequest();
+      req.withCredentials = true
       req.open('GET', moov.baseUrl + path);
-      req.responseType = 'json';
-      req.setRequestHeader("x-request-id", moov.requestId)
+      req.responseType = 'text';
+      // req.setRequestHeader("x-request-id", moov.requestId)
 
       req.onload = function() {
         callback(req.response);
@@ -34,26 +34,28 @@
       };
       req.send(null);
     },
-    
+
     post: function(path, body, callback) {
       var req = new XMLHttpRequest();
+      req.withCredentials = true
       req.open('POST', moov.baseUrl + path);
-      req.responseType = 'json';
-      req.setRequestHeader("x-request-id", moov.requestId)
+      req.responseType = 'text';
+      // req.setRequestHeader("x-request-id", moov.requestId)
 
       req.onload = function() {
         callback(req.response);
       };
       req.onerror = function(e) {
-        var elm = document.querySelector("#signup-error")
-        console.dir(e);
-        elm.innerHTML = "Whoops! Something went wrong...";
-        elm.style.display = 'inherit';
+        callback(e);
+        // var elm = document.querySelector("#signup-error")
+        // console.dir(e);
+        // elm.innerHTML = "Whoops! Something went wrong...";
+        // elm.style.display = 'inherit';
       };
       req.send(body);
     },
-    
-    requestId: nextId(),  
+
+    requestId: nextId(),
 
     // update error element
     error: function(msg) {
@@ -109,22 +111,21 @@
 
       moov.post('/users/create', JSON.stringify(body), function (resp) {
         var js = JSON.parse(resp);
-        if (js.error !== undefined) {
-          console.log(js.error);
-        }
-        console.log(js);
+        if (js.error) {
+          moov.error(js.error);
+        } else {
+          // happy path
 
-        // js.id // TODO(adam)
+        }
       })
     },
 
     createOAuth2Client: function(cookie) {
       moov.post('/oauth2/clients', null, function (resp) {
         var js = JSON.parse(resp)
-        if (js.error !== undefined) {
-          console.log(js.error);
+        if (js.error) {
+          moov.error(js.error);
         }
-        console.log(js);
       });
     },
 
@@ -144,6 +145,12 @@
       });
     },
 
-    
+    createACHFile: function() {
+      var body = {};
+      moov.post('/ach/files', body, function (resp) {
+        console.log(resp);
+      });
+    },
+
   };
 })()
