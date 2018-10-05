@@ -28,10 +28,15 @@
       // req.setRequestHeader("x-request-id", moov.requestId)
 
       req.onload = function() {
-        callback(req.response);
+        if (req.status == 403) {
+          moov.error("Error: You\'re not logged in.");
+        } else {
+          callback(req.response);
+        }
       };
       req.onerror = function(e) {
         moov.error("Whoops! Something went wrong...");
+        console.log(e);
       };
       req.send(null);
     },
