@@ -47,6 +47,7 @@
       req.open('POST', moov.baseUrl + path);
       req.responseType = 'text';
       // req.setRequestHeader("x-request-id", moov.requestId)
+      req.setRequestHeader("content-type", "application/json");
 
       req.onload = function() {
         callback(req.response);
@@ -152,8 +153,8 @@
 
     checkLogin: function() {
       moov.get('/users/login', function(resp) {
-          moov.success("Already logged in. Loading ach files...");
-          moov.getACHFiles();
+        moov.success("Already logged in. Loading ach files...");
+        moov.getACHFiles();
       });
     },
 
@@ -168,16 +169,33 @@
         if (js.error) {
           moov.error(js.error);
         } else {
-          console.dir(js);
           moov.success("Found "+js.files.length+" files");
+          moov.setupACHFileCreate();
         }
       });
     },
 
+    setupACHFileCreate: function() {
+      // file header
+      document.querySelector("#immediateOrigin").value = "99991234";
+      document.querySelector("#immediateOriginName").value = "My Bank Name";
+      document.querySelector("#immediateDestination").value = "69100013";
+      document.querySelector("#immediateDestinationName").value = "Federal Reserve Bank";
+
+      // make form visible
+      document.querySelector("#file-header").style.display = "inherit";
+    },
+
     createACHFile: function() {
-      var body = {};
-      moov.post('/ach/files', body, function (resp) {
+      var body = {
+        immediateOrigin: document.querySelector("#immediateOrigin").value,
+        immediateOriginName: document.querySelector("#immediateOriginName").value,
+        immediateDestination: document.querySelector("#immediateDestination").value,
+        immediateDestinationName: document.querySelector("#immediateDestinationName").value,
+      };
+      moov.post('/ach/files/create', body, function (resp) {
         console.log(resp);
+        moov.getACHFiles()
       });
     },
 

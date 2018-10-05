@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Moov ACH Demo</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
 
     <style type="text/css">
@@ -21,10 +21,18 @@
     </p>
 
     <form id="signup">
-      Email: <input type="text" id="signup-email" placeholder="demo@moov.io" autofocus /><br />
-      Password: <input type="password" id="signup-password" /><br />
-      Name: <input type="text" id="signup-name" placeholder="Your Name" /> (Only required for signup)<br />
-      <!-- Phone: <input type="text" id="signup-phone" value="555.555.5555" /><br /> -->
+      <table>
+        <tr>
+          <td>Email:</td><td><input type="text" id="signup-email" placeholder="demo@moov.io" autofocus /></td>
+        </tr>
+        <tr>
+          <td>Password:</td><td><input type="password" id="signup-password" /></td>
+        </tr>
+        <tr>
+          <td>Name:</td><td><input type="text" id="signup-name" placeholder="Your Name" /> (Only required for signup)</td>
+        </tr>
+        <!-- Phone: <input type="text" id="signup-phone" value="555.555.5555" /><br /> -->
+      </table>
 
       <input type="button" style="margin-top: 10px;" onclick="moov.signup();" value="Signup!" />
       <input type="button" style="margin-top: 10px;" onclick="moov.login();" value="Login!" />
@@ -32,6 +40,25 @@
       <p class="moov-pink" id="dialog" style="display:none;">
         Whoops! Please verify the above fields are filled out. Thanks!
       </p>
+    </form>
+
+    <form id="file-header" style="display:none;">
+      <h3 for="file-header">Let's create an ACH file!</h3>
+      <table>
+        <tr>
+          <td>Immediate Origin:</td><td><input type="text" id="immediateOrigin" /></td>
+        </tr>
+        <tr>
+          <td>Immediate Origin Name:</td><td><input type="text" id="immediateOriginName" /></td>
+        </tr>
+        <tr>
+          <td>Immediate Destination:</td><td><input type="text" id="immediateDestination" /></td>
+        </tr>
+        <tr>
+          <td>Immediate Destination: Name:</td><td><input type="text" id="immediateDestinationName" /></td>
+        </tr>
+      </table>
+      <input type="button" onclick="moov.createACHFile();" value="Create File" />
     </form>
 
     <script src="app.js"></script>
