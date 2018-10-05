@@ -20,6 +20,8 @@
 
   window.moov = {
     baseUrl: "https://api.moov.io/v1",
+    requestId: nextId(),
+
     get: function(path, callback) {
       var req = new XMLHttpRequest();
       req.withCredentials = true
@@ -58,7 +60,22 @@
       req.send(body);
     },
 
-    requestId: nextId(),
+    delete: function(path, callback) {
+      var req = new XMLHttpRequest();
+      req.withCredentials = true;
+      req.open('DELETE', moov.baseUrl + path);
+      req.responseType = 'text';
+
+      req.setRequestHeader("x-request-id", moov.requestId)
+
+      req.onload = function() {
+        callback(req.response);
+      };
+      req.onerror = function(e) {
+        callback(e);
+      };
+      req.send(null);
+    },
 
     // update error element
     error: function(msg) {
@@ -159,7 +176,7 @@
     },
 
     getACHFiles: function() {
-      moov.get('/ach/files', function (resp) {
+      moov.get('/ach/files?limit=20', function (resp) {
         if (!resp) {
           moov.error("Whoops! Try logging in again.");
           return
@@ -171,31 +188,143 @@
         } else {
           moov.success("Found "+js.files.length+" files");
           moov.setupACHFileCreate();
+          moov.showCurrentFiles(js.files);
         }
       });
     },
 
+    showCurrentFiles: function(files) {
+      // Clear the current content
+      var parent = document.querySelector("#ach-file-list");
+      parent.innerHTML = '';
+
+      var header = document.createElement("h4");
+      if (files.length > 0) {
+        header.innerHTML = 'Current Files';
+      } else {
+        header.innerHTML = 'No files created yet';
+        header.style.fontWeight = 'normal'; // unbold
+      }
+      parent.appendChild(header);
+
+      // Add each ACH file now
+      var len = files.length;
+      for (var i = 0; i < len; i++) {
+        var file = files[i];
+        var header = file.fileHeader;
+
+        var elm = document.createElement("table");
+        elm.cellPadding = 5;
+        elm.style.borderBottom = '1px solid #ccc';
+        elm.innerHTML = '<tr><td id="delete-file-'+file.id+'">&nbsp;</td><td>ABA</td><td>Name</td></tr>';
+        elm.innerHTML += '<tr><td>Origin</td><td>'+header.immediateOrigin+'</td><td>'+header.immediateOriginName+'</td></tr>';
+        elm.innerHTML += '<tr><td>Destination</td><td>'+header.immediateDestination+'</td><td>'+header.immediateDestinationName+'</td></tr>';
+        parent.appendChild(elm);
+
+        // Add a button to delete this file
+        var delButton = document.createElement("input");
+        delButton.type = "button";
+        delButton.dataset.fileId = file.id;
+        delButton.onclick = function(e) {
+          moov.deleteACHFile(this.dataset.fileId);
+        };
+        delButton.value = "Delete";
+
+        var td = document.querySelector("#delete-file-"+file.id);
+        if (td) {
+          td.appendChild(delButton);
+        }
+      }
+      parent.style.display = 'inherit';
+    },
+
     setupACHFileCreate: function() {
       // file header
-      document.querySelector("#immediateOrigin").value = "99991234";
-      document.querySelector("#immediateOriginName").value = "My Bank Name";
-      document.querySelector("#immediateDestination").value = "69100013";
-      document.querySelector("#immediateDestinationName").value = "Federal Reserve Bank";
+      document.querySelector("#immediateOrigin").value = "121042882";
+      document.querySelector("#immediateOriginName").value = "My Bank Name"; // Wells Fargo
+      document.querySelector("#immediateDestination").value = "231380104";
+      document.querySelector("#immediateDestinationName").value = "Federal Reserve Bank"; // Citadel
+
+      // batch
+      document.querySelector("#serviceClassCode").value = "220";
+      document.querySelector("#standardEntryClassCode").value = "PPD";
+      document.querySelector("#companyName").value = "Your Company, Inc"; // Wells Fargo
+      document.querySelector("#companyIdentification").value = "121042882";
+      document.querySelector("#companyEntryDescription").value = "Online Order";
+      // bh.EffectiveEntryDate = time.Now().AddDate(0, 0, 1) // TODO(adam): ???
+      document.querySelector("#ODFIIdentification").value = "121042882";
 
       // make form visible
       document.querySelector("#file-header").style.display = "inherit";
     },
 
     createACHFile: function() {
-      var body = {
-        immediateOrigin: document.querySelector("#immediateOrigin").value,
-        immediateOriginName: document.querySelector("#immediateOriginName").value,
-        immediateDestination: document.querySelector("#immediateDestination").value,
+      var body = JSON.stringify({
+        immediateOrigin:          document.querySelector("#immediateOrigin").value,
+        immediateOriginName:      document.querySelector("#immediateOriginName").value,
+        immediateDestination:     document.querySelector("#immediateDestination").value,
         immediateDestinationName: document.querySelector("#immediateDestinationName").value,
-      };
+      });
+
+      // Create file w/ header
       moov.post('/ach/files/create', body, function (resp) {
+        var js = JSON.parse(resp);
+        var batch = JSON.stringify({
+          id:                      js.id,
+          serviceClassCode:        parseInt(document.querySelector("#serviceClassCode").value, 10),
+          standardEntryClassCode:  document.querySelector("#standardEntryClassCode").value,
+          companyName:             document.querySelector("#companyName").value,
+          companyIdentification:   document.querySelector("#companyIdentification").value,
+          companyEntryDescription: document.querySelector("#companyEntryDescription").value,
+          ODFIIdentification:      document.querySelector("#ODFIIdentification").value,
+        });
+        moov.addBatchToFile(js.id, batch);
+        if (moov.validateFile(js.id)) {
+          // only refresh files on validate success
+          moov.getACHFiles();
+        }
+      });
+    },
+
+    deleteACHFile: function(id) {
+      moov.delete('/ach/files/'+id, function(resp) {
+        if (resp) {
+          moov.getACHFiles();
+        }
+      });
+    },
+
+    addBatchToFile: function(id, body) {
+      moov.post('/ach/files/'+id+'/batches/', body, function (resp) {
+        if (!resp) {
+          console.log(resp);
+        }
+      });
+    },
+
+    // validateFile returns a boolean indicating if the file validates
+    // without errors.
+    validateFile: function(id) {
+      moov.get('/ach/files/'+id+'/validate', function (resp) {
+        // Show the validation error (if there is one)
+        try {
+          var js = JSON.parse(resp);
+          if (js.error) {
+            moov.error("ERROR: "+js.error);
+            console.log(js.error);
+            return false
+          }
+        } catch (e) {
+          // do nothing, we got success (probably)
+          console.log("ERROR: "+e);
+        }
+        return true
+      });
+    },
+
+    getFileContents: function(id) {
+      moov.get('/ach/files/'+id+'/contents', function (resp) {
         console.log(resp);
-        moov.getACHFiles()
       });
     },
 

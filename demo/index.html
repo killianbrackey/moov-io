@@ -42,9 +42,12 @@
       </p>
     </form>
 
+    <div id="ach-file-list" style="display:none;"></div>
+
     <form id="file-header" style="display:none;">
       <h3 for="file-header">Let's create an ACH file!</h3>
       <table>
+        <h5>File Header</h5>
         <tr>
           <td>Immediate Origin:</td><td><input type="text" id="immediateOrigin" /></td>
         </tr>
@@ -55,7 +58,28 @@
           <td>Immediate Destination:</td><td><input type="text" id="immediateDestination" /></td>
         </tr>
         <tr>
-          <td>Immediate Destination: Name:</td><td><input type="text" id="immediateDestinationName" /></td>
+          <td>Immediate Destination Name:</td><td><input type="text" id="immediateDestinationName" /></td>
+        </tr>
+      </table>
+      <table>
+        <h5>Batch</h5>
+        <tr>
+          <td>Service Class Code:</td><td><input type="text" id="serviceClassCode" /></td>
+        </tr>
+        <tr>
+          <td>Standard Entry Class Code: </td><td><input type="text" id="standardEntryClassCode" /></td>
+        </tr>
+        <tr>
+          <td>Company Name: </td><td><input type="text" id="companyName" /></td>
+        </tr>
+        <tr>
+          <td>Company Identification: </td><td><input type="text" id="companyIdentification" /></td>
+        </tr>
+        <tr>
+          <td>Company Entry Description: </td><td><input type="text" id="companyEntryDescription" /></td>
+        </tr>
+        <tr>
+          <td>ODFT Identification: </td><td><input type="text" id="ODFIIdentification" /></td>
         </tr>
       </table>
       <input type="button" onclick="moov.createACHFile();" value="Create File" />
