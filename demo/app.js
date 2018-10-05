@@ -25,7 +25,7 @@
       req.withCredentials = true
       req.open('GET', moov.baseUrl + path);
       req.responseType = 'text';
-      // req.setRequestHeader("x-request-id", moov.requestId)
+      req.setRequestHeader("x-request-id", moov.requestId)
 
       req.onload = function() {
         if (req.status == 403) {
@@ -46,7 +46,7 @@
       req.withCredentials = true
       req.open('POST', moov.baseUrl + path);
       req.responseType = 'text';
-      // req.setRequestHeader("x-request-id", moov.requestId)
+      req.setRequestHeader("x-request-id", moov.requestId)
       req.setRequestHeader("content-type", "application/json");
 
       req.onload = function() {
