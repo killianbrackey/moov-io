@@ -25,13 +25,18 @@
       req.withCredentials = true
       req.open('GET', moov.baseUrl + path);
       req.responseType = 'text';
-      // req.setRequestHeader("x-request-id", moov.requestId)
+      req.setRequestHeader("x-request-id", moov.requestId)
 
       req.onload = function() {
-        callback(req.response);
+        if (req.status == 403) {
+          moov.error("Error: You\'re not logged in.");
+        } else {
+          callback(req.response);
+        }
       };
       req.onerror = function(e) {
         moov.error("Whoops! Something went wrong...");
+        console.log(e);
       };
       req.send(null);
     },
@@ -41,17 +46,14 @@
       req.withCredentials = true
       req.open('POST', moov.baseUrl + path);
       req.responseType = 'text';
-      // req.setRequestHeader("x-request-id", moov.requestId)
+      req.setRequestHeader("x-request-id", moov.requestId)
+      req.setRequestHeader("content-type", "application/json");
 
       req.onload = function() {
         callback(req.response);
       };
       req.onerror = function(e) {
         callback(e);
-        // var elm = document.querySelector("#signup-error")
-        // console.dir(e);
-        // elm.innerHTML = "Whoops! Something went wrong...";
-        // elm.style.display = 'inherit';
       };
       req.send(body);
     },
@@ -84,7 +86,6 @@
       var name = document.querySelector("#signup-name");
       var email = document.querySelector("#signup-email");
       var password = document.querySelector("#signup-password");
-      // var phone = document.querySelector("#signup-phone");
 
       if (!name.value != "") {
         moov.error("Whoops, please provide your name")
@@ -109,7 +110,7 @@
       var body = {
         "email": email.value,
         "password": password.value,
-        "phone": "555.555.5555",
+        "phone": "555.555.5555", // hardcoded so demos have less to fill in
       };
       if (nameParts.length > 1) {
         body.firstName = nameParts[0]
@@ -152,51 +153,49 @@
 
     checkLogin: function() {
       moov.get('/users/login', function(resp) {
-        // var js = JSON.parse(resp);
-        // if (js.error) {
-        //   moov.error(js.error);
-        // } else {
-          moov.success("Already logged in. Loading ach files...");
-          moov.getACHFiles();
-        // }
+        moov.success("Already logged in. Loading ach files...");
+        moov.getACHFiles();
       });
     },
 
-    // createOAuth2Client: function(cookie) {
-    //   moov.post('/oauth2/clients', null, function (resp) {
-    //     var js = JSON.parse(resp)
-    //     if (js.error) {
-    //       moov.error(js.error);
-    //     }
-    //   });
-    // },
-
-    // createOAuthToken: function(clientId, clientSecret) {
-    //   moov.post(
-    //     '/oauth/token?grant_type=client_credentials&client_id='+clientId+'&client_secret='+clientSecret,
-    //     null, // body
-    //     function (resp) {
-    //       console.log(resp);
-    //     }
-    //   );
-    // },
-
     getACHFiles: function() {
       moov.get('/ach/files', function (resp) {
+        if (!resp) {
+          moov.error("Whoops! Try logging in again.");
+          return
+        }
+
         var js = JSON.parse(resp);
         if (js.error) {
           moov.error(js.error);
         } else {
-          console.dir(js);
           moov.success("Found "+js.files.length+" files");
+          moov.setupACHFileCreate();
         }
       });
     },
 
+    setupACHFileCreate: function() {
+      // file header
+      document.querySelector("#immediateOrigin").value = "99991234";
+      document.querySelector("#immediateOriginName").value = "My Bank Name";
+      document.querySelector("#immediateDestination").value = "69100013";
+      document.querySelector("#immediateDestinationName").value = "Federal Reserve Bank";
+
+      // make form visible
+      document.querySelector("#file-header").style.display = "inherit";
+    },
+
     createACHFile: function() {
-      var body = {};
-      moov.post('/ach/files', body, function (resp) {
+      var body = {
+        immediateOrigin: document.querySelector("#immediateOrigin").value,
+        immediateOriginName: document.querySelector("#immediateOriginName").value,
+        immediateDestination: document.querySelector("#immediateDestination").value,
+        immediateDestinationName: document.querySelector("#immediateDestinationName").value,
+      };
+      moov.post('/ach/files/create', body, function (resp) {
         console.log(resp);
+        moov.getACHFiles()
       });
     },
 
