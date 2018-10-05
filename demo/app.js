@@ -154,6 +154,11 @@
 
     getACHFiles: function() {
       moov.get('/ach/files', function (resp) {
+        if (!resp) {
+          moov.error("Whoops! Try logging in again.");
+          return
+        }
+
         var js = JSON.parse(resp);
         if (js.error) {
           moov.error(js.error);
