@@ -197,12 +197,13 @@
     // make them visible by setting display: 'inherit'.
     showHiddenFields: function() {
       var elements = document.querySelectorAll(".hidden");
-      console.log(elements);
       for (var i = 0; i < elements.length; i++) {
         var elm = elements[0];
         if (elm.nodeName == "TR") {
           elm.style.display = 'table-row';
           elm.style['vertical-align'] = 'inherit';
+        } else {
+          console.log("Trying to display other element: "+elm);
         }
       }
     },
@@ -244,9 +245,14 @@
         };
         delButton.value = "Delete";
 
-        var td = document.querySelector("#delete-file-"+file.id);
-        if (td) {
-          td.appendChild(delButton);
+        var q = "#delete-file-"+file.id;
+        if (!q.match(/^([a-zA-Z0-9]*)$/)) {
+          console.log("SKIPPING "+file.id+" due to invalid dom selector characters")
+        } else {
+          var td = document.querySelector(q);
+          if (td) {
+            td.appendChild(delButton);
+          }
         }
       }
       parent.style.display = 'inherit';
