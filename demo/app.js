@@ -282,7 +282,11 @@
         if (moov.validateFile(js.id)) {
           // only refresh files on validate success
           moov.getACHFiles();
+        } else {
+          // TODO(adam): we want to refresh, but not trample moov.error's value
+          // (validateFile sets that on error)
         }
+
       });
     },
 
