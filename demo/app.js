@@ -193,6 +193,20 @@
       });
     },
 
+    // Take all .hidden elements with display: 'none' and
+    // make them visible by setting display: 'inherit'.
+    showHiddenFields: function() {
+      var elements = document.querySelectorAll(".hidden");
+      console.log(elements);
+      for (var i = 0; i < elements.length; i++) {
+        var elm = elements[0];
+        if (elm.nodeName == "TR") {
+          elm.style.display = 'table-row';
+          elm.style['vertical-align'] = 'inherit';
+        }
+      }
+    },
+
     showCurrentFiles: function(files) {
       // Clear the current content
       var parent = document.querySelector("#ach-file-list");

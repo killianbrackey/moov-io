@@ -10,6 +10,7 @@
       body {
       font-family: sans-serif;
       }
+      .hidden { display: none; }
     </style>
 
     <link rel="stylesheet" type="text/css" href="../moov.css">
@@ -62,11 +63,14 @@
         </tr>
       </table>
       <table>
-        <h5>Batch</h5>
-        <tr>
+        <p>
+          <strong>Batch</strong>
+          - (<a href="javascript:moov.showHiddenFields();">Show Details</a>)
+        </p>
+        <tr class="hidden">
           <td>Service Class Code:</td><td><input type="text" id="serviceClassCode" /></td>
         </tr>
-        <tr>
+        <tr class="hidden">
           <td>Standard Entry Class Code: </td><td><input type="text" id="standardEntryClassCode" /></td>
         </tr>
         <tr>
