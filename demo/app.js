@@ -9,7 +9,7 @@
   function nextId() {
     var out = ""
     for (i = 0; i < 20; i++) {
-      out += String.fromCharCode((Math.random()*26+97).toFixed()) // 97 is ASCII/UTF-8 "a"
+      out += String.fromCharCode((Math.random()*25+97).toFixed()) // 97 is ASCII/UTF-8 "a"
     }
     return out
   }
@@ -198,16 +198,12 @@
     showHiddenFields: function() {
       var elements = document.querySelectorAll(".hidden");
       for (var i = 0; i < elements.length; i++) {
-        var elm = elements[0];
-        if (elm.nodeName == "TR") {
-          elm.style.display = 'table-row';
-          elm.style['vertical-align'] = 'inherit';
-        } else {
-          console.log("Trying to display other element: "+elm);
-        }
+        elements[i].classList.remove("hidden");
       }
+      document.querySelector("#show-details").style.display = 'none';
     },
 
+    // Takes a json array of File objects and renders them to the page (in summary).
     showCurrentFiles: function(files) {
       // Clear the current content
       var parent = document.querySelector("#ach-file-list");
@@ -223,16 +219,21 @@
       parent.appendChild(header);
 
       // Add each ACH file now
-      var len = files.length;
-      for (var i = 0; i < len; i++) {
+      for (var i = 0; i < files.length; i++) {
         var file = files[i];
+        // TODO(adam):
+        if (!file.id.match(/^([a-zA-Z0-9]*)$/)) {
+          console.log("SKIPPING '"+file.id+"' due to invalid dom selector characters");
+          files.splice(i, 1); // remove invalid file from array
+          continue
+        }
         var header = file.fileHeader;
 
         var elm = document.createElement("table");
         elm.cellPadding = 5;
         elm.style.borderBottom = '1px solid #ccc';
-        elm.innerHTML = '<tr><td id="delete-file-'+file.id+'">&nbsp;</td><td>ABA</td><td>Name</td></tr>';
-        elm.innerHTML += '<tr><td>Origin</td><td>'+header.immediateOrigin+'</td><td>'+header.immediateOriginName+'</td></tr>';
+        elm.innerHTML = '<tr><td id="delete-file-'+file.id+'">&nbsp;</td><td>ABA</td><td>Name</td><td>Valid?</td></tr>';
+        elm.innerHTML += '<tr><td>Origin</td><td>'+header.immediateOrigin+'</td><td>'+header.immediateOriginName+'</td><td id="file-status-'+file.id+'"></td></tr>';
         elm.innerHTML += '<tr><td>Destination</td><td>'+header.immediateDestination+'</td><td>'+header.immediateDestinationName+'</td></tr>';
         parent.appendChild(elm);
 
@@ -245,15 +246,19 @@
         };
         delButton.value = "Delete";
 
-        var q = "#delete-file-"+file.id;
-        if (!q.match(/^([a-zA-Z0-9]*)$/)) {
-          console.log("SKIPPING "+file.id+" due to invalid dom selector characters")
-        } else {
-          var td = document.querySelector(q);
-          if (td) {
-            td.appendChild(delButton);
+        // Update validation status
+        moov.validateFile(file.id, function(fileId) {
+          return function(success) {
+            var elm = document.querySelector('#file-status-'+fileId)
+            if (success === true) {
+              elm.innerHTML = '\u2705'; // green checkmark
+            } else {
+              elm.innerHTML = '\u274C'; // red X
+            }
           }
-        }
+        }(file.id)); // pass current file.id to closure
+
+        document.querySelector("#delete-file-"+file.id).appendChild(delButton);
       }
       parent.style.display = 'inherit';
     },
@@ -265,48 +270,112 @@
       document.querySelector("#immediateDestination").value = "231380104";
       document.querySelector("#immediateDestinationName").value = "Federal Reserve Bank"; // Citadel
 
-      // batch
-      document.querySelector("#serviceClassCode").value = "220";
+      // Batch
+      document.querySelector("#serviceClassCode").value = "200";
       document.querySelector("#standardEntryClassCode").value = "PPD";
       document.querySelector("#companyName").value = "Your Company, Inc"; // Wells Fargo
       document.querySelector("#companyIdentification").value = "121042882";
       document.querySelector("#companyEntryDescription").value = "Online Order";
       // bh.EffectiveEntryDate = time.Now().AddDate(0, 0, 1) // TODO(adam): ???
-      document.querySelector("#ODFIIdentification").value = "121042882";
+      document.querySelector("#ODFIIdentification").value = "12104288";
+
+      // Entry Detail
+      document.querySelector("#transactionCode").value = "22";
+      document.querySelector("#RDFIIdentification").value = "23138010";
+      document.querySelector("#checkDigit").value = "4";
+      document.querySelector("#DFIAccountNumber").value = "81967038518      "; // TODO(adam): is the padding required?
+      document.querySelector("#amount").value = "100000";
+      document.querySelector("#identificationNumber").value = "#83738AB#      ";
+      document.querySelector("#individualName").value = "Steven Tander         ";
+      document.querySelector("#discretionaryData").value = "  ";
+      document.querySelector("#traceNumber").value = "121042880000001";
+      document.querySelector("#addendum-paymentRelatedInformation").value = "Bonus for working on #OSS!";
+      document.querySelector("#category").value = "Forward";
 
       // make form visible
       document.querySelector("#file-header").style.display = "inherit";
     },
 
     createACHFile: function() {
+      var fileId = nextId();
       var body = JSON.stringify({
-        immediateOrigin:          document.querySelector("#immediateOrigin").value,
-        immediateOriginName:      document.querySelector("#immediateOriginName").value,
-        immediateDestination:     document.querySelector("#immediateDestination").value,
-        immediateDestinationName: document.querySelector("#immediateDestinationName").value,
+        "id": fileId,
+        "fileHeader": {
+          "id": fileId,
+          "immediateOrigin": document.querySelector("#immediateOrigin").value,
+          "immediateOriginName": document.querySelector("#immediateOriginName").value,
+          "immediateDestination": document.querySelector("#immediateDestination").value,
+          "immediateDestinationName": document.querySelector("#immediateDestinationName").value,
+          "fileCreationDate": "2018-10-08T00:00:00Z", // TODO(adam): generate via javascript
+          "fileCreationTime": "2018-10-08T00:00:00Z",
+          "fileIDModifier": "A"
+        },
+        "batches": [
+          {
+            "batchHeader": {
+              "id": fileId,
+              "serviceClassCode": parseInt(document.querySelector("#serviceClassCode").value, 10),
+              "standardEntryClassCode": document.querySelector("#standardEntryClassCode").value,
+              "companyName": document.querySelector("#companyName").value,
+              "companyIdentification": document.querySelector("#companyIdentification").value,
+              "companyEntryDescription": document.querySelector("#companyEntryDescription").value,
+              "effectiveEntryDate": "2018-10-09T00:00:00Z",
+              "ODFIIdentification": document.querySelector("#ODFIIdentification").value,
+              "batchNumber": 1
+            },
+            "entryDetails": [
+              {
+                "id": fileId,
+                "transactionCode": parseInt(document.querySelector("#transactionCode").value, 10),
+                "RDFIIdentification": document.querySelector("#RDFIIdentification").value,
+                "checkDigit": document.querySelector("#checkDigit").value,
+                "DFIAccountNumber": document.querySelector("#DFIAccountNumber").value,
+                "amount": parseInt(document.querySelector("#amount").value, 10),
+                "identificationNumber": document.querySelector("#identificationNumber").value,
+                "individualName": document.querySelector("#individualName").value,
+                "discretionaryData": document.querySelector("#discretionaryData").value,
+                "addendaRecordIndicator": 1,
+                "traceNumber": parseInt(document.querySelector("#traceNumber").value = "121042880000001", 10),
+                // "addendum": [
+                //   {
+                //     "id": fileId,
+                //     "paymentRelatedInformation": document.querySelector("#addendum-paymentRelatedInformation").value,
+                //     "sequenceNumber": 1,
+                //     "entryDetailSequenceNumber": 1
+                //   }
+                // ],
+                "category": document.querySelector("#category").value
+              }
+            ],
+            "batchControl": {
+              "id": fileId,
+              "serviceClassCode": parseInt(document.querySelector("#serviceClassCode").value, 10),
+              "entryAddendaÇount": 0, // TODO(adam): 1
+              // "entryHash": 23138010,
+              // "totalDebit": 0,
+              // "totalCredit": 100000,
+              "companyIdentification": document.querySelector("#companyIdentification").value,
+              "ODFIIdentification": document.querySelector("#ODFIIdentification").value,
+              "batchNumber": 1
+            }
+          }
+        ],
+        "fileControl": {
+          "id": fileId,
+          "batchCount": 1,
+          "blockCount": 1,
+          "entryAddendaCount": 1, // TODO(adam)
+        },
       });
 
-      // Create file w/ header
+      // Create file
       moov.post('/ach/files/create', body, function (resp) {
         var js = JSON.parse(resp);
-        var batch = JSON.stringify({
-          id:                      js.id,
-          serviceClassCode:        parseInt(document.querySelector("#serviceClassCode").value, 10),
-          standardEntryClassCode:  document.querySelector("#standardEntryClassCode").value,
-          companyName:             document.querySelector("#companyName").value,
-          companyIdentification:   document.querySelector("#companyIdentification").value,
-          companyEntryDescription: document.querySelector("#companyEntryDescription").value,
-          ODFIIdentification:      document.querySelector("#ODFIIdentification").value,
+        moov.validateFile(js.id, function(success) {
+          if (success === true) {
+            moov.getACHFiles();
+          }
         });
-        moov.addBatchToFile(js.id, batch);
-        if (moov.validateFile(js.id)) {
-          // only refresh files on validate success
-          moov.getACHFiles();
-        } else {
-          // TODO(adam): we want to refresh, but not trample moov.error's value
-          // (validateFile sets that on error)
-        }
-
       });
     },
 
@@ -328,21 +397,23 @@
 
     // validateFile returns a boolean indicating if the file validates
     // without errors.
-    validateFile: function(id) {
+    //
+    // callback should take a boolean representing validation success
+    validateFile: function(id, callback) {
       moov.get('/ach/files/'+id+'/validate', function (resp) {
         // Show the validation error (if there is one)
-        try {
-          var js = JSON.parse(resp);
-          if (js.error) {
-            moov.error("ERROR: "+js.error);
-            console.log(js.error);
-            return false
+        var js = JSON.parse(resp);
+        if (js.error) {
+          moov.error("ERROR: "+js.error);
+          console.log(js.error);
+          if (callback !== undefined) {
+            callback(false);
           }
-        } catch (e) {
-          // do nothing, we got success (probably)
-          console.log("ERROR: "+e);
+        } else {
+          if (callback !== undefined) {
+            callback(true);
+          }
         }
-        return true
       });
     },
 
