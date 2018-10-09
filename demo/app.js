@@ -234,7 +234,7 @@
         elm.style.borderBottom = '1px solid #ccc';
         elm.innerHTML = '<tr><td id="delete-file-'+file.id+'">&nbsp;</td><td>ABA</td><td>Name</td><td>Valid?</td></tr>';
         elm.innerHTML += '<tr><td>Origin</td><td>'+header.immediateOrigin+'</td><td>'+header.immediateOriginName+'</td><td id="file-status-'+file.id+'"></td></tr>';
-        elm.innerHTML += '<tr><td>Destination</td><td>'+header.immediateDestination+'</td><td>'+header.immediateDestinationName+'</td></tr>';
+        elm.innerHTML += '<tr><td>Destination</td><td>'+header.immediateDestination+'</td><td>'+header.immediateDestinationName+'</td><td id="show-contents-'+file.id+'"></td></tr>';
         parent.appendChild(elm);
 
         // Add a button to delete this file
@@ -257,6 +257,18 @@
             }
           }
         }(file.id)); // pass current file.id to closure
+
+        // Button to show ACH plaintext
+        var contentsButton = document.createElement("input");
+        contentsButton.type = "button";
+        contentsButton.dataset.fileId = file.id;
+        contentsButton.onclick = function(e) {
+          moov.getFileContents(this.dataset.fileId);
+        };
+        contentsButton.value = "Raw File";
+
+        var holder = document.querySelector("#show-contents-"+file.id);
+        holder.appendChild(contentsButton);
 
         document.querySelector("#delete-file-"+file.id).appendChild(delButton);
       }
@@ -364,7 +376,7 @@
           "id": fileId,
           "batchCount": 1,
           "blockCount": 1,
-          "entryAddendaCount": 1, // TODO(adam)
+          "entryAddendaCount": 0, // TODO(adam)
         },
       });
 
@@ -419,7 +431,8 @@
 
     getFileContents: function(id) {
       moov.get('/ach/files/'+id+'/contents', function (resp) {
-        console.log(resp);
+        var elm = document.querySelector("#ach-file-contents");
+        elm.innerText = resp;
       });
     },
 
