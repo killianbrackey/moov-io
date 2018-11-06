@@ -362,7 +362,7 @@
             "batchControl": {
               "id": fileId,
               "serviceClassCode": parseInt(document.querySelector("#serviceClassCode").value, 10),
-              "entryAddendaÇount": 0, // TODO(adam): 1
+              "entryAddendaÇount": 1,
               // "entryHash": 23138010,
               // "totalDebit": 0,
               // "totalCredit": 100000,
@@ -376,7 +376,7 @@
           "id": fileId,
           "batchCount": 1,
           "blockCount": 1,
-          "entryAddendaCount": 0, // TODO(adam)
+          "entryAddendaCount": 1,
         },
       });
 
