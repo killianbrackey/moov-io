@@ -1,6 +1,6 @@
-FROM nginx:1.15
+FROM nginx:1.15.6
 
-# Setup nginx 
+# Setup nginx
 RUN chmod 777 -R /var/cache/nginx/
 COPY nginx/nginx.conf /opt/nginx/nginx.conf
 COPY nginx/default.conf /opt/nginx/conf.d/default.conf
