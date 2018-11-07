@@ -6,6 +6,9 @@ build: AUTHORS
 	docker build -t moov/moov-io:$(VERSION) -f Dockerfile .
 	docker tag moov/moov-io:$(VERSION) moov/moov-io:latest
 
+serve:
+	python -m SimpleHTTPServer
+
 # From https://github.com/genuinetools/img
 .PHONY: AUTHORS
 AUTHORS:

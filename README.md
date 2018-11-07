@@ -8,9 +8,10 @@ This repository holds our public website ([moov.io](https://moov.io)) discussing
 ## Getting Started / Install
 
 1. Clone the repository somewhere (`git clone git@github.com:moov-io/moov-io.git`).
-1. Edit, push up a new branch and create a Pull Request!
-1. Verify your changes with github pages (load `user.github.io/moov-io` in a browser).
-   - You can also build our docker image (`make build`).
+1. Edit the files you want locally
+1. Run `make serve` to run a webserver at [localhost:8080](http://localhost:8080).
+1. Commit your changes, push up a new branch, and create a Pull Request!
+   1. Optional: Verify your changes with github pages (load `user.github.io/moov-io` in a browser).
 
 ## Getting Help
 
