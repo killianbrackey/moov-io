@@ -348,14 +348,14 @@
                 "discretionaryData": document.querySelector("#discretionaryData").value,
                 "addendaRecordIndicator": 1,
                 "traceNumber": parseInt(document.querySelector("#traceNumber").value = "121042880000001", 10),
-                // "addendum": [
-                //   {
-                //     "id": fileId,
-                //     "paymentRelatedInformation": document.querySelector("#addendum-paymentRelatedInformation").value,
-                //     "sequenceNumber": 1,
-                //     "entryDetailSequenceNumber": 1
-                //   }
-                // ],
+                "addenda05": [
+                  {
+                    "id": fileId,
+                    "paymentRelatedInformation": document.querySelector("#addendum-paymentRelatedInformation").value,
+                    "sequenceNumber": 1,
+                    "entryDetailSequenceNumber": 1
+                  }
+                ],
                 "category": document.querySelector("#category").value
               }
             ],
