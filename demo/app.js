@@ -347,7 +347,7 @@
                 "individualName": document.querySelector("#individualName").value,
                 "discretionaryData": document.querySelector("#discretionaryData").value,
                 "addendaRecordIndicator": 1,
-                "traceNumber": parseInt(document.querySelector("#traceNumber").value = "121042880000001", 10),
+                "traceNumber": document.querySelector("#traceNumber").value,
                 "addenda05": [
                   {
                     "id": fileId,
