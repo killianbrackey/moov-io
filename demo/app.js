@@ -383,6 +383,11 @@
       // Create file
       moov.post('/ach/files/create', body, function (resp) {
         var js = JSON.parse(resp);
+
+        // Build file
+        moov.getFileContents(js.id);
+
+        // run validation
         moov.validateFile(js.id, function(success) {
           if (success === true) {
             moov.getACHFiles();
