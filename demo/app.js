@@ -358,26 +358,9 @@
                 ],
                 "category": document.querySelector("#category").value
               }
-            ],
-            "batchControl": {
-              "id": fileId,
-              "serviceClassCode": parseInt(document.querySelector("#serviceClassCode").value, 10),
-              "entryAddendaÇount": 1,
-              // "entryHash": 23138010,
-              // "totalDebit": 0,
-              // "totalCredit": 100000,
-              "companyIdentification": document.querySelector("#companyIdentification").value,
-              "ODFIIdentification": document.querySelector("#ODFIIdentification").value,
-              "batchNumber": 1
-            }
+            ]
           }
-        ],
-        "fileControl": {
-          "id": fileId,
-          "batchCount": 1,
-          "blockCount": 1,
-          "entryAddendaCount": 1,
-        },
+        ]
       });
 
       // Create file
