@@ -3,7 +3,7 @@ VERSION := v0.1.0-dev
 .PHONY: build
 
 build: AUTHORS
-	docker build -t moov/moov-io:$(VERSION) -f Dockerfile .
+	docker build --pull -t moov/moov-io:$(VERSION) -f Dockerfile .
 	docker tag moov/moov-io:$(VERSION) moov/moov-io:latest
 
 serve:
