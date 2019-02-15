@@ -1,0 +1,7 @@
+sudo: true
+services:
+  - docker
+os:
+  - linux
+script:
+  - make build
