@@ -7,6 +7,7 @@ build: AUTHORS
 	docker tag moov/moov-io:$(VERSION) moov/moov-io:latest
 
 serve:
+	@echo "Load http://localhost:8000 in a browser..."
 	python -m SimpleHTTPServer
 
 # From https://github.com/genuinetools/img
