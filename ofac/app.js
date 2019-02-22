@@ -31,7 +31,7 @@
 
       req.onload = function() {
         if (req.status == 403) {
-          moov.error("Error: You\'re not logged in.");
+          moov.error("Error: You\'re not logged in. Try <a href='https://moov.io/demo'>logging in</a> (or signing up).");
         } else {
           callback(req.response);
         }
