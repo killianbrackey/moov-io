@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Moov OFAC Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style type="text/css">
+      body {
+      background-color: #fcfcfc;
+      font-family: sans-serif;
+      }
+      .hidden { display: none; }
+      .results-even-row {
+          background-color: #EEE;
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../moov.css">
+  </head>
+  <body>
+    <h2>Moov OFAC API Demo</h2>
+    <p>
+      <!-- Moov ACH (<a href="https://github.com/moov-io/ach">Github</a>) implements a RESTful API and file reader/writer for parsing Automated Clearing House (<a href="https://en.wikipedia.org/wiki/Automated_Clearing_House">ACH</a>) files. ACH is the primary method of electronic money movement throughout the United States. -->
+    </p>
+
+    <p>
+      OFAC Name Search: <input type="text" id="input" value="alh" />
+      <input type="button" onclick="moov.searchOFAC(document.querySelector('#input').value);" value="Search" />
+    </p>
+
+    <div id="results"></div>
+
+    <hr />
+    <p class="moov-pink" id="dialog" style="display:none;">
+      Whoops! Please verify the above fields are filled out. Thanks!
+    </p>
+
+    <script src="app.js"></script>
+  </body>
+</html>
