@@ -1,4 +1,4 @@
-FROM nginx:1.15.8
+FROM nginx:1.15.9
 
 # Setup nginx
 RUN chmod 777 -R /var/cache/nginx/
