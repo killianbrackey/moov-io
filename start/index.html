@@ -51,7 +51,7 @@
     <div style="width: 70%;">
       <div class="gray-div">
         <p>The Moov API requires OAuth2 authenticating (or HTTP cookie auth) in order to interact with its services. We have <a href="https://api.moov.io/#operation/createOAuth2Client">API Documentation</a> for creating an OAuth client and token after signup.</p>
-        <p>JSON is returned by all API responses, including errors, although you can generate client code via OpenAPI code generation to convert responses to appropriate language-specific objects.</p>
+        <p>JSON is returned by all API responses, including errors, although you can generate client code via <a href="https://github.com/OpenAPITools/openapi-generator">OpenAPI code generation</a> using our <a href="https://github.com/moov-io/api/blob/master/openapi.yaml" style="font-weight:bold;">specification</a> which convert responses to appropriate language-specific objects.
         <p>When an API requires a token generated using OAuth (2-legged), no end user is involved. You generate the token by passing your client credentials (Client Id and Client Secret) in a simple call to Create access token (<code>/oauth2/token</code>).</p>
         <p>The operation returns a token that is valid for a few hours and can be renewed; when it expires, you just repeat the call and get a new token. Making additional token requests will keep generating tokens.</p>
         <p>Once the OAuth2 client and token are generated you can use the returned header in all following API calls.</p>
