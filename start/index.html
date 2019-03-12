@@ -17,6 +17,11 @@
       label {
           font-weight: bold;
       }
+      .gray-div {
+          background-color: #CCC;
+          padding: 5px;
+          border-radius: 10px;
+      }
     </style>
 
     <link rel="stylesheet" type="text/css" href="../moov.css">
@@ -48,7 +53,7 @@
     </p>
 
     <div style="width: 70%;">
-      <div style="background-color: #CCC; padding: 5px; border-radius: 10px;">
+      <div class="gray-div">
         <p>The Moov API requires OAuth2 authenticating (or HTTP cookie auth) in order to interact with its services. We have <a href="https://api.moov.io/#operation/createOAuth2Client">API Documentation</a> for creating an OAuth client and token after signup.</p>
         <p>JSON is returned by all API responses, including errors, although you can generate client code via OpenAPI code generation to convert responses to appropriate language-specific objects.</p>
         <p>When an API requires a token generated using OAuth (2-legged), no end user is involved. You generate the token by passing your client credentials (Client Id and Client Secret) in a simple call to Create access token (/oauth2/token).</p>
@@ -78,6 +83,7 @@
       </div>
       <code id="oauth-token-curl-cmd"></code>
     </p>
+    <hr />
     <p id="ach-files">
       <div>
         <strong>Load ACH files</strong> - <a href="https://api.moov.io/#operation/getFiles">API documentation</a> - <a href="https://docs.moov.io/en/latest/ach/">Tutorial</a><br />
@@ -89,6 +95,7 @@
       <code id="ach-files-cmd"></code>
       <pre id="ach-files-resp"></pre>
     </p>
+    <hr />
     <p id="ofac-search">
       <div>
         <strong>Perform OFAC search</strong> - <a href="https://api.moov.io/#operation/searchSDNs">API documentation</a> - <a href="https://docs.moov.io/en/latest/ofac/">Tutorial</a><br />
@@ -98,6 +105,15 @@
       </div>
       <code id="ofac-search-cmd"></code>
       <pre id="ofac-search-resp"></pre>
+    </p>
+    <hr />
+    <p id="transfer">
+      <div>
+      <strong>Create a transfer</strong>
+      <p>
+        Moov's API also supports <a href="https://api.moov.io/#tag/Transfers">creating an ACH transfer</a> after the dependent objects (<a href="https://api.moov.io/#operation/addOriginator">Originator</a>, <a href="https://api.moov.io/#operation/addCustomers">Customer</a>, and <a href="https://api.moov.io/#operation/addDepository">Depositories</a>) are created first.
+      </p>
+      </div>
     </p>
 
     <script src="app.js"></script>
