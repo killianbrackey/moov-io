@@ -16,8 +16,8 @@
   };
 
   window.moov = {
-    // baseUrl: 'https://api.moov.io/v1',
-    baseUrl: "http://localhost:9000/v1", // local dev
+    baseUrl: 'https://api.moov.io/v1',
+    // baseUrl: "http://localhost:9000/v1", // local dev
     requestId: nextId(),
 
     get: function(path, callback) {
