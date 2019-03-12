@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Getting Started - Moov</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+
+    <style type="text/css">
+      body {
+      background-color: #fcfcfc;
+      font-family: sans-serif;
+      }
+      .hidden { display: none; }
+      .results-even-row {
+          background-color: #EEE;
+      }
+      label {
+          font-weight: bold;
+      }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="../moov.css">
+  </head>
+  <body>
+    <h2>Getting started with the Moov API</h2>
+    <p>
+      docs.moov.io<br />api.moov.io
+    </p>
+
+    <table>
+      <tr>
+        <td>Email:</td><td><input type="text" id="signup-email" placeholder="demo@moov.io" autofocus /></td>
+      </tr>
+      <tr>
+        <td>Password:</td><td><input type="password" id="signup-password" /></td>
+      </tr>
+      <tr>
+        <td>Name:</td><td><input type="text" id="signup-name" placeholder="Your Name" /> (Only required for signup)</td>
+      </tr>
+    </table>
+
+    <input type="button" style="margin-top: 10px;" onclick="moov.signup();" value="Signup!" />
+    <input type="button" style="margin-top: 10px;" onclick="moov.login();" value="Login!" />
+
+    <hr />
+    <p class="moov-pink" id="dialog" style="display:none;">
+      Whoops! Please verify the above fields are filled out. Thanks!
+    </p>
+
+    <div style="width: 70%;">
+      <div style="background-color: #CCC; padding: 5px; border-radius: 10px;">
+        <p>The Moov API requires OAuth2 authenticating (or HTTP cookie auth) in order to interact with its services. We have <a href="https://api.moov.io/#operation/createOAuth2Client">API Documentation</a> for creating an OAuth client and token after signup.</p>
+        <p>JSON is returned by all API responses, including errors, although you can generate client code via OpenAPI code generation to convert responses to appropriate language-specific objects.</p>
+        <p>When an API requires a token generated using OAuth (2-legged), no end user is involved. You generate the token by passing your client credentials (Client Id and Client Secret) in a simple call to Create access token (/oauth2/token).</p>
+        <p>The operation returns a token that is valid for a few hours and can be renewed; when it expires, you just repeat the call and get a new token. Making additional token requests will keep generating tokens.</p>
+        <p>Once the OAuth2 client and token are generated you can use the returned header in all following API calls.</p>
+        <p>Links: <a href="https://api.moov.io/">API Documentation</a></p>
+      </div>
+      <p id="results"></p>
+    </div>
+
+    <h3>Example cURL commands</h3>
+    <p id="auth-check">
+      <div>
+        <strong>Verify we're logged in and show our user data.</strong> - <a href="https://api.moov.io/#operation/checkUserLogin">API documentation</a><br />
+        foo bar
+      </div>
+      <br />
+      <code id="auth-check-cmd"></code>
+      <pre id="auth-check-resp"></pre>
+    </p>
+    <p id="oauth-token-curl">
+      <div>
+        <strong>Create OAuth2 token</strong> - <a href="https://api.moov.io/#operation/checkUserLogin">API documentation</a><br />
+        <p>
+          Once an OAuth2 client credential exists in order for an application to use it we need an OAuth token created. The following curl command shows an example.
+        </p>
+      </div>
+      <code id="oauth-token-curl-cmd"></code>
+    </p>
+    <p id="ach-files">
+      <div>
+        <strong>Load ACH files</strong> - <a href="https://api.moov.io/#operation/getFiles">API documentation</a> - <a href="https://docs.moov.io/en/latest/ach/">Tutorial</a><br />
+        <p>
+          <a href="https://en.wikipedia.org/wiki/Automated_Clearing_House">Automated Clearing House</a> (ACH) files are used between US banks to transfer money between businesses and consumers.
+          Moov offers examples for <a href="https://github.com/moov-io/ach/blob/master/examples/http/main.go">creating a file with Go</a> and <a href="https://github.com/moov-io/ach/blob/master/test/testdata/ppd-valid.json">example JSON file</a>.
+        </p>
+      </div>
+      <code id="ach-files-cmd"></code>
+      <pre id="ach-files-resp"></pre>
+    </p>
+    <p id="ofac-search">
+      <div>
+        <strong>Perform OFAC search</strong> - <a href="https://api.moov.io/#operation/searchSDNs">API documentation</a> - <a href="https://docs.moov.io/en/latest/ofac/">Tutorial</a><br />
+        <p>
+          <a href="https://sanctionssearch.ofac.treas.gov/">Office of Foreign Asset Control</a> (OFAC) is an HTTP API and Go library to download, parse and serve United States OFAC sanction data for applications and humans.
+        </p>
+      </div>
+      <code id="ofac-search-cmd"></code>
+      <pre id="ofac-search-resp"></pre>
+    </p>
+
+    <script src="app.js"></script>
+  </body>
+</html>
