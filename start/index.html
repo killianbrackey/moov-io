@@ -97,7 +97,7 @@
     <hr />
     <p id="ofac-search">
       <div>
-        <strong>Perform OFAC search</strong> - <a href="https://api.moov.io/#operation/searchSDNs">API documentation</a> - <a href="https://docs.moov.io/en/latest/ofac/">Tutorial</a><br />
+        <strong>Perform OFAC search</strong> - <a href="https://api.moov.io/#operation/search">API documentation</a> - <a href="https://docs.moov.io/en/latest/ofac/">Tutorial</a><br />
         <p>
           <a href="https://sanctionssearch.ofac.treas.gov/">Office of Foreign Asset Control</a> (OFAC) is an HTTP API and Go library to download, parse and serve United States OFAC sanction data for applications and humans.
         </p>
@@ -110,7 +110,7 @@
       <div>
       <strong>Create a transfer</strong>
       <p>
-        Moov's API also supports <a href="https://api.moov.io/#tag/Transfers">creating an ACH transfer</a> after the dependent objects (<a href="https://api.moov.io/#operation/addOriginator">Originator</a>, <a href="https://api.moov.io/#operation/addCustomers">Customer</a>, and <a href="https://api.moov.io/#operation/addDepository">Depositories</a>) are created first.
+        Moov's API also supports <a href="https://api.moov.io/#tag/Transfers">creating an ACH transfer</a> after the dependent objects (<a href="https://api.moov.io/#operation/addOriginator">Originator</a>, <a href="https://api.moov.io/#operation/addReceivers">Receiver</a>, and <a href="https://api.moov.io/#operation/addDepository">Depositories</a>) are created first.
       </p>
       <p>
         We publish a generated <a href="https://godoc.org/github.com/moov-io/go-client/client">Go client</a> from the <a href="https://github.com/moov-io/api/blob/master/openapi.yaml">OpenAPI v3 specification</a> allowing you to generate a client for any OpenAPI v3 supported language.
