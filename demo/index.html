@@ -89,96 +89,95 @@
           Whoops! Please verify the above fields are filled out. Thanks!
         </p>
       </form>
-
-      <div id="ach-file-list" style="display:none;"></div>
-
-      <div>
-        <pre id="ach-file-contents"></pre>
-      </div>
-
-      <form id="file-header" style="display:none;">
-        <h3 for="file-header">Let's create an ACH file!</h3>
-        <span id="show-details"><a href="javascript:moov.showHiddenFields();">Show Details</a></span>
-        <table>
-          <p><strong>File Header</strong></p>
-          <tr>
-            <td>Immediate Origin:</td><td><input type="text" id="immediateOrigin" /></td>
-          </tr>
-          <tr>
-            <td>Immediate Origin Name:</td><td><input type="text" id="immediateOriginName" /></td>
-          </tr>
-          <tr>
-            <td>Immediate Destination:</td><td><input type="text" id="immediateDestination" /></td>
-          </tr>
-          <tr>
-            <td>Immediate Destination Name:</td><td><input type="text" id="immediateDestinationName" /></td>
-          </tr>
-        </table>
-        <table>
-          <p><strong>Batch</strong></p>
-          <tr class="hidden">
-            <td>Service Class Code:</td><td><input type="text" id="serviceClassCode" /></td>
-          </tr>
-          <tr class="hidden">
-            <td>Standard Entry Class Code: </td><td><input type="text" id="standardEntryClassCode" /></td>
-          </tr>
-          <tr>
-            <td>Company Name: </td><td><input type="text" id="companyName" /></td>
-          </tr>
-          <tr>
-            <td>Company Identification: </td><td><input type="text" id="companyIdentification" /></td>
-          </tr>
-          <tr>
-            <td>Company Entry Description: </td><td><input type="text" id="companyEntryDescription" /></td>
-          </tr>
-          <tr>
-            <td>ODFI Identification: </td><td><input type="text" id="ODFIIdentification" /></td>
-          </tr>
-        </table>
-        <table>
-          <p><strong>Entry Detail</strong></p>
-          <tr class="hidden">
-            <td>Transaction Code: </td><td><input type="text" id="transactionCode" /></td>
-          </tr>
-          <tr class="hidden">
-            <td>RDFI Identification: </td><td><input type="text" id="RDFIIdentification" /></td>
-          </tr>
-          <tr class="hidden">
-            <td>Check Digit: </td><td><input type="text" id="checkDigit" /></td>
-          </tr>
-          <tr class="hidden">
-            <td>DFI Account Number: </td><td><input type="text" id="DFIAccountNumber" /></td>
-          </tr>
-          <tr>
-            <td>Amount: </td><td><input type="text" id="amount" /></td>
-          </tr>
-          <tr class="hidden">
-            <td>Identification Number: </td><td><input type="text" id="identificationNumber" /></td>
-          </tr>
-          <tr>
-            <td>Individual Name: </td><td><input type="text" id="individualName" /></td>
-          </tr>
-          <tr class="hidden">
-            <td>Discretionary Data: </td><td><input type="text" id="discretionaryData" /></td>
-          </tr>
-          <tr>
-            <td>Trace Number: </td><td><input type="text" id="traceNumber" /></td>
-          </tr>
-          <tr>
-            <td>Payment Related Information: </td><td><input type="text" id="addendum-paymentRelatedInformation" /></td>
-          </tr>
-          <tr class="hidden">
-            <td>Category: </td><td><input type="text" id="category" /></td>
-          </tr>
-        </table>
-        <input type="button" onclick="moov.createACHFile();" value="Create File" />
-      </form>
     </div>
   </div>
 
+  <div style="width: 80%; margin-left:10%;">
+    <div id="ach-file-list" style="display:none;"></div>
+
+    <div>
+      <pre id="ach-file-contents"></pre>
+    </div>
+
+    <form id="file-header" style="display:none;">
+      <h3 for="file-header">Let's create an ACH file!</h3>
+      <span id="show-details"><a href="javascript:moov.showHiddenFields();">Show Details</a></span>
+      <table>
+        <p><strong>File Header</strong></p>
+        <tr>
+          <td>Immediate Origin:</td><td><input type="text" id="immediateOrigin" /></td>
+        </tr>
+        <tr>
+          <td>Immediate Origin Name:</td><td><input type="text" id="immediateOriginName" /></td>
+        </tr>
+        <tr>
+          <td>Immediate Destination:</td><td><input type="text" id="immediateDestination" /></td>
+        </tr>
+        <tr>
+          <td>Immediate Destination Name:</td><td><input type="text" id="immediateDestinationName" /></td>
+        </tr>
+      </table>
+      <table>
+        <p><strong>Batch</strong></p>
+        <tr class="hidden">
+          <td>Service Class Code:</td><td><input type="text" id="serviceClassCode" /></td>
+        </tr>
+        <tr class="hidden">
+          <td>Standard Entry Class Code: </td><td><input type="text" id="standardEntryClassCode" /></td>
+        </tr>
+        <tr>
+          <td>Company Name: </td><td><input type="text" id="companyName" /></td>
+        </tr>
+        <tr>
+          <td>Company Identification: </td><td><input type="text" id="companyIdentification" /></td>
+        </tr>
+        <tr>
+          <td>Company Entry Description: </td><td><input type="text" id="companyEntryDescription" /></td>
+        </tr>
+        <tr>
+          <td>ODFI Identification: </td><td><input type="text" id="ODFIIdentification" /></td>
+        </tr>
+      </table>
+      <table>
+        <p><strong>Entry Detail</strong></p>
+        <tr class="hidden">
+          <td>Transaction Code: </td><td><input type="text" id="transactionCode" /></td>
+        </tr>
+        <tr class="hidden">
+          <td>RDFI Identification: </td><td><input type="text" id="RDFIIdentification" /></td>
+        </tr>
+        <tr class="hidden">
+          <td>Check Digit: </td><td><input type="text" id="checkDigit" /></td>
+        </tr>
+        <tr class="hidden">
+          <td>DFI Account Number: </td><td><input type="text" id="DFIAccountNumber" /></td>
+        </tr>
+        <tr>
+          <td>Amount: </td><td><input type="text" id="amount" /></td>
+        </tr>
+        <tr class="hidden">
+          <td>Identification Number: </td><td><input type="text" id="identificationNumber" /></td>
+        </tr>
+        <tr>
+          <td>Individual Name: </td><td><input type="text" id="individualName" /></td>
+        </tr>
+        <tr class="hidden">
+          <td>Discretionary Data: </td><td><input type="text" id="discretionaryData" /></td>
+        </tr>
+        <tr>
+          <td>Trace Number: </td><td><input type="text" id="traceNumber" /></td>
+        </tr>
+        <tr>
+          <td>Payment Related Information: </td><td><input type="text" id="addendum-paymentRelatedInformation" /></td>
+        </tr>
+        <tr class="hidden">
+          <td>Category: </td><td><input type="text" id="category" /></td>
+        </tr>
+      </table>
+      <input type="button" onclick="moov.createACHFile();" value="Create File" />
+    </form>
+  </div>
+
   <script src="app.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>
