@@ -8,7 +8,11 @@ build: AUTHORS
 
 serve:
 	@echo "Load http://localhost:8000 in a browser..."
+ifeq (, $(shell which python3))
 	python -m SimpleHTTPServer
+else
+	python -m http.server
+endif
 
 # From https://github.com/genuinetools/img
 .PHONY: AUTHORS
