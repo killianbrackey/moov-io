@@ -221,7 +221,6 @@
       // Add each ACH file now
       for (var i = 0; i < files.length; i++) {
         var file = files[i];
-        // TODO(adam):
         if (!file.id.match(/^([a-zA-Z0-9]*)$/)) {
           console.log("SKIPPING '"+file.id+"' due to invalid dom selector characters");
           files.splice(i, 1); // remove invalid file from array

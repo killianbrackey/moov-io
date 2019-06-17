@@ -4,6 +4,7 @@
     <title>Moov OFAC Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style type="text/css">
       body {
@@ -19,29 +20,69 @@
     <link rel="stylesheet" type="text/css" href="../moov.css">
   </head>
   <body>
-    <h2>Moov OFAC API Demo</h2>
-    <p>
-      <a href="/">Home</a> | <a href="../start/">Getting Started</a> | Demos: <a href="../demo/">ACH</a> and <a href="../ofac/">OFAC</a>
-    </p>
-    <p>
-      The Office of Foreign Asset Control (OFAC) administers and enforces United States economic and trade sanctions which companies and individuals are required to abide by to disallow transactions with blocked entities. Moov's OFAC service is an HTTP API and Go library to download, parse and serve sanction data for applications and humans. Also supported is an async webhook notification service to initiate processes on remote systems connected with OFAC.
-    </p>
-    <p>
-      <a href="https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx">OFAC website</a>, <a href="https://docs.moov.io/en/latest/ofac/">Moov's OFAC Documentation</a>, and <a href="https://api.moov.io/#tag/OFAC">API Docs</a>
-    </p>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Moov.io</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Overview</a>
+            </li>
 
-    <p>
-      OFAC Name Search: <input type="text" id="input" value="alh" />
-      <input type="button" onclick="moov.searchOFAC(document.querySelector('#input').value);" value="Search" />
-    </p>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Demo
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="./start/">Getting Started</a>
+                <a class="dropdown-item" href="./demo/">ACH</a>
+                <a class="dropdown-item" href="./ofac/">OFAC</a>
+              </div>
+            </li>
 
-    <div id="results"></div>
+            <li class="nav-item">
+              <a class="nav-link" href="https://api.moov.io" target="_blank">API</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://docs.moov.io" target="_blank">Docs</a>
+            </li>
 
-    <hr />
-    <p class="moov-pink" id="dialog" style="display:none;">
-      Whoops! Please verify the above fields are filled out. Thanks!
-    </p>
+            <!--
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li> -->
+          </ul>
+          <a class="btn btn-light" href="https://github.com/moov-io" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </nav>
 
-    <script src="app.js"></script>
+    <div class="container">
+      <div class="row">
+        <h2>Moov OFAC API Demo</h2>
+        <p>
+          The Office of Foreign Asset Control (OFAC) administers and enforces United States economic and trade sanctions which companies and individuals are required to abide by to disallow transactions with blocked entities. Moov's OFAC service is an HTTP API and Go library to download, parse and serve sanction data for applications and humans. Also supported is an async webhook notification service to initiate processes on remote systems connected with OFAC. <br /><br />
+
+          <a href="https://www.treasury.gov/about/organizational-structure/offices/Pages/Office-of-Foreign-Assets-Control.aspx">OFAC website</a>, <a href="https://docs.moov.io/en/latest/ofac/">Moov's OFAC Documentation</a>, and <a href="https://api.moov.io/#tag/OFAC">API Docs</a>
+        </p>
+
+        <p>
+          OFAC Name Search: <input type="text" id="input" value="alh" />
+          <input type="button" onclick="moov.searchOFAC(document.querySelector('#input').value);" value="Search" />
+        </p>
+
+        <div id="results"></div>
+
+        <hr />
+        <p class="moov-pink" id="dialog" style="display:none;">
+          Whoops! Please verify the above fields are filled out. Thanks!
+        </p>
+      </div>
+    </div>
+
+  <script src="app.js"></script>
   </body>
 </html>
