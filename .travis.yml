@@ -1,11 +1,14 @@
 sudo: true
+
 services:
-- docker
+  - docker
+
 os:
-- linux
-# - osx # TravisCI on OSX doesn't support docker yet
+  - linux
+
 script:
-- make build
+  - make build
+
 deploy:
   provider: releases
   api_key:
@@ -13,8 +16,8 @@ deploy:
   on:
     repo: moov-io/moov-io
     tags: true
-    go: 1.12.x
   skip_cleanup: true
+
 after_deploy:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - make release-push
