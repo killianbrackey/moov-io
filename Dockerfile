@@ -3,7 +3,7 @@ FROM nginx:1.17
 # Setup nginx
 RUN chmod 777 -R /var/cache/nginx/
 COPY nginx/nginx.conf /opt/nginx/nginx.conf
-COPY nginx/default.conf /opt/nginx/conf.d/default.conf
+COPY nginx/default.conf /opt/nginx/conf.d/default.conf.tpl
 
 # Bring over assets / files
 COPY index.html /opt/nginx/www/
@@ -15,8 +15,9 @@ COPY ./start/ /opt/nginx/www/start/
 # TODO(adam): nginx_exporter instead
 RUN echo '# empty prometheus metrics response' > /opt/nginx/www/metrics
 
-# Run commands
-USER nobody
+# TODO(adam): run as non-root user...
 EXPOSE 8080
-ENTRYPOINT ["nginx"]
+
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["-c", "/opt/nginx/nginx.conf"]
