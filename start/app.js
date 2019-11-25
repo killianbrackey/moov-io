@@ -229,10 +229,10 @@
     },
 
     generateCurlOFACSearch: function(id) {
-      document.querySelector(id).innerHTML = "curl -H 'cookie: " + moov.cookie() + "' '" + moov.baseUrl + "/ofac/search?name=nicolas+maduro&limit=1'<br />";
+      document.querySelector(id).innerHTML = "curl -H 'cookie: " + moov.cookie() + "' '" + moov.baseUrl + "/watchman/search?name=nicolas+maduro&limit=1'<br />";
     },
     fillExampleOFACSearch: function(id) {
-      moov.get('/ofac/search?name=nicolas+maduro&limit=1', function(resp) {
+      moov.get('/watchman/search?name=nicolas+maduro&limit=1', function(resp) {
         if (resp != null) {
           document.querySelector(id).innerHTML = JSON.stringify(JSON.parse(resp), null, 2);
         }
