@@ -12,10 +12,8 @@ COPY ./assets/ /opt/nginx/www/assets/
 COPY ./demo/ /opt/nginx/www/demo/
 COPY ./start/ /opt/nginx/www/start/
 
-# TODO(adam): nginx_exporter instead
 RUN echo '# empty prometheus metrics response' > /opt/nginx/www/metrics
 
-# TODO(adam): run as non-root user...
 EXPOSE 8080
 
 COPY entrypoint.sh /entrypoint.sh
