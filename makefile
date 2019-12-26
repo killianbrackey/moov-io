@@ -5,9 +5,16 @@ build:
 	docker build --pull -t moov/moov-io:$(VERSION) -f Dockerfile .
 	docker tag moov/moov-io:$(VERSION) moov/moov-io:latest
 
+.PHONY: build
+generate:
+	wget -O assets/bootstrap.min.css https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css
+	wget -O assets/jquery-slim.min.js https://code.jquery.com/jquery-3.4.1.slim.min.js
+	wget -O assets/popper.min.js https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js
+	wget -O assets/bootstrap.min.js https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js
+
 .PHONY: run
 run:
-	docker run -p 8080:8080 moov/moov-io:$(VERSION)
+	docker run --read-only -p 8080:8080 -v $(shell pwd)/nginx/cache/:/var/cache/nginx -v $(shell pwd)/nginx/run/:/var/run moov/moov-io:$(VERSION)
 
 .PHONY: release-push
 release-push:

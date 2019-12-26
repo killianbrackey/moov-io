@@ -9,3 +9,6 @@
 !.vscode/extensions.json
 
 .vscode/launch.json
+
+./nginx/cache/
+./nginx/run/
