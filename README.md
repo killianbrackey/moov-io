@@ -13,6 +13,10 @@ This repository holds our public website ([moov.io](https://moov.io)) discussing
 1. Commit your changes, push up a new branch, and create a Pull Request!
    1. Optional: Verify your changes with github pages (load `user.github.io/moov-io` in a browser).
 
+## Content Management
+
+- Please refer to [Hugo's documentation](https://gohugo.io/content-management/) for details on modifying content.
+
 ## Updating Hugo Theme
 
 Inside the theme directory run `git pull`. Then `make build && make run` to verify the site loads as expected and then open a pull request.
