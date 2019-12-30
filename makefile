@@ -2,7 +2,11 @@ VERSION=v$(shell date +"%Y.%m.%d").1
 
 .PHONY: build
 build:
-	hugo # build site
+ifeq ($(TRAVIS_OS_NAME),"linux")
+	cd ./site && ./bin/hugo
+else
+	cd ./site && hugo
+endif
 	docker build --pull -t moov/moov-io:$(VERSION) -f Dockerfile .
 	docker tag moov/moov-io:$(VERSION) moov/moov-io:latest
 
