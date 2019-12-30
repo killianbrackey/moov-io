@@ -3,7 +3,7 @@ VERSION=v$(shell date +"%Y.%m.%d").1
 .PHONY: build
 build:
 ifneq ($(TRAVIS_OS_NAME),"")
-	cd ./site && ./hugo
+	cd ./site && ../hugo
 else
 	cd ./site && hugo
 endif
