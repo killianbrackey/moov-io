@@ -10,8 +10,8 @@
 
 .vscode/launch.json
 
-./nginx/cache/
-./nginx/run/
+/nginx/cache/
+/nginx/run/
 
 /bin/
 
