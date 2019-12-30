@@ -13,5 +13,7 @@
 ./nginx/cache/
 ./nginx/run/
 
+/bin/
+
 /site/public/
 /site/resources/_gen/
