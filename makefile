@@ -10,6 +10,13 @@ endif
 	docker build --pull -t moov/moov-io:$(VERSION) -f Dockerfile .
 	docker tag moov/moov-io:$(VERSION) moov/moov-io:latest
 
+.PHONY: theme
+theme:
+	wget https://github.com/lucperkins/hugo-fresh/archive/master.zip
+	unzip -q master.zip
+	mv hugo-fresh-master/ site/themes/hugo-fresh/
+	rm -rf master.zip
+
 .PHONY: run
 run:
 	docker run --read-only -p 8080:8080 -v $(shell pwd)/nginx/cache/:/var/cache/nginx -v $(shell pwd)/nginx/run/:/var/run moov/moov-io:$(VERSION)
