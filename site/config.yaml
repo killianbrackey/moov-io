@@ -149,6 +149,8 @@ params:
           link: https://api.moov.io
         - text: Documentation
           link: https://docs.moov.io
+        - text: SOC2
+          link: https://moov.io/soc2/
       column3:
         title: "Contact"
         links:
