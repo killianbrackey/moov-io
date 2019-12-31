@@ -12,8 +12,9 @@ endif
 
 .PHONY: theme
 theme:
-	wget https://github.com/lucperkins/hugo-fresh/archive/master.zip
+	wget https://github.com/StefMa/hugo-fresh/archive/master.zip
 	unzip -q master.zip
+	rm -rf site/themes/hugo-fresh/
 	mv hugo-fresh-master/ site/themes/hugo-fresh/
 	rm -rf master.zip
 
