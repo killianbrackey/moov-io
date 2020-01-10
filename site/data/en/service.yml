@@ -1,0 +1,33 @@
+################################# Service #################################
+service:
+  enable : true
+  title : Our Products
+  service_Item :
+    # - icon : ti-world # themify icon pack : https://themify.me/themify-icons
+    - icon : ti-money # themify icon pack : https://themify.me/themify-icons
+      title : ACH Processing
+      content : Create, Validate and process NACHA ACH Files with the industries leading library. Moov Paygate additionally provides a RESTful API enabling Automated Clearing House (ACH) transactions to be submitted and received without a deep understanding of a file specification.
+      
+    - icon : ti-user # themify icon pack : https://themify.me/themify-icons
+      title : Customers
+      content : Moov Customers solves authentic identification of humans who are legally able to hold and transfer currency within the US. Focused on solving Know Your Customer (KYC), Customer Identification Program (CIP), Office of Foreign Asset Control (OFAC) checks and verification workflows to comply with US federal law and ensure authentic transfers.
+
+    - icon : ti-list
+      title : Accounts
+      content : Moov Accounts is a dual ledger supporting FBO (For Benefit Of) deposits. Work continues on Savings, Time Deposit, Custodial, and DDA accounts.   
+
+    - icon : ti-check-box # themify icon pack : https://themify.me/themify-icons
+      title : KYC & OFAC
+      content : Moov Watchman is an HTTP API to download, parse and offer search functions over numerous trade sanction lists from the United States, European Union governments, agencies, and non profits for complying with regional laws. Also included is a web UI and async webhook notification service to initiate processes on remote systems.
+
+    - icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
+      title : Wire Transfers
+      content : Moov Wire supports domestic FedWire transactions, allowing our customers to create, review, and handle wires.
+      
+    - icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
+      title : Image Cash Letter
+      content : Record paper check and related payment data as images during the item capture process and transmit them to us for clearing and settlement. Image Cash Letter reduces the costs, time and risks associated with transporting paper checks.
+
+    # - icon : ti-credit-card
+    #   title : Issue & Authorize Cards
+    #   content : (in development) Provide plastic of virtual cards to your customers with our ISO8583 Host and Issuing platform platform.

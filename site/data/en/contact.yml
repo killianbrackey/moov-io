@@ -1,0 +1,25 @@
+############################## Contact #############################
+contact:
+  enable : true
+  title : Contact Us
+  subtitle : Get In Touch!
+  content : Moov is a software company with decades of experience in banking, payments, and regulatory scrutiny. Were happy to help your team figure out the best go to market strategy for your latest creation or assist your development team in integrating our projects into your larger solution.
+  form_Action: "#" #contact form works with https://formspree.io
+  map:
+    enable : true
+    gmapAPI : "https://maps.googleapis.com/maps/api/js?key=AIzaSyAigQOXlEySjcILPQy4zPuqeh-QybdPhFU"
+    mapLatitude : 39.7555
+    mapLongitude: 105.2211
+
+  contact_Details :
+    - icon : ti-location-pin # themify icon pack : https://themify.me/themify-icons
+      info : "Golden, Colorado, USA"
+      
+    # - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
+    #   info : "Phone: +880-31-000-000"
+      
+    # - icon : ti-printer # themify icon pack : https://themify.me/themify-icons
+    #   info : "Fax: +880-31-000-000"
+      
+    - icon : ti-email # themify icon pack : https://themify.me/themify-icons
+      info : "Email: support@moov.io"

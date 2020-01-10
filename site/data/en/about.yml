@@ -1,0 +1,15 @@
+############################# About ###################################
+about:
+  enable : true
+  title : About Us
+  about_Item :
+  - icon : ti-ruler-pencil # themify icon pack : https://themify.me/themify-icons
+    title : Developer Focused
+    content : Developers love Moov’s open platform because it lets them build quickly and extend to fit your requirements. Open communities dwarf closed door companies and legacy vendors while being inviting spaces for collaboration across industries. Moov exists to solve the critical pain point of developers dealing with proprietary banking infrastructure.  
+
+  - icon : ti-credit-card # themify icon pack : https://themify.me/themify-icons
+    title : Empowered Institutions
+    content : Moov-Enabled banking allows all financial institutions to grow new customers, deposits, and fee revenue. All while reducing operating costs and leveraging best of class software. Never ask your legacy vendor for permission to innovate again!
+  - icon : ti-thought # themify icon pack : https://themify.me/themify-icons
+    title : Fintech Connector
+    content : Join The Herd. Financial Institutions and Fintechs can all agree that we need to iterate faster and not be beholden to a gatekeeper choosing winners and losers. Moov removes the boundaries of traditional branch banking systems and empowers developers and financial institutions to leverage a banking infrastructure designed for the cloud economy. 

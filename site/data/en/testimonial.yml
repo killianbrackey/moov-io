@@ -1,0 +1,38 @@
+################################# Testimonial #########################
+testimonial:
+  enable : true
+  bg_Image : images/backgrounds/blue-background-3-crop.png
+  testimonial_Item :
+  # testimonial item loop
+    - name : Tyler McIntyre, Founder Novo
+      image : images/testimonial/Tyler_McIntyr_Novo.jpeg
+      date : January 3, 2020
+      content : As a fintech, Moov's repos have helped us build a lot of our banking stack from scratch, allowing us to deploy in production faster than signing an NDA at a typical vendor
+    
+    - name : Jordan Wright, CEO Atomic
+      image : images/testimonial/Jordan_Wright.png
+      date : January 3, 2020
+      content : We ran across Moov while doing some research on our upcoming NACHA file implementation. We were expecting to go through a terrible process when it came to creating and validating NACHA files. The Moov team has made that process straight-forward and simple. They’re breaking down the traditional walls and creating an easier playing field for all.
+
+    - name : Ray Johnson, VP LindenLabs
+      image : images/testimonial/ray_johnson.jpeg
+      date : January 11, 2020
+      content : LindenLab, the maker’s of SecondLife, is leveraging Moov to support players who earn money within the SecondLife virtual world to be paid out directly. We evaluated many ACH services and Moov’s open-source approach allowed us to create the most correct and compelling implementation quicker than other options.
+
+    - name : Eric Peterson, BillGO
+      image : images/testimonial/Eric_Peterson_Billgo.jpeg
+      date : January 7, 2020
+      content : The Moov ach project has helped BillGO integrate with multiple financial institutions under tight timelines, and worked really well.  The active community support has been invaluable.
+
+
+
+    # testimonial item loop
+    # - name : Killian Brackey, CTO Sezzle
+    #   image : images/testimonial/Killian_Brackey_sezzle.jpeg
+    #   date : Oct 3, 2019
+    #   content : Sezzle was an early contributor to Moov ACH as a building block of our online payment platform that allows you to pay for your order through 4 small installment payments, spread over 6 weeks, rather than paying the full amount at once.
+      
+    # - name : Wade Arnold, Project Lead
+    #   image : images/testimonial/wade_head.jpeg
+    #   date : Oct 1, 2016
+    #   content : There are thousands of new fintech startups and digital banks improving choice, but the industry will never truly move forward while it is constrained by the challenges of legacy operational structures reinforced by accompanying it systems.
