@@ -17,7 +17,7 @@ testimonial:
     - name : Ray Johnson, VP LindenLabs
       image : images/testimonial/ray_johnson.jpeg
       date : January 11, 2020
-      content : LindenLab, the maker’s of SecondLife, is leveraging Moov to support players who earn money within the SecondLife virtual world to be paid out directly. We evaluated many ACH services and Moov’s open-source approach allowed us to create the most correct and compelling implementation quicker than other options.
+      content : LindenLab, the maker of SecondLife, is leveraging Moov to support players who earn money within the SecondLife virtual world to be paid out directly. We evaluated many ACH services and Moov’s open-source approach allowed us to create the most correct and compelling implementation quicker than other options.
 
     - name : Eric Peterson, BillGO
       image : images/testimonial/Eric_Peterson_Billgo.jpeg
