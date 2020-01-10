@@ -83,17 +83,11 @@ URL = "plugins/wow/wow.min.js"
 
 # TODO drop down menus are not working in these theme. I may need to update the template to make them work
 #todo DOCs, API, DEMO
+# link to github until we figure this out
 
   [[menu.main]]
   identifier = "community"
   name = "Community"
-  URL = "#"
-  weight = 8
-
-
-  [[menu.main]]
-  parent = "community"
-  name = "GitHub"
   URL = "https://GitHub.com/moov-io/"
   weight = 8
 
