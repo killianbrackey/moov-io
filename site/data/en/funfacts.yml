@@ -3,23 +3,21 @@ funfacts:
   enable : true
   bg_Image : "images/backgrounds/pink-background-2.png"
   counter_Item:
-  
-      # counter item loop
+    # counter item loop
     - title : "GitHub Projects"
       icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-      count : "23"
-  
+      count : "24"
+
     # counter item loop
     - title : "GitHub Stars"
       icon : "ti-star" # themify icon pack : https://themify.me/themify-icons
-      count : "320"
-  
-    
+      count : "138"
+
     # counter item loop
     - title : "Slack Users"
       icon : "ti-face-smile" # themify icon pack : https://themify.me/themify-icons
-      count : "158"
-      
+      count : "95"
+
     # counter item loop
     - title : "Cups of Coffee"
       icon : "ti-gift" # themify icon pack : https://themify.me/themify-icons
