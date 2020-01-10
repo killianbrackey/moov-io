@@ -4,7 +4,7 @@ contact:
   title : Contact Us
   subtitle : Get In Touch!
   content : Moov is a software company with decades of experience in banking, payments, and regulatory scrutiny. Were happy to help your team figure out the best go to market strategy for your latest creation or assist your development team in integrating our projects into your larger solution.
-  form_Action: "#" #contact form works with https://formspree.io
+  form_Action: "https://formspree.io/xpzpzvpq" #contact form works with https://formspree.io
   map:
     enable : true
     gmapAPI : "https://maps.googleapis.com/maps/api/js?key=AIzaSyAigQOXlEySjcILPQy4zPuqeh-QybdPhFU"
