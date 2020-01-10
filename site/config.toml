@@ -85,11 +85,11 @@ URL = "plugins/wow/wow.min.js"
 #todo DOCs, API, DEMO
 # link to github until we figure this out
 
-  [[menu.main]]
-  identifier = "community"
-  name = "Community"
-  URL = "https://GitHub.com/moov-io/"
-  weight = 8
+  # [[menu.main]]
+  # identifier = "community"
+  # name = "Community"
+  # URL = "https://GitHub.com/moov-io/"
+  # weight = 8
 
 
 
