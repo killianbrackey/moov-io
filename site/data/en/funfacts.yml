@@ -11,7 +11,7 @@ funfacts:
     # counter item loop
     - title : "GitHub Stars"
       icon : "ti-star" # themify icon pack : https://themify.me/themify-icons
-      count : "138"
+      count : "240"
 
     # counter item loop
     - title : "Slack Users"
