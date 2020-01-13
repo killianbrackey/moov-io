@@ -27,7 +27,7 @@
 				<li class="nav-item"><a class="nav-link" href="#body">{{ with .Site.Params.home }}{{ . }}{{ end }}</a></li>
 				{{ range .Site.Menus.main }}
 				<li class="nav-item {{ if .HasChildren }}has-dropdown{{end}}">
-                                  <a class="nav-link" href="#{{ .URL }}">{{ .Name }}</a>
+                                  <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
 
                                   <ul class="navbar-dropdown">
                                     {{ range .Children }}
@@ -46,7 +46,7 @@
 				<li class="nav-item"><a class="nav-link" href="{{ .Site.BaseURL | relLangURL }}#body">{{ with .Site.Params.home }}{{ . }}{{ end }}</a></li>
 				{{ range .Site.Menus.main }}
 				<li class="nav-item {{ if .HasChildren }}has-dropdown{{ end }}">
-                                  <a class="nav-link" href="{{ $.Site.BaseURL | relLangURL }}#{{ .URL }}">{{ .Name }}</a>
+                                  <a class="nav-link" href="{{ $.Site.BaseURL | relLangURL }}{{ .URL }}">{{ .Name }}</a>
 
                                   <ul class="navbar-dropdown">
                                     {{ range .Children }}

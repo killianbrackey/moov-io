@@ -46,12 +46,12 @@ URL = "plugins/wow/wow.min.js"
 
   [[menu.main]]
   name = "About Us"
-  URL = "about"
+  URL = "#about"
   weight = 1
 
   [[menu.main]]
   name = "Products"
-  URL = "services"
+  URL = "#services"
   weight = 2
 
   # [[menu.main]]
@@ -61,7 +61,7 @@ URL = "plugins/wow/wow.min.js"
 
   [[menu.main]]
   name = "Team"
-  URL = "team"
+  URL = "#team"
   weight = 4
 
 
@@ -78,7 +78,7 @@ URL = "plugins/wow/wow.min.js"
 
   [[menu.main]]
   name = "Contact"
-  URL = "contact"
+  URL = "#contact"
   weight = 7
 
 # TODO drop down menus are not working in these theme. I may need to update the template to make them work
