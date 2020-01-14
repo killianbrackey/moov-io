@@ -7,8 +7,8 @@ testimonial:
     - name : Tyler McIntyre, Founder Novo
       image : images/testimonial/Tyler_McIntyr_Novo.jpeg
       date : January 3, 2020
-      content : As a fintech, Moov's repos have helped us build a lot of our banking stack from scratch, allowing us to deploy in production faster than signing an NDA at a typical vendor
-    
+      content : As a fintech, Moov's repositories have helped us build a lot of our banking stack from scratch, allowing us to deploy in production faster than signing an NDA at a typical vendor
+
     - name : Jordan Wright, CEO Atomic
       image : images/testimonial/Jordan_Wright.png
       date : January 3, 2020
@@ -31,7 +31,7 @@ testimonial:
     #   image : images/testimonial/Killian_Brackey_sezzle.jpeg
     #   date : Oct 3, 2019
     #   content : Sezzle was an early contributor to Moov ACH as a building block of our online payment platform that allows you to pay for your order through 4 small installment payments, spread over 6 weeks, rather than paying the full amount at once.
-      
+
     # - name : Wade Arnold, Project Lead
     #   image : images/testimonial/wade_head.jpeg
     #   date : Oct 1, 2016

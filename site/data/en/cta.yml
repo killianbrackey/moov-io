@@ -3,7 +3,7 @@ cta:
   enable : true
   bg_Image : "images/backgrounds/green-background-crop.png"
   title : "Slack w/ Industry Experts & Full Transparency "
-  content : "Our slack community is full of payment and banking experts from around the world. Join the conversations from software development to risk managment. You can even join our daily #standup!"
+  content : "Our slack community is full of payment and banking experts from around the world. Join the conversations from software development to risk management. You can even join our daily #standup!"
   button:
     enable : true
     label : "Join The Heard! (slack)"
