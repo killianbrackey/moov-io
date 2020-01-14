@@ -1,7 +1,7 @@
 ################################# Testimonial #########################
 testimonial:
   enable : true
-  bg_Image : images/backgrounds/blue-background-3-crop.png
+  bg_Image : images/backgrounds/blue-background-3-crop.jpg
   testimonial_Item :
   # testimonial item loop
     - name : Tyler McIntyre, Founder Novo
@@ -10,17 +10,17 @@ testimonial:
       content : As a fintech, Moov's repositories have helped us build a lot of our banking stack from scratch, allowing us to deploy in production faster than signing an NDA at a typical vendor
 
     - name : Jordan Wright, CEO Atomic
-      image : images/testimonial/Jordan_Wright.png
+      image : images/testimonial/Jordan_Wright.jpg
       date : January 3, 2020
       content : We ran across Moov while doing some research on our upcoming NACHA file implementation. We were expecting to go through a terrible process when it came to creating and validating NACHA files. The Moov team has made that process straight-forward and simple. They’re breaking down the traditional walls and creating an easier playing field for all.
 
     - name : Ray Johnson, VP LindenLabs
-      image : images/testimonial/ray_johnson.jpeg
+      image : images/testimonial/Ray_Johnson_LindenLab.jpg
       date : January 11, 2020
       content : LindenLab, the maker of SecondLife, is leveraging Moov to support players who earn money within the SecondLife virtual world to be paid out directly. We evaluated many ACH services and Moov’s open-source approach allowed us to create the most correct and compelling implementation quicker than other options.
 
     - name : Eric Peterson, BillGO
-      image : images/testimonial/Eric_Peterson_Billgo.jpeg
+      image : images/testimonial/Eric_Peterson_BillGO.jpg
       date : January 7, 2020
       content : The Moov ach project has helped BillGO integrate with multiple financial institutions under tight timelines, and worked really well.  The active community support has been invaluable.
 
