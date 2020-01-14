@@ -13,16 +13,16 @@ team:
           link : "https://www.linkedin.com/in/robertsmith8/"
         - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
           link : "https://twitter.com/JrRsmith"
-        
+
       # team member loop
     - image : images/team/adam_shannon_bw.png
       name : Adam Shannon
       designation : Senior Software Engineer
-      content : Taming bits and herding developers. Adam leads the software architecture and infrastructure at Moov. 
+      content : Taming bits and herding developers. Adam leads the software architecture and infrastructure at Moov.
       social_Icon :
         - icon : ti-github # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/adamdecaf"
-        
+
     - image : images/team/brooke_kline.jpeg
       name : Brooke Kline
       designation : Senior Software Engineer
@@ -30,12 +30,12 @@ team:
       social_Icon :
         - icon : ti-github # themify icon pack : https://themify.me/themify-icons
           link : "https://github.com/bkmoovio"
-      
+
     # team member loop
     - image : images/team/wadeA_bw.jpg
       name : Wade Arnold
       designation : Project Founder
-      content : Moov was born out of my personal frustration to unleash innovation within Fintech devoid of the limitations of legacy sysetms.  
+      content : Moov was born out of my personal frustration to unleash innovation within Fintech devoid of the limitations of legacy systems.
       social_Icon :
         - icon : ti-twitter-alt # themify icon pack : https://themify.me/themify-icons
           link : "https://twitter.com/wadearnold"
@@ -43,4 +43,3 @@ team:
           link : "https://github.com/wadearnold/"
         - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
           link : "https://www.linkedin.com/in/wadearnold/"
-        
