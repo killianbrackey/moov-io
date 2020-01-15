@@ -22,4 +22,11 @@ contact:
     #   info : "Fax: +880-31-000-000"
 
     - icon : ti-email # themify icon pack : https://themify.me/themify-icons
-      info : 'Email: support@moov.io'
+      info : 'support@moov.io'
+
+    - icon : ti-github
+      info : GitHub.com/moov-io/
+      link : "https://github.com/moov-io/"
+
+    - icon : ti-twitter
+      info : '@moov-io'
