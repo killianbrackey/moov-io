@@ -23,10 +23,16 @@ contact:
 
     - icon : ti-email # themify icon pack : https://themify.me/themify-icons
       info : 'support@moov.io'
+      link : 'mailto:support@moov.io'
 
     - icon : ti-github
       info : GitHub.com/moov-io/
-      link : "https://github.com/moov-io/"
+      link : https://github.com/moov-io/
 
     - icon : ti-twitter
       info : '@moov_io'
+      link : https://twitter.com/moov_io
+
+    - icon : ti-email
+      info : 'Google groups Moov-Users'
+      link : https://groups.google.com/forum/#!forum/moov-users
