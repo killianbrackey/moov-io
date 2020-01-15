@@ -16,7 +16,7 @@ funfacts:
     # counter item loop
     - title : "Slack Users"
       icon : "ti-face-smile" # themify icon pack : https://themify.me/themify-icons
-      count : "95"
+      count : "97"
 
     # counter item loop
     - title : "Cups of Coffee"
