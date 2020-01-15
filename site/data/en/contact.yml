@@ -8,8 +8,8 @@ contact:
   map:
     enable : true
     gmapAPI : "https://maps.googleapis.com/maps/api/js?key=AIzaSyAigQOXlEySjcILPQy4zPuqeh-QybdPhFU"
-    mapLatitude : 39.7555
-    mapLongitude: 105.2211
+    mapLatitude : 39.756240
+    mapLongitude: -105.222145
 
   contact_Details :
     - icon : ti-location-pin # themify icon pack : https://themify.me/themify-icons

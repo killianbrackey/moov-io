@@ -24,6 +24,11 @@ testimonial:
       date : January 7, 2020
       content : The Moov ach project has helped BillGO integrate with multiple financial institutions under tight timelines, and worked really well.  The active community support has been invaluable.
 
+    - name : Bob Hitch, ACS Technologies
+      image : images/testimonial/Bob_Hitch_ACSt.jpg
+      date : January 15, 2020
+      content : Moov's libraries have helped us bring added functionality to our clients quicker than we could've done alone.  The Moov community is a hidden gem—an unexpected breath of fresh air!
+
 
 
     # testimonial item loop
