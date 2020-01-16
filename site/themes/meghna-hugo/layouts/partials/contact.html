@@ -24,7 +24,8 @@
 					{{ range .contact_Details }}
 					<div class="con-info clearfix">
 						<i class="{{ .icon }}"></i>
-						<span>{{ .info }}</span>
+						<span><a href="{{ .link | safeURL }}">{{ .info }}</i></a></span>
+						<!-- <span>{{ .info }}</span> -->
 					</div>
 					{{ end }}
 				</div>

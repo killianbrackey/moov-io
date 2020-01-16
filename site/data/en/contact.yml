@@ -14,6 +14,7 @@ contact:
   contact_Details :
     - icon : ti-location-pin # themify icon pack : https://themify.me/themify-icons
       info : "Golden, Colorado, USA"
+      link : https://www.google.com/maps/d/u/0/viewer?ie=UTF8&hl=en&msa=0&ll=39.765269999999994%2C-105.21400499999999&spn=0.158341%2C0.205994&z=11&source=embed&mid=1Ct81NcGwB9I6JnE9ET0ON-WnNWY
 
     # - icon : ti-mobile # themify icon pack : https://themify.me/themify-icons
     #   info : "Phone: +880-31-000-000"
@@ -22,4 +23,17 @@ contact:
     #   info : "Fax: +880-31-000-000"
 
     - icon : ti-email # themify icon pack : https://themify.me/themify-icons
-      info : 'Email: support@moov.io'
+      info : 'support@moov.io'
+      link : 'mailto:support@moov.io'
+
+    - icon : ti-github
+      info : GitHub.com/moov-io/
+      link : https://github.com/moov-io/
+
+    - icon : ti-twitter
+      info : '@moov_io'
+      link : https://twitter.com/moov_io
+
+    - icon : ti-email
+      info : 'Google groups Moov-Users'
+      link : https://groups.google.com/forum/#!forum/moov-users
