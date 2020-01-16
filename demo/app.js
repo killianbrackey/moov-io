@@ -19,8 +19,8 @@
   };
 
   window.moov = {
-    // baseUrl: "https://api.moov.io/v1",
-    baseUrl: "http://localhost:9000/v1",
+    baseUrl: "https://api.moov.io/v1",
+    // baseUrl: "http://localhost:9000/v1",
     requestId: nextId(),
 
     get: function(path, callback) {
@@ -105,7 +105,7 @@
       var email = document.querySelector("#signup-email");
       var password = document.querySelector("#signup-password");
 
-      if (!name.value !== "") {
+      if (!name.value != "") {
         moov.error("Whoops, please provide your name")
         name.focus();
         return
