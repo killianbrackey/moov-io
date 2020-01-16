@@ -1,7 +1,7 @@
 ############################### Banner ################################
 banner:
   enable : true
-  bg_Image : "images/slider/hero-area.jpg"
+  bg_Image : "images/slider/hero-area-logo.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
   title : "The Modern Banking Platform "
   content : "Moov is a portable, extensible, open-source platform for embedding banking services within any application. Join our rapidly growing ecosystem of software developers and sponsor banks and never be left behind with proprietary vendors again!"
