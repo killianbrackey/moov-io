@@ -1,0 +1,158 @@
+baseURL: http://something-fresh.org/
+languageCode: en-us
+title: Moov - At the core of fintech
+theme: hugo-fresh
+googleAnalytics: UA-118148273-1
+# Disables warnings
+disableKinds:
+- taxonomy
+- taxonomyTerm
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # Allows you to write raw html in your md files
+
+params:
+  # Open graph allows easy social sharing. If you don't want it you can set it to false or just delete the variable
+  openGraph: true
+  # Used as meta data; describe your site to make Google Bots happy
+  description:
+  # navbarlogo:
+  # # Logo (from static/images/logos/___)
+  #   image: ./moov-icon.png
+  #   link: /
+  font:
+    name: "Open Sans"
+    sizes: [400,600]
+  hero:
+    # Main hero title
+    title: Open Source Fintech Toolbox
+    # Hero subtitle (optional)
+    subtitle: |
+      Our open source components let our developer community focus on building great financial products on top of our stored value accounting, money exchange, and federal compliance.
+    # Button text
+    buttontext: Get started
+    # Where the main hero button links to
+    buttonlink: "#"
+    # Hero image (from static/images/___)
+    # image: illustrations/worker.svg
+    image: moov-icon.png
+    # Footer logos (from static/images/logos/clients/___.svg)
+    clientlogos: []
+    # - systek
+    # - tribe
+    # - kromo
+    # - infinite
+    # - gutwork
+  # Customizable navbar. For a dropdown, add a "sublinks" list.
+  navbar:
+  - title: API
+    url: https://api.moov.io
+  - title: Docs
+    url: https://docs.moov.io
+  - title: Demo
+    sublinks:
+    - title: ACH
+      url: /ach/
+    - title: Watchman
+      url: /watchman/
+  # - title: Sign up
+  #   url: /
+  #   button: true
+  section1:
+    title: Modern retail banking infrastructure
+    subtitle: with developer-friendly API's
+    tiles:
+    - title: ACH Gateway
+      icon: mouse-globe
+      text: Modern engine with operational support
+      url: '#'
+      buttonText: Get started
+    - title: Compliance Support
+      icon: laptop-cloud
+      text: Supporting global sanctions regulations
+      url: '#'
+      buttonText: Get started
+    - title: Multiple Standards
+      icon: plug-cloud
+      text: Wire, ISO 8583, ImageCashLetter
+      url: '#'
+      buttonText: Get started
+  section2:
+    title: An open builder community
+    # subtitle: TODO
+    features:
+    - title: Extendable APIs
+      text: Easily integrate features together for your product
+      # Icon (from /images/illustrations/icons/___.svg)
+      icon: laptop-globe
+    - title: TODO
+      text: Something..
+      icon: doc-sync
+    - title: TODO
+      text: Something else..
+      icon: mobile-feed
+  # section3:
+  #   title: One platform
+  #   subtitle: To rule them all
+  #   image: illustrations/mockups/app-mockup.png
+  #   buttonText: Get started
+  #   buttonLink: "#"
+  # section4:
+  #   title: Our Clients love us!
+  #   subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
+  #   clients:
+  #   - name: Irma Walters
+  #     quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+  #     job: Accountant
+  #     img: 1
+  #   - name: John Bradley
+  #     quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+  #     job: Financial Analyst
+  #     img: 2
+  #   - name: Gary Blackman
+  #     quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
+  #     job: HR Manager
+  #     img: 3
+  section5: false
+  footer:
+    # Logo (from /images/logos/___)
+    logo: fresh-white-alt.svg
+    # Social Media Title
+    socialmediatitle: Follow Us
+    # Social media links (GitHub, Twitter, etc.). All are optional.
+    socialmedia:
+    - link: https://github.com/moov-io
+      # Icons are from Font Awesome
+      icon: github
+    - link: https://twitter.com/moov_io
+      icon: twitter
+    bulmalogo: true
+    quicklinks:
+      column1:
+        title: "Product"
+        links:
+        - text: Discover features
+          link: /
+        - text: Why choose our product?
+          link: /
+        - text: Compare features
+          link: /
+        - text: Our roadmap
+          link: /
+        - text: AGB
+          link: /agb
+      column2:
+        title: "Docs"
+        links:
+        - text: API
+          link: https://api.moov.io
+        - text: Documentation
+          link: https://docs.moov.io
+        - text: SOC2
+          link: https://moov.io/soc2/
+      column3:
+        title: "Contact"
+        links:
+        - text: Security
+          link: "mailto:security@moov.io"
