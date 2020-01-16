@@ -8,7 +8,7 @@
 
   function nextId() {
     var out = ""
-    for (i = 0; i < 20; i++) {
+    for (var i = 0; i < 20; i++) {
       out += String.fromCharCode((Math.random()*25+97).toFixed()) // 97 is ASCII/UTF-8 "a"
     }
     return out
@@ -105,7 +105,7 @@
       var email = document.querySelector("#signup-email");
       var password = document.querySelector("#signup-password");
 
-      if (!name.value != "") {
+      if (!name.value !== "") {
         moov.error("Whoops, please provide your name")
         name.focus();
         return
@@ -225,6 +225,7 @@
         if (!file.id.match(/^([a-zA-Z0-9]*)$/)) {
           console.log("SKIPPING '"+file.id+"' due to invalid dom selector characters");
           files.splice(i, 1); // remove invalid file from array
+          i--;
           continue
         }
         var header = file.fileHeader;

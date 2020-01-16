@@ -5,7 +5,7 @@
 
   function nextId() {
     var out = ""
-    for (i = 0; i < 20; i++) {
+    for (var i = 0; i < 20; i++) {
       out += String.fromCharCode((Math.random()*25+97).toFixed()) // 97 is ASCII/UTF-8 "a"
     }
     return out
@@ -85,7 +85,7 @@
       var email = document.querySelector("#signup-email");
       var password = document.querySelector("#signup-password");
 
-      if (!name.value != "") {
+      if (!name.value !== "") {
         moov.error("Whoops, please provide your name")
         name.focus();
         return
@@ -168,7 +168,7 @@
     fillOAuth2ClientCredentials: function() {
       moov.get('/oauth2/clients', function(resp) {
         var clients = JSON.parse(resp)
-        if (clients && clients != null) {
+        if (clients) {
           var results = "<h3>OAuth2 Clients</h3><table><thead><tr><td>Client ID</td><td>Client Secret</td><td>Domain</td></tr></thead>";
           for (var i = 0; i < clients.length; i++) {
             if (i == 0) {
@@ -194,8 +194,8 @@
     cookie: function() {
       var cookies = document.cookie.split(';');
       for (var i = 0; i < cookies.length; i++) {
-        if (cookies[0].startsWith("moov")) {
-          return cookies[0]
+        if (cookies[i].startsWith("moov")) {
+          return cookies[i]
         }
       }
       return ""
