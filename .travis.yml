@@ -25,3 +25,7 @@ deploy:
 after_deploy:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - make release-push
+
+notifications:
+  slack:
+    secure: sF3gHuJVkcxR2nFoS0TlDG18htbIFQ3t7zmzQYTENYc+JjxTeI+YZpFr1nsJDV/yM/cO4z1Y1Bfbvd57WmcTKCXvKco7ADDuybGu3RQO8fgRp8VoO/pH7qk8H8dHRNkdPtklyscNmqOXkeLWTgudsZFApcMFp6PTw3vpVC4VXrN/aHH3ddfAhNnYqEoMYagb1Oa8E0pxJaXT0Vv+7ORQk+KZDJNcEAHM/7jkaNG9ygfVXYpGEA85xYMokveNNs+e9WWeOpTFZS/O3sfljNs5n5FUD3mKjznOSoUDo1ZktTr5TTT4/2WaqADplqBbCEv09vjPJroY8bqhH1MyXkXT4Pr32FO94O9Ufi8FNlAAtoqFV9Cqn59DkpaF95Ak/ARDK1LdvT8niWcpazZUzpHZc2s/tkttZVQeQEkhx5CJAUZgy2+/gIAWeqwGgUk8RYIwXNYp0m93/hVcdNvvsVowrSJVRlhc38eqlHXP4U+LdlqdLaEucxwlbQPqbdSQdvAn5CUkRBpjjOew/dM/z825Cih1llPBiVFAyW9D2DHLxjqKTBtBe4oK5Ny5ghJP76nS9cjwG0wkJ89RwCc9AfNyAHz2oLgSArV0zuLOzqHzZD3Z9WsF+6Wnq4wcSirjNEfO4fYoq78Z57FLJOpJJ0fbkCBfUDU5nbsZ+5TeiQcXaqs=
