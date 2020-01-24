@@ -46,12 +46,12 @@ URL = "plugins/wow/wow.min.js"
 
   [[menu.main]]
   name = "About Us"
-  URL = "about"
+  URL = "#about"
   weight = 1
 
   [[menu.main]]
   name = "Products"
-  URL = "services"
+  URL = "#services"
   weight = 2
 
   # [[menu.main]]
@@ -61,10 +61,10 @@ URL = "plugins/wow/wow.min.js"
 
   [[menu.main]]
   name = "Team"
-  URL = "team"
+  URL = "#team"
   weight = 4
 
-  
+
 
   # [[menu.main]]
   # name = "Pricing"
@@ -78,21 +78,35 @@ URL = "plugins/wow/wow.min.js"
 
   [[menu.main]]
   name = "Contact"
-  URL = "contact"
+  URL = "#contact"
   weight = 7
 
 # TODO drop down menus are not working in these theme. I may need to update the template to make them work
 #todo DOCs, API, DEMO
 # link to github until we figure this out
 
-  # [[menu.main]]
-  # identifier = "community"
-  # name = "Community"
-  # URL = "https://GitHub.com/moov-io/"
-  # weight = 8
+  [[menu.main]]
+  name = "Community"
+  URL = "https://github.com/moov-io"
+  weight = 8
 
+  [[menu.main]]
+  parent = "Community"
+  name = "API"
+  URL = "https://api.moov.io"
+  weight = 10
 
+  [[menu.main]]
+  parent = "Community"
+  name = "Docs"
+  URL = "https://docs.moov.io"
+  weight = 11
 
+  [[menu.main]]
+  parent = "Community"
+  name = "Slack"
+  URL = "https://slack.moov.io"
+  weight = 12
 
 ############################# Default Parameters ##########################
 [params]
@@ -120,7 +134,7 @@ preloader = "images/favicon.png"
 icon = "ti-github" # themify icon pack : https://themify.me/themify-icons
 link = "https://github.com/moov-io/"
 
-# TODO add a slack signup logo 
+# TODO add a slack signup logo
 #http://moov-io.slack.com/
 
 

@@ -2315,3 +2315,44 @@ figcaption {
   display: block;
 }
 /*# sourceMappingURL=maps/style.css.map */
+
+/* Dropdopwn CSS ported from hugo-fresh */
+#navbarSupportedContent {
+    max-height: 125px;
+}
+
+.navbar-dropdown {
+    /* top: 3.4rem; */
+    /* min-width: 220px; */
+    margin-top: 2px;
+    border-top-color: $secondary;
+    padding: 0px 20px;
+    opacity: 0;
+}
+
+.navbar-dropdown:hover {
+    opacity: 1;
+}
+
+.navbar-dropdown ul li {
+    list-style-type: none;
+}
+
+.navbar-item {
+    /* border: 1px white solid; */
+    padding: 1px 20px;
+    margin-left: -30px;
+    list-style-type: none;
+}
+
+.navbar-item a {
+    border-bottom: 2px solid rgba(236, 239, 241, 0.07);;
+}
+
+.has-dropdown {
+    z-index: 100;
+}
+
+.has-dropdown:hover > ul {
+    opacity: 1;
+}
