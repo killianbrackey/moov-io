@@ -11,12 +11,12 @@ funfacts:
     # counter item loop
     - title : "GitHub Stars"
       icon : "ti-star" # themify icon pack : https://themify.me/themify-icons
-      count : "244"
+      count : "248"
 
     # counter item loop
     - title : "Slack Users"
       icon : "ti-face-smile" # themify icon pack : https://themify.me/themify-icons
-      count : "106"
+      count : "108"
 
     # counter item loop
     - title : "Cups of Coffee"
