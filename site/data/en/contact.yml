@@ -23,10 +23,8 @@ contact:
     #   info : "Fax: +880-31-000-000"
 
     - icon : ti-email # themify icon pack : https://themify.me/themify-icons
-      # info : 'support@moov.io'
-      # link : 'mailto:support@moov.io'
-      info : 'wade@moov.io'
-      link : 'mailto:wade@moov.io'
+      info : 'support@moov.io'
+      link : 'mailto:support@moov.io'
 
     - icon : ti-github
       info : GitHub.com/moov-io/
