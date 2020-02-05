@@ -19,6 +19,6 @@ funfacts:
       count : "108"
 
     # counter item loop
-    - title : "Cups of Coffee"
-      icon : "ti-gift" # themify icon pack : https://themify.me/themify-icons
-      count : "9522"
+    - title : "Twitter Followers"
+      icon : "ti-twitter" # themify icon pack : https://themify.me/themify-icons
+      count : "322"
