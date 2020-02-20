@@ -6,12 +6,12 @@ funfacts:
     # counter item loop
     - title : "GitHub Projects"
       icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
-      count : "24"
+      count : "25"
 
     # counter item loop
     - title : "GitHub Stars"
       icon : "ti-star" # themify icon pack : https://themify.me/themify-icons
-      count : "253"
+      count : "257"
 
     # counter item loop
     - title : "Slack Users"
@@ -21,4 +21,4 @@ funfacts:
     # counter item loop
     - title : "Twitter Followers"
       icon : "ti-twitter" # themify icon pack : https://themify.me/themify-icons
-      count : "3225"
+      count : "329"
