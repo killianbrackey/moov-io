@@ -1,24 +1,25 @@
 ################################# funfacts ##################################
+# Icons are from https://themify.me/themify-icons
 funfacts:
   enable : true
   bg_Image : "images/backgrounds/pink-background-2.jpg"
   counter_Item:
     # counter item loop
     - title : "GitHub Projects"
-      icon : "ti-github" # themify icon pack : https://themify.me/themify-icons
+      icon : "ti-github"
       count : "25"
 
     # counter item loop
     - title : "GitHub Stars"
-      icon : "ti-star" # themify icon pack : https://themify.me/themify-icons
-      count : "260"
+      icon : "ti-star"
+      count : "263" # via https://crm.moov.io/stargazers/
 
     # counter item loop
     - title : "Slack Users"
-      icon : "ti-face-smile" # themify icon pack : https://themify.me/themify-icons
-      count : "143"
+      icon : "ti-face-smile"
+      count : "158" # via https://slack.moov.io/
 
     # counter item loop
     - title : "Twitter Followers"
-      icon : "ti-twitter" # themify icon pack : https://themify.me/themify-icons
-      count : "336"
+      icon : "ti-twitter"
+      count : "349" # via https://twitter.com/moov_io
