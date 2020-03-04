@@ -135,7 +135,7 @@ icon = "ti-github" # themify icon pack : https://themify.me/themify-icons
 link = "https://github.com/moov-io/"
 
 # TODO add a slack signup logo
-#http://moov-io.slack.com/
+#https://slack.moov.io/
 
 
 [[params.social_Icon]]
