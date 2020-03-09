@@ -4,6 +4,17 @@ testimonial:
   bg_Image : images/backgrounds/blue-background-3-crop.jpg
   testimonial_Item :
   # testimonial item loop
+
+    - name : Zach Bruhnke, Co-Founder HMBradley
+      image : images/testimonial/Zach_Bruhnke.jpeg
+      date : March 9, 2020
+      content : What Moov is doing is exactly what this industry needs – A team that knows the industry inside and out collaborating to re-build everything. With more and more banks making a shift towards FinTech, that don’t have the institutional knowledge to manage compliance and technology at scale, the kind of tools Moov is building are exactly what will push all of us forward. Of all the people and teams I’m excited about in FinTech Moov is at the top of my list. 
+
+    - name : Mengxi Lu, Mission Lane
+      image : images/testimonial/Mengxi_Lu.jpeg
+      date : March 8, 2020
+      content : Working at Lendup and now Mission Lane I have built technologies that power US consumer lending. I am a big fan of Moov and wish we would have had it when we started; it could have saved us a lot of time and effort!
+  
     - name : Tyler McIntyre, Founder Novo
       image : images/testimonial/Tyler_McIntyr_Novo.jpeg
       date : January 3, 2020
@@ -28,14 +39,6 @@ testimonial:
       image : images/testimonial/Bob_Hitch_ACSt.jpg
       date : January 15, 2020
       content : Moov's libraries have helped us bring added functionality to our clients quicker than we could've done alone.  The Moov community is a hidden gem—an unexpected breath of fresh air!
-
-
-
-    # testimonial item loop
-    # - name : Killian Brackey, CTO Sezzle
-    #   image : images/testimonial/Killian_Brackey_sezzle.jpeg
-    #   date : Oct 3, 2019
-    #   content : Sezzle was an early contributor to Moov ACH as a building block of our online payment platform that allows you to pay for your order through 4 small installment payments, spread over 6 weeks, rather than paying the full amount at once.
 
     # - name : Wade Arnold, Project Lead
     #   image : images/testimonial/wade_head.jpeg
