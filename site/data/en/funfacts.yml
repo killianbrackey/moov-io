@@ -17,9 +17,9 @@ funfacts:
     # counter item loop
     - title : "Slack Users"
       icon : "ti-face-smile"
-      count : "208" # via https://slack.moov.io/
+      count : "228" # via https://slack.moov.io/
 
     # counter item loop
     - title : "Twitter Followers"
       icon : "ti-twitter"
-      count : "377" # via https://twitter.com/moov_io
+      count : "376" # via https://twitter.com/moov_io
