@@ -9,6 +9,15 @@
     <meta name="author" content="{{ . }}">{{ end }}
     {{ hugo.Generator }}
 
+    <meta property="og:url" content="{{ .URL | absURL }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Moov">
+    <meta property="og:title" content="Moov | At the core of fintech">
+    <meta property="og:image" content="{{ `images/social/share-image.jpg` | absURL }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="twitter:card" content="summary_large_image">
+
     {{ "<!-- plugins -->" | safeHTML }}
     {{ range .Site.Params.plugins.css }}
     <link rel="stylesheet" href="{{ .URL | absURL }} ">
