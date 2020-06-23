@@ -111,6 +111,7 @@ URL = "plugins/wow/wow.min.js"
 ############################# Default Parameters ##########################
 [params]
 logo = "images/logo.png"
+logo2x = "images/logo@2x.png"
 # Meta data
 description = "At the core of fintech. Opensource Cloud Native Core processing for Fintechs, Startups, Banks & Credit Unions "
 author = "Moov, LLC"
