@@ -12,14 +12,14 @@ funfacts:
     # counter item loop
     - title : "GitHub Stars"
       icon : "ti-star"
-      count : "329" # via https://crm.moov.io/stargazers/
+      count : "342" # via https://crm.moov.io/stargazers/
 
     # counter item loop
     - title : "Slack Users"
       icon : "ti-face-smile"
-      count : "349" # via https://slack.moov.io/
+      count : "358" # via https://slack.moov.io/
 
     # counter item loop
     - title : "Twitter Followers"
       icon : "ti-twitter"
-      count : "473" # via https://twitter.com/moov_io
+      count : "490" # via https://twitter.com/moov_io
