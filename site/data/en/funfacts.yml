@@ -7,17 +7,17 @@ funfacts:
     # counter item loop
     - title : "GitHub Projects"
       icon : "ti-github"
-      count : "37"
+      count : "34" # via https://github.com/moov-io (open-source repositories)
 
     # counter item loop
     - title : "GitHub Stars"
       icon : "ti-star"
-      count : "342" # via https://crm.moov.io/stargazers/
+      count : "346" # via https://crm.moov.io/stargazers/
 
     # counter item loop
     - title : "Slack Users"
       icon : "ti-face-smile"
-      count : "358" # via https://slack.moov.io/
+      count : "364" # via https://slack.moov.io/
 
     # counter item loop
     - title : "Twitter Followers"
