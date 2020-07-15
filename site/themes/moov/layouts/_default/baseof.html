@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset='utf-8'>
+    <title>{{ .Site.Title }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" type="image/png" href="/favicon.png">
+
+    <meta property="og:title" content="{{ .Site.Title }}">
+    <meta property="og:url" content="{{ .URL | absURL }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Moov">
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    <meta property="og:image" content="{{ `/images/social/moov-share-image.png` | absURL }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter.site" content="@moov_io">
+    <meta name="twitter:image" content="{{ `/images/social/moov-share-image.png` | absURL }}">
+    <meta name="twitter:image:alt" content="Let's Moov together.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+
+    {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  </head>
+  <body class="home">
+    <div class="outter">
+      {{ block "header" . }}{{ partial "site-header.html" . }}{{ end }}
+      {{ block "main" . }}{{ end }}
+      {{ block "footer" . }}{{ partial "site-footer.html" . }}{{ end }}
+    </div>
+
+    {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
+    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+      {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
+  </body>
+</html>
