@@ -2139,3 +2139,6 @@ footer h3 {
   margin-right: -2rem;
   padding: 0 2rem;
 }
+[id="signup-status"] p {
+  margin-top: 2rem;
+}
