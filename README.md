@@ -1,6 +1,6 @@
 ## moov-io
 
-[![Build Status](https://travis-ci.com/moov-io/moov-io.svg?branch=master)](https://travis-ci.com/moov-io/moov-io)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f2a38aae-87b3-4af0-9b35-608767d4b199/deploy-status)](https://app.netlify.com/sites/moov-io/deploys)
 [![Apache 2 licensed](https://img.shields.io/badge/license-Apache2-blue.svg)](https://raw.githubusercontent.com/moov-io/moov-io/master/LICENSE)
 
 This repository holds our public website ([moov.io](https://moov.io)) discussing our products and features.
