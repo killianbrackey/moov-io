@@ -1738,6 +1738,7 @@ footer h3 {
 .community figure svg {
   display: flex;
   height: auto;
+  width: 100%;
 }
 .community figure .top {
   position: absolute;
