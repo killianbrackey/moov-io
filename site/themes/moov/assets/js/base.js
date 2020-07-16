@@ -215,6 +215,40 @@ function objectFit(image) {
 var elem = document.getElementsByClassName("cover");
 objectFit(elem);
 
+function formPost(method, url, data, success, error) {
+	var xhr = new XMLHttpRequest();
+	xhr.open(method, url);
+	xhr.setRequestHeader("Accept", "application/json");
+	xhr.onreadystatechange = function() {
+		if (xhr.readyState !== XMLHttpRequest.DONE) return;
+		if (xhr.status === 200) {
+			success(xhr.response, xhr.responseType);
+		} else {
+			error(xhr.status, xhr.response, xhr.responseType);
+		}
+	};
+	xhr.send(data);
+}
+
+var signupForm = document.getElementById("signup-form");
+var signupStatus = document.getElementById("signup-status");
+
+function signupSuccess() {
+	signupForm.reset();
+	signupForm.style.display = "none ";
+	signupStatus.innerHTML = "<p>Thanks for joining the waitlist. We'll be in touch soon.</p>";
+}
+
+function signupError() {
+	signupForm.innerHTML = "Oops! There was a problem.";
+}
+
+signupForm.addEventListener("submit", function(event) {
+	event.preventDefault();
+	var data = new FormData(signupForm);
+	formPost(signupForm.method, signupForm.action, data, signupSuccess, signupError);
+});
+
 var dialog = document.querySelector('#waitlist-dialog');
 var dialogLaunchers = document.querySelectorAll('.opens-waitlist-dialog');
 var dialogCloser = document.querySelector('.close-dialog');
@@ -229,6 +263,8 @@ dialogCloser.addEventListener('click', function(event) {
 	event.preventDefault();
 	dialog.classList.remove('in');
 	dialog.setAttribute('aria-hidden', true);
+	signupForm.style.display = "";
+	signupStatus.innerHTML = "";
 });
 
 var quotes;

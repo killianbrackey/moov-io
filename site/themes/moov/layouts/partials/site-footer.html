@@ -12,11 +12,11 @@
         <form id="contact-form" method="post" action="https://formspree.io/xpzpzvpq" role="form">
           <div class="form-group">
             <label for="name" class="sr-only">Your name</label>
-            <input type="text" placeholder="Your Name" class="form-control" name="name" id="name">
+            <input type="text" placeholder="Your Name" class="form-control" name="name" id="name" required>
           </div>
           <div class="form-group">
             <label for="email" class="sr-only">Your email</label>
-            <input type="email" placeholder="Your Email" class="form-control" name="email" id="email">
+            <input type="email" placeholder="Your Email" class="form-control" name="email" id="email" required>
           </div>
           <div class="form-group">
             <label for="subject" class="sr-only">Subject</label>
@@ -24,12 +24,11 @@
           </div>
           <div class="form-group">
             <label for="message" class="sr-only">Message</label>
-            <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message"></textarea>
+            <textarea rows="6" placeholder="Message" class="form-control" name="message" id="message" required></textarea>
           </div>
-          <div id="cf-submit">
-            <button type="submit" id="contact-submit" class="btn purple" value="Submit">Send</button>
-          </div>
+          <button type="submit" id="contact-submit" class="btn purple" value="Submit">Send</button>
         </form>
+        <div id="contact-status"></div>
       </div>
       <div id="waitlist-dialog" class="dialog" role="dialog" aria-hidden="true" aria-modal="true">
         <div class="form">
@@ -38,16 +37,15 @@
           <form id="signup-form" method="post" action="https://formspree.io/xwkrwbnb" role="form">
             <div class="form-group">
               <label for="signupname" class="sr-only">Your name</label>
-              <input type="text" placeholder="Your Name" class="form-control" name="name" id="signupname">
+              <input type="text" placeholder="Your Name" class="form-control" name="name" id="signupname" required>
             </div>
             <div class="form-group">
               <label for="signupemail" class="sr-only">Your email</label>
-              <input type="email" placeholder="Your Email" class="form-control" name="email" id="signupemail">
+              <input type="email" placeholder="Your Email" class="form-control" name="email" id="signupemail" required>
             </div>
-            <div id="cf-submit">
-              <button type="submit" id="waitlist-submit" class="btn purple" value="Submit">Signup</button>
-            </div>
+            <button type="submit" id="waitlist-submit" class="btn purple" value="Submit">Signup</button>
           </form>
+          <div id="signup-status"></div>
         </div>
       </div>
     </div>

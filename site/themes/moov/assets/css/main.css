@@ -1531,6 +1531,10 @@ footer h3 {
   text-transform: uppercase;
   color: #000000;
 }
+.quote cite a {
+  color: inherit;
+  text-decoration: underline;
+}
 @media (min-width: 641px) {
   .quote cite span {
     display: inline;
@@ -2134,4 +2138,7 @@ footer h3 {
   margin-left: 2rem;
   margin-right: -2rem;
   padding: 0 2rem;
+}
+[id="signup-status"] p {
+  margin-top: 2rem;
 }

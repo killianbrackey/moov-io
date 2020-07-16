@@ -24,9 +24,9 @@
 
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
-
     {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    <link rel="apple-touch-icon" href="{{ `/images/icon-180.png` | absURL }}">
   </head>
   <body class="home">
     <div class="outter">
@@ -36,8 +36,6 @@
     </div>
 
     {{ block "scripts" . }}{{ partial "site-scripts.html" . }}{{ end }}
-    {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-      {{ template "_internal/google_analytics_async.html" . }}
-    {{ end }}
+    {{ template "_internal/google_analytics_async.html" . }}
   </body>
 </html>
