@@ -1531,6 +1531,10 @@ footer h3 {
   text-transform: uppercase;
   color: #000000;
 }
+.quote cite a {
+  color: inherit;
+  text-decoration: underline;
+}
 @media (min-width: 641px) {
   .quote cite span {
     display: inline;
