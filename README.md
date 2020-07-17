@@ -8,7 +8,7 @@ This repository holds our public website ([moov.io](https://moov.io)) discussing
 ## Getting Started / Install
 
 1. Clone the repository somewhere (`git clone git@github.com:moov-io/moov-io.git`).
-1. Edit the files you want locally in `site/`
+1. Edit the files you want locally
 1. Run `hugo serve` to run a webserver at [localhost:1313](http://localhost:1313).
 1. Commit your changes, push up a new branch, and create a Pull Request!
    1. Optional: Verify your changes with github pages (load `user.github.io/moov-io` in a browser).
@@ -22,7 +22,7 @@ This repository holds our public website ([moov.io](https://moov.io)) discussing
 Inside the theme directory run `git pull`. Then `make build && make run` to verify the site loads as expected and then open a pull request.
 
 ```
-$ cd site/themes/hugo-fresh/
+$ cd themes/hugo-fresh/
 
 $ git pull origin master
 From https://github.com/StefMa/hugo-fresh
