@@ -13,6 +13,13 @@ This repository holds our public website ([moov.io](https://moov.io)) discussing
 1. Commit your changes, push up a new branch, and create a Pull Request!
    1. Optional: Verify your changes with github pages (load `user.github.io/moov-io` in a browser).
 
+## Production Deploys
+
+1. Merge an approved PR to the `master` branch
+1. Login to the [moov-bot](https://github.com/moov-bot) GitHub account.
+   1. @adamdecaf or @wadearnold should have access to this
+1. "Login with GitHub" to the [Netlify](https://www.netlify.com/) dashboard
+
 ## Content Management
 
 - Please refer to [Hugo's documentation](https://gohugo.io/content-management/) for details on modifying content.
