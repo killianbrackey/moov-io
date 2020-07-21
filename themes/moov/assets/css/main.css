@@ -1085,6 +1085,7 @@ footer h3 {
   -webkit-clip-path: url("#moovmask");
           clip-path: url("#moovmask");
   width: 110vw;
+  height: auto;
 }
 
 .fixed {
@@ -2087,8 +2088,8 @@ footer h3 {
   align-items: flex-end;
 }
 .investors ul li .investor-name {
-  font-family: "playfair Display", serif;
-  font-size: 4.2rem;
+  font-size: 3.2rem;
+  font-weight: 500;
   line-height: 1;
   display: block;
   margin-top: auto;
@@ -2115,13 +2116,16 @@ footer h3 {
   left: 0;
   right: 0;
   place-items: center;
-  background-color: rgba(76, 175, 80, 0.79);
+  background-color: rgba(31, 31, 31, 0.80);
   z-index: 1000;
+  -webkit-backdrop-filter: blur(30px) saturate(150%);
+  backdrop-filter: blur(30px) saturate(150%);
 }
 .dialog.in {
   display: grid;
 }
-.dialog .form {
+.dialog .form,
+.investors-dialog-inner {
   max-width: 60rem;
   margin: 0 auto;
   padding: 4rem;
@@ -2142,4 +2146,32 @@ footer h3 {
 }
 [id="signup-status"] p {
   margin-top: 2rem;
+}
+.investors-dialog {
+  place-items: normal;
+  overflow-y: auto;
+}
+.investors-dialog-inner {
+  max-width: 100%;
+}
+.closes-investor-dialog {
+  position: sticky;
+  top: 1.5rem;
+  background-color: rgba(255,255,255,.6);
+}
+.investors-dialog h3 {
+  font-family: 'playfair display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  padding-top: 1.25rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 900px) {
+  .investors-dialog {
+    padding-top: 2.5rem;
+  }
+  .investors-dialog-inner {
+    max-width: 90rem;
+  }
 }

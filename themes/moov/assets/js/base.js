@@ -249,9 +249,10 @@ signupForm.addEventListener("submit", function(event) {
 	formPost(signupForm.method, signupForm.action, data, signupSuccess, signupError);
 });
 
+// Waitlist dialog
 var dialog = document.querySelector('#waitlist-dialog');
 var dialogLaunchers = document.querySelectorAll('.opens-waitlist-dialog');
-var dialogCloser = document.querySelector('.close-dialog');
+var dialogCloser = document.querySelector('.closes-dialog');
 for (var i = 0; i < dialogLaunchers.length; i++) {
 	dialogLaunchers[i].addEventListener('click', function(event) {
 		event.preventDefault();
@@ -266,6 +267,26 @@ dialogCloser.addEventListener('click', function(event) {
 	signupForm.style.display = "";
 	signupStatus.innerHTML = "";
 });
+
+// Investors dialog
+var investorsDialog = document.querySelector('#investors-dialog');
+var investorsDialogLaunchers = document.querySelectorAll('.opens-investors-dialog');
+var investorDialogCloser = document.querySelector('.closes-investor-dialog');
+for (var i = 0; i < investorsDialogLaunchers.length; i++) {
+	investorsDialogLaunchers[i].addEventListener('click', function(event) {
+		event.preventDefault();
+		investorsDialog.classList.add('in');
+		investorsDialog.setAttribute('aria-hidden', false);
+		document.body.style.overflowY = 'hidden';
+	})
+}
+investorDialogCloser.addEventListener('click', function(event) {
+	event.preventDefault();
+	document.body.style.overflowY = '';
+	investorsDialog.classList.remove('in');
+	investorsDialog.setAttribute('aria-hidden', true);
+});
+
 
 var quotes;
 
