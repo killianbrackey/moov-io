@@ -788,7 +788,7 @@ footer .form-contain p {
 footer .form-contain form {
   margin-top: 3rem;
 }
-footer .form-contain input, footer .form-contain textarea {
+footer input, footer textarea {
   font-family: "Manrope", sans-serif;
   font-size: 1.6rem;
   width: 100%;
@@ -800,7 +800,7 @@ footer .form-contain input, footer .form-contain textarea {
   border-radius: 0.4rem;
   padding: 1.25rem 2rem;
 }
-footer .form-contain input#e-mail, footer .form-contain textarea#e-mail {
+footer input#e-mail, footer textarea#e-mail {
   display: none;
 }
 footer .moov-info {
@@ -813,8 +813,10 @@ footer .moov-info {
 }
 @media (min-width: 641px) {
   footer .moov-info {
-    margin-top: 15rem;
     padding: 5rem 10% 5rem 10%;
+  }
+  footer .contain + .moov-info {
+    margin-top: 15rem;
   }
 }
 footer .moov-info a {
@@ -1017,6 +1019,9 @@ footer h3 {
   letter-spacing: 0.7rem;
   text-transform: uppercase;
   width: 90%;
+}
+.believe-page .large-type .top-text {
+  left: 5%;
 }
 @media (min-width: 641px) {
   .large-type .top-text {
@@ -1964,6 +1969,9 @@ footer h3 {
   margin-top: 10rem;
   overflow: hidden;
 }
+.believe-page {
+  margin-top: 0;
+}
 .believe .large-type {
   position: relative;
   padding-left: 5%;
@@ -2041,14 +2049,13 @@ footer h3 {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   justify-content: flex-start;
 }
 @media (min-width: 1024px) {
   .investors ul {
-    justify-content: space-around;
+    justify-content: space-between;
   }
 }
 .investors ul li {
@@ -2118,8 +2125,6 @@ footer h3 {
   place-items: center;
   background-color: rgba(31, 31, 31, 0.80);
   z-index: 1000;
-  -webkit-backdrop-filter: blur(30px) saturate(150%);
-  backdrop-filter: blur(30px) saturate(150%);
 }
 .dialog.in {
   display: grid;

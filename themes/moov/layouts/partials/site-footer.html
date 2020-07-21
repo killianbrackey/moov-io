@@ -1,4 +1,5 @@
 <footer id="contact-us">
+  {{ if .IsHome }}
   <div class="contain">
     <div class="copy-contain">
       <div class="label">CONTACT US</div>
@@ -30,28 +31,11 @@
         </form>
         <div id="contact-status"></div>
       </div>
-      <div id="waitlist-dialog" class="dialog" role="dialog" aria-hidden="true" aria-modal="true">
-        <div class="form">
-          <button type="button" class="close-dialog closes-dialog">&times;</button>
-          <p>Join our waitlist and we'll let you know when you can start building on Moov.</p>
-          <form id="signup-form" method="post" action="https://formspree.io/xwkrwbnb" role="form">
-            <div class="form-group">
-              <label for="signupname" class="sr-only">Your name</label>
-              <input type="text" placeholder="Your Name" class="form-control" name="name" id="signupname" required>
-            </div>
-            <div class="form-group">
-              <label for="signupemail" class="sr-only">Your email</label>
-              <input type="email" placeholder="Your Email" class="form-control" name="email" id="signupemail" required>
-            </div>
-            <button type="submit" id="waitlist-submit" class="btn purple" value="Submit">Signup</button>
-          </form>
-          <div id="signup-status"></div>
-        </div>
-      </div>
     </div>
   </div>
+  {{ end }}
   <div class="moov-info">
-    <div class="logo">
+    <a href="/" class="logo">
       <svg width="160" height="44" viewBox="0 0 223.1 50">
         <title>Moov logo</title>
         <path d="M60.4,0H1.6C0.7,0,0,0.7,0,1.6v46.5C0,49.3,0.7,50,1.7,50h17.8c0.9,0,1.6-0.7,1.6-1.6V11.6c0-0.3,0.3-0.6,0.6-0.6h3.7
@@ -65,7 +49,7 @@
         <path d="M164,0h-32c-4.6,0-7.6,3.3-7.6,8.2v33.6c0,4.9,3,8.2,7.6,8.2h32c4.6,0,7.6-3.3,7.6-8.2V8.2C171.6,3.3,168.7,0,164,0z
           M150.5,38.4c0,0.3-0.3,0.6-0.6,0.6h-3.7c-0.3,0-0.6-0.3-0.6-0.6V11.6c0-0.3,0.3-0.6,0.6-0.6h3.7c0.3,0,0.6,0.3,0.6,0.6V38.4z"></path>
       </svg>
-    </div>
+    </a>
     <div class="links">
       <a href="https://docs.moov.io/">Docs</a>
       <a href="#" class="opens-waitlist-dialog">Join the Waitlist</a>
@@ -100,5 +84,23 @@
       </a>
     </div>
     <div class="copyright">© 2020 Moov Financial, Inc. All rights reserved.</div>
+  </div>
+  <div id="waitlist-dialog" class="dialog" role="dialog" aria-hidden="true" aria-modal="true">
+    <div class="form">
+      <button type="button" class="close-dialog closes-dialog">&times;</button>
+      <p>Join our waitlist and we'll let you know when you can start building on Moov.</p>
+      <form id="signup-form" method="post" action="https://formspree.io/xwkrwbnb" role="form">
+        <div class="form-group">
+          <label for="signupname" class="sr-only">Your name</label>
+          <input type="text" placeholder="Your Name" class="form-control" name="name" id="signupname" required>
+        </div>
+        <div class="form-group">
+          <label for="signupemail" class="sr-only">Your email</label>
+          <input type="email" placeholder="Your Email" class="form-control" name="email" id="signupemail" required>
+        </div>
+        <button type="submit" id="waitlist-submit" class="btn purple" value="Submit">Signup</button>
+      </form>
+      <div id="signup-status"></div>
+    </div>
   </div>
 </footer>

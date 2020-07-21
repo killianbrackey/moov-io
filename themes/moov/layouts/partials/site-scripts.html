@@ -9,3 +9,9 @@
 {{ $base := resources.Get "js/base.js" }}
 {{ $secureBase := $base | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureBase.RelPermalink }}" integrity="{{ $secureBase.Data.Integrity }}"></script>
+
+{{ if .IsHome }}
+{{ $quotes := resources.Get "js/quotes.js" }}
+{{ $secureQuotes := $quotes | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureQuotes.RelPermalink }}" integrity="{{ $secureQuotes.Data.Integrity }}"></script>
+{{ end }}
