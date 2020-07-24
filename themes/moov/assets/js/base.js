@@ -271,3 +271,28 @@ if (dialogCloser) {
 		signupStatus.innerHTML = "";
 	});
 }
+
+// Looking for logos
+var logo = document.querySelector('nav > a');
+var isPressPage = window.location.pathname === '/press/';
+if (!isPressPage) {
+	logo.addEventListener('contextmenu', function(event) {
+		event.preventDefault();
+		var pressDialog = document.createElement('div');
+		pressDialog.classList.add('dialog');
+		pressDialog.classList.add('in');
+		pressDialog.setAttribute('role', 'dialog');
+		pressDialog.setAttribute('aria-hidden', false);
+		pressDialog.setAttribute('aria-modal', true);
+		pressDialog.innerHTML = '<div class="dialog-inner"><button type="button" class="close-dialog closes-press-dialog">&times;</button><h3>Looking for our logo?</h3><p><a href="/press" class="btn purple">See brand guidelines</a></p></div>';
+		document.body.appendChild(pressDialog);
+		var pressDialogCloser = document.querySelector('.closes-press-dialog');
+		var pressCloserHandler = function(event) {
+			event.preventDefault();
+			pressDialogCloser.removeEventListener('click', pressCloserHandler);
+			pressDialog.parentNode.removeChild(pressDialog);
+		}
+		pressDialogCloser.addEventListener('click', pressCloserHandler);
+		return false;
+	});
+}

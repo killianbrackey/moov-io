@@ -1,4 +1,4 @@
-<footer id="contact-us">
+<footer id="contact-us" {{ if .IsHome }}class="footer-padding"{{ end }}>
   {{ if .IsHome }}
   <div class="contain">
     <div class="copy-contain">
@@ -52,6 +52,7 @@
     </a>
     <div class="links">
       <a href="https://docs.moov.io/">Docs</a>
+      <a href="/press">Press</a>
       <a href="#" class="opens-waitlist-dialog">Join the Waitlist</a>
     </div>
     <div class="social">
