@@ -243,15 +243,18 @@ function signupError() {
 	signupForm.innerHTML = "Oops! There was a problem.";
 }
 
-signupForm.addEventListener("submit", function(event) {
-	event.preventDefault();
-	var data = new FormData(signupForm);
-	formPost(signupForm.method, signupForm.action, data, signupSuccess, signupError);
-});
+if (signupForm) {
+	signupForm.addEventListener("submit", function(event) {
+		event.preventDefault();
+		var data = new FormData(signupForm);
+		formPost(signupForm.method, signupForm.action, data, signupSuccess, signupError);
+	});
+}
 
+// Waitlist dialog
 var dialog = document.querySelector('#waitlist-dialog');
 var dialogLaunchers = document.querySelectorAll('.opens-waitlist-dialog');
-var dialogCloser = document.querySelector('.close-dialog');
+var dialogCloser = document.querySelector('.closes-dialog');
 for (var i = 0; i < dialogLaunchers.length; i++) {
 	dialogLaunchers[i].addEventListener('click', function(event) {
 		event.preventDefault();
@@ -259,55 +262,37 @@ for (var i = 0; i < dialogLaunchers.length; i++) {
 		dialog.setAttribute('aria-hidden', false);
 	})
 }
-dialogCloser.addEventListener('click', function(event) {
-	event.preventDefault();
-	dialog.classList.remove('in');
-	dialog.setAttribute('aria-hidden', true);
-	signupForm.style.display = "";
-	signupStatus.innerHTML = "";
-});
-
-var quotes;
-
-document.addEventListener('DOMContentLoaded', function() {
-	quotes = new Splide( '.splide', { 
-		arrows: false, 
-		pagination: false, 
-		speed: 1000, 
-		waitForTransition: false,
-		type: 'loop'
-	}).mount();
-
-	quotes.on('mounted', function(){
-		document.querySelector('.quote-nav .numbers .total-slides').textContent = document.querySelectorAll('.splide__slide').length;
+if (dialogCloser) {
+	dialogCloser.addEventListener('click', function(event) {
+		event.preventDefault();
+		dialog.classList.remove('in');
+		dialog.setAttribute('aria-hidden', true);
+		signupForm.style.display = "";
+		signupStatus.innerHTML = "";
 	});
+}
 
-	quotes.on('move', function(){
-		var current = quotes.index + 1;
-		if(current <= 9) current = '0' + current.toString();
-		document.querySelector('.quote-nav .numbers .number-left').textContent = current;
-		var logos = document.querySelectorAll('.investor-logos .image');
-		for (var i = 0; i < logos.length; i++) {
-			logos[i].classList.remove('active');
-		};
-		document.querySelectorAll('.investor-logos .image')[quotes.index].classList.add('active')
+// Looking for logos
+var logo = document.querySelector('nav > a');
+var isPressPage = window.location.pathname === '/press/';
+if (!isPressPage) {
+	logo.addEventListener('contextmenu', function(event) {
+		event.preventDefault();
+		var pressDialog = document.createElement('div');
+		pressDialog.classList.add('dialog');
+		pressDialog.classList.add('in');
+		pressDialog.setAttribute('role', 'dialog');
+		pressDialog.setAttribute('aria-hidden', false);
+		pressDialog.setAttribute('aria-modal', true);
+		pressDialog.innerHTML = '<div class="dialog-inner"><button type="button" class="close-dialog closes-press-dialog">&times;</button><h3>Looking for our logo?</h3><p><a href="/press" class="btn purple">See brand guidelines</a></p></div>';
+		document.body.appendChild(pressDialog);
+		var pressDialogCloser = document.querySelector('.closes-press-dialog');
+		var pressCloserHandler = function(event) {
+			event.preventDefault();
+			pressDialogCloser.removeEventListener('click', pressCloserHandler);
+			pressDialog.parentNode.removeChild(pressDialog);
+		}
+		pressDialogCloser.addEventListener('click', pressCloserHandler);
+		return false;
 	});
-});
-
-document.querySelector('#prev-next').addEventListener('click', function() {
-	quotes.go('+1');
-});
-
-document.querySelector('#prev-quote').addEventListener('click', function() {
-	quotes.go('-1');
-});
-
-var investor_logos = document.querySelectorAll('.investor-logos .image');
-for (var i = 0; i < investor_logos.length; i++) {
-	investor_logos[i].addEventListener('click', function(){
-		var child = this;
-		var parent = child.parentNode;
-		var index = Array.prototype.indexOf.call(parent.children, child);
-		quotes.go(index);
-	});
-};
+}

@@ -108,8 +108,11 @@ img {
 nav {
   display: flex;
   flex-direction: column;
-  padding: 10% 5% 8rem 5%;
+  padding: 3.5rem 5%;
   width: 100%;
+}
+.home nav {
+  padding-bottom: 5rem;
 }
 @media (min-width: 500px) {
   nav {
@@ -122,7 +125,8 @@ nav {
   }
 }
 @media (min-width: 1024px) {
-  nav {
+  nav,
+  .home nav {
     padding: 3.5rem 10% 3.5rem 10%;
   }
 }
@@ -722,10 +726,12 @@ nav .links a:first-child {
 
 footer {
   background: #f1f1f1;
+}
+.footer-padding {
   padding: 10rem 0 0 0;
 }
 @media (min-width: 641px) {
-  footer {
+  .footer-padding {
     padding: 20rem 0 0 0;
   }
 }
@@ -788,7 +794,7 @@ footer .form-contain p {
 footer .form-contain form {
   margin-top: 3rem;
 }
-footer .form-contain input, footer .form-contain textarea {
+footer input, footer textarea {
   font-family: "Manrope", sans-serif;
   font-size: 1.6rem;
   width: 100%;
@@ -800,7 +806,7 @@ footer .form-contain input, footer .form-contain textarea {
   border-radius: 0.4rem;
   padding: 1.25rem 2rem;
 }
-footer .form-contain input#e-mail, footer .form-contain textarea#e-mail {
+footer input#e-mail, footer textarea#e-mail {
   display: none;
 }
 footer .moov-info {
@@ -808,13 +814,15 @@ footer .moov-info {
   flex-wrap: wrap;
   align-items: center;
   background: #222222;
-  padding: 5rem 10% 2rem 10%;
+  padding: 5rem 5% 2rem 5%;
   margin-top: 5rem;
 }
 @media (min-width: 641px) {
   footer .moov-info {
-    margin-top: 15rem;
     padding: 5rem 10% 5rem 10%;
+  }
+  footer .contain + .moov-info {
+    margin-top: 15rem;
   }
 }
 footer .moov-info a {
@@ -824,6 +832,10 @@ footer .moov-info a {
   margin-right: 3.5rem;
   transition: 0.6s;
   font-weight: 600;
+  white-space: nowrap;
+}
+footer .moov-info a:last-child {
+  margin-right: 0;
 }
 footer .moov-info a:hover {
   color: #faad40;
@@ -832,7 +844,7 @@ footer .moov-info > div {
   flex-basis: 100%;
   margin-bottom: 3rem;
 }
-@media (min-width: 641px) {
+@media (min-width: 720px) {
   footer .moov-info > div {
     flex-basis: 50%;
   }
@@ -850,6 +862,7 @@ footer .moov-info > div {
 }
 footer .moov-info .logo svg {
   width: 16rem;
+  margin-bottom: 1.5rem;
 }
 footer .moov-info .logo svg path {
   fill: #ffffff;
@@ -1018,6 +1031,9 @@ footer h3 {
   text-transform: uppercase;
   width: 90%;
 }
+.believe-page .large-type .top-text {
+  left: 5%;
+}
 @media (min-width: 641px) {
   .large-type .top-text {
     top: 9rem;
@@ -1085,6 +1101,7 @@ footer h3 {
   -webkit-clip-path: url("#moovmask");
           clip-path: url("#moovmask");
   width: 110vw;
+  height: auto;
 }
 
 .fixed {
@@ -1963,6 +1980,9 @@ footer h3 {
   margin-top: 10rem;
   overflow: hidden;
 }
+.believe-page {
+  margin-top: 0;
+}
 .believe .large-type {
   position: relative;
   padding-left: 5%;
@@ -2031,6 +2051,9 @@ footer h3 {
   }
 }
 
+.influencers {
+  font-size: 3.75rem;
+}
 .investors {
   margin-top: 10rem;
 }
@@ -2040,14 +2063,13 @@ footer h3 {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   justify-content: flex-start;
 }
 @media (min-width: 1024px) {
   .investors ul {
-    justify-content: space-around;
+    justify-content: stretch;
   }
 }
 .investors ul li {
@@ -2056,7 +2078,7 @@ footer h3 {
   align-items: flex-start;
   justify-content: flex-end;
   border-bottom: 1px solid #d8d8d8;
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
   width: 100%;
 }
 @media (min-width: 641px) {
@@ -2066,7 +2088,8 @@ footer h3 {
 }
 @media (min-width: 1024px) {
   .investors ul li {
-    width: 30%;
+    width: 22%;
+    margin-right: 3%;
   }
 }
 .investors ul li .investor-logo {
@@ -2081,17 +2104,31 @@ footer h3 {
   }
 }
 .investors ul li a {
-  margin: 3rem 0;
+  margin: 2rem 0;
   display: block;
   display: flex;
   align-items: flex-end;
 }
 .investors ul li .investor-name {
-  font-family: "playfair Display", serif;
-  font-size: 4.2rem;
+  font-size: 2.8rem;
+  font-weight: 500;
   line-height: 1;
   display: block;
   margin-top: auto;
+}
+@media (min-width: 641px) {
+  .investors ul li {
+    margin-bottom: 6rem;
+  }
+  .investors ul li a {
+    margin: 3rem 0;
+  }
+  .investors ul li .investor-name {
+    font-size: 3.2rem;
+  }
+  .investors .break {
+    display: block;
+  }
 }
 .investors ul li .copy {
   font-size: 1.8rem;
@@ -2115,13 +2152,14 @@ footer h3 {
   left: 0;
   right: 0;
   place-items: center;
-  background-color: rgba(76, 175, 80, 0.79);
+  background-color: rgba(31, 31, 31, 0.80);
   z-index: 1000;
 }
 .dialog.in {
   display: grid;
 }
-.dialog .form {
+.dialog .form,
+.dialog-inner {
   max-width: 60rem;
   margin: 0 auto;
   padding: 4rem;
@@ -2136,10 +2174,305 @@ footer h3 {
   appearance: none;
   float: right;
   font-size: 4rem;
-  margin-left: 2rem;
   margin-right: -2rem;
   padding: 0 2rem;
 }
 [id="signup-status"] p {
   margin-top: 2rem;
+}
+.dialog-inner {
+  max-width: 100%;
+  text-align: center;
+}
+.dialog-inner p {
+  margin: 2rem 0;
+}
+.closes-investor-dialog {
+  position: sticky;
+  top: 1.5rem;
+  background-color: rgba(255,255,255,.6);
+}
+.dialog h3 {
+  font-family: 'playfair display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  padding-top: 1.25rem;
+  letter-spacing: 0;
+}
+
+@media (min-width: 900px) {
+  .dialog {
+    padding-top: 2.5rem;
+  }
+  .dialog-inner {
+    max-width: 90rem;
+  }
+}
+
+.press-hero {
+  padding: 5rem 0 0;
+}
+.press-hero-main {
+  text-align: center;
+}
+.press-hero-sub {
+  margin-top: 8rem;
+  background-color: #f1f1f1;
+  border-top: 1px solid #d3d3d3;
+  padding-top: 5rem;
+  padding-bottom: 20rem;
+}
+.press-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}
+.press-hero h2 {
+  flex: 1 0 0;
+  margin-bottom: 2rem;
+}
+.press-brand-story {
+  flex: 2 0 0;
+}
+.press-brand-story p {
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.press-brand-story p:last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 692px) {
+  .press-hero {
+    padding: 10rem 0 0;
+  }
+  .press-hero h1 {
+    font-size: 5rem;
+  }
+}
+@media (min-width: 900px) {
+  .press-hero h2 {
+    margin-bottom: 0;
+    padding-right: 4rem;
+  }
+  .press-hero-sub .contain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+
+.press-logos {
+  position: relative;
+  margin-top: -10rem;
+}
+.press-logos h3 {
+  margin-bottom: 1rem;
+}
+
+.press-logos .graphic-right {
+  position: absolute;
+  top: -80px;
+  right: 0;
+}
+.press-logos .graphic-right svg {
+  width: 48px;
+  height: 230px;
+}
+
+.logo-container {
+  margin-bottom: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto auto auto auto;
+  gap: 18px;
+  grid-template-areas: "moov-black moov-black" "moov-white moov-white" "fiesta fiesta" "retro watching" "pride line" "shapes camo";
+}
+@media (min-width: 690px) {
+  .logo-container {
+    gap: 36px;
+    grid-template-rows: 1fr auto 1fr 1fr 1fr;
+    grid-template-areas: "moov-black moov-white" "fiesta fiesta" "retro watching" "pride line" "shapes camo";
+  }
+}
+
+.disclaimer {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.moov-black { 
+  grid-area: moov-black;
+  background-color: #fff;
+  color: #111;
+}
+
+.moov-white { 
+  grid-area: moov-white;
+  background-color: #000;
+  color: #fff;
+}
+
+.moov-fiesta { 
+  grid-area: fiesta;
+  background-color: #010101;
+  color: #fff;
+}
+
+.moov-retro { 
+  grid-area: retro;
+  background-color: #fad3ce;
+}
+
+.moov-watching { 
+  grid-area: watching;
+  background-color: #f2f1f2;
+}
+
+.moov-pride { grid-area: pride; }
+
+.moov-line { 
+  grid-area: line;
+  background-color: #222020;
+  color: #fff;
+}
+
+.moov-shapes {
+  grid-area: shapes;
+  background-color: #010101;
+  color: #fff;
+}
+
+.moov-camo {
+  grid-area: camo;
+  background-color: #ed4551;
+  color: #fff;
+}
+
+.logo-container [class^="moov-"] {
+  position: relative;
+  border-radius: 7px;
+}
+.logo-container [class^="moov-"]::after {
+  content: '';
+  border: 1px solid rgba(0,0,0,0.1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 7px;
+  pointer-events: none;
+}
+
+.logo-container figure {
+  position: relative;
+  height: 100%;
+}
+
+.logo-container figure img,
+.logo-container figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 75/32;
+  position: relative;
+  border-radius: 7px;
+}
+.logo-container figcaption {
+  display: none;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0.6;
+  pointer-events: none;
+}
+@media (min-width: 700px) {
+  .logo-container figcaption {
+    display: block;
+  }
+}
+
+@media (-ms-high-contrast: none) {
+  .logo-container {
+    display: -ms-grid;
+    -ms-grid-columsn: 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+  }
+  .moov-black {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .moov-white {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+  .moov-fiesta {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+  }
+  .moov-retro {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .moov-watching {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+  .moov-pride {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .moov-line {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+  .moov-shapes {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+  }
+  .moov-camo {
+    -ms-grid-row: 5;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+  }
+}
+
+.lid, .pupil {
+  transform-origin: center;
+  transition: transform .2s ease, opacity .2s ease;
+  -webkit-animation: lidblink 10s linear infinite; 
+  animation: lidblink 10s linear infinite;
+}
+
+@-webkit-keyframes lidblink {
+	0% { -webkit-transform: scaleY(1); }
+	96% { -webkit-transform: scaleY(1); }
+  98% { -webkit-transform: scaleY(0); }
+  100% { -webkit-transform: scaleY(1); }
+}
+@keyframes lidblink {
+	0% { transform: scaleY(1); }
+	96% { transform: scaleY(1); }
+  98% { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
 }
