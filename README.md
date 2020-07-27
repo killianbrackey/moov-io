@@ -24,19 +24,9 @@ This repository holds our public website ([moov.io](https://moov.io)) discussing
 
 - Please refer to [Hugo's documentation](https://gohugo.io/content-management/) for details on modifying content.
 
-## Updating Hugo Theme
+## Updating Community Stats
 
-Inside the theme directory run `git pull`. Then `make build && make run` to verify the site loads as expected and then open a pull request.
-
-```
-$ cd themes/hugo-fresh/
-
-$ git pull origin master
-From https://github.com/StefMa/hugo-fresh
- * branch            master     -> FETCH_HEAD
-Updating 1896157..5ebe24e
-Fast-forward
-```
+To update the counts for Slack users, Github Stars and Twitter, open `data/stats.toml` and change the lablled values.
 
 ## Getting Help
 
