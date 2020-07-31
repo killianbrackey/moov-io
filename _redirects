@@ -1,3 +1,5 @@
-# Proxy /watchman/ to demo.moov.io/watchman
-# From https://docs.netlify.com/routing/redirects/rewrites-proxies/#proxy-to-another-service
-/watchman https://demo.moov.io/watchman/ 200
+# Redirect to our Watchman demo
+/watchman https://demo.moov.io/watchman/
+
+# Redirect to our SOC2 docs
+/soc2 https://docs.moov.io/soc2/
