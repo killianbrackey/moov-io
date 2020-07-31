@@ -4,3 +4,11 @@ command = "hugo"
 
 [context.production.environment]
 HUGO_VERSION = "0.74.1"
+
+[[redirects]]
+  from = "/watchman"
+  to = "https://demo.moov.io/watchman/"
+
+[[redirects]]
+  from = "/soc2"
+  to = "https://docs.moov.io/soc2/"
