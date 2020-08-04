@@ -25,14 +25,14 @@
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">
     
-    <link rel="stylesheet" href="/css/main.min.739ca9c16de0441ace79b198422cf26c71a04500048c68fa4b0ee854c0b0b32a.css">
+    <link rel="stylesheet" href="/css/main.min.2570122dc64783d8bd7b23716b2bf87c1b2b4db346ba9a2f2873b56f2ed9fab5.css">
     <link rel="apple-touch-icon" href="https://moov.io/images/icon-180.png">
   </head>
   <body class="home">
     <div class="outter">
       <nav>
   <a href="/">
-    <svg width="134" height="44" viewBox="0 0 223.1 50">
+    <svg width="134" height="44" viewBox="0 0 223.1 50" class="logo">
       <title>Moov logo</title>
       <path d="M60.4,0H1.6C0.7,0,0,0.7,0,1.6v46.5C0,49.3,0.7,50,1.7,50h17.8c0.9,0,1.6-0.7,1.6-1.6V11.6c0-0.3,0.3-0.6,0.6-0.6h3.7
       c0.3,0,0.6,0.3,0.6,0.6v36.7c0,0.9,0.7,1.6,1.6,1.6h12.6c0.9,0,1.6-0.7,1.6-1.6V11.6c0-0.3,0.3-0.6,0.6-0.6h3.7
@@ -46,28 +46,33 @@
         M150.5,38.4c0,0.3-0.3,0.6-0.6,0.6h-3.7c-0.3,0-0.6-0.3-0.6-0.6V11.6c0-0.3,0.3-0.6,0.6-0.6h3.7c0.3,0,0.6,0.3,0.6,0.6V38.4z"></path>
     </svg>
   </a>
+  <button id="menu-btn" type="button" aria-label="Menu">
+    <div class="menu-icon">
+      <div></div>
+    </div>
+  </button>
   <div class="links">
     
     
       
       
       
-      <a href="/" class="active">Home</a>
+      <a href="/" class="nav-link active">Home</a>
     
       
       
       
-      <a href="/about/" class="">About</a>
+      <a href="/about/" class="nav-link">About</a>
     
       
       
       
-      <a href="/blog/" class="">Blog</a>
+      <a href="/blog/" class="nav-link">Blog</a>
     
       
       
       
-      <a href="/careers/" class="">Careers</a>
+      <a href="/careers/" class="nav-link">Careers</a>
     
     <a href="#" class="nav-btn opens-waitlist-dialog">Get early access</a>
   </div>
@@ -109,7 +114,7 @@
     </div>
     <div class="copy fadeup">
       <p>With Moov, you’re empowered to embed banking and payment functionality in your own application without having to worry about protocols, site reliability, security, or compliance. These low-level protocols aren’t strategic for any company, they just have to work.</p>
-      <a href="" class="btn white opens-waitlist-dialog">JOIN THE WAITLIST</a>
+      <a href="" class="btn white opens-waitlist-dialog">Join the waitlist</a>
     </div>
   </div>
 </section>
@@ -317,7 +322,7 @@
       <h2>Moov is built around a community of developers and doers.</h2>
       <p>We&apos;ve assembled a community of builders, thinkers, and doers in the financial technology space.</p>
       <p>Who are we missing? You. Join our Slack channel to rub virtual shoulders with a diverse group working to build a better tomorrow.</p>
-      <a href="https://slack.moov.io/" class="btn slack">JOIN THE SLACK</a>
+      <a href="https://slack.moov.io/" class="btn slack">Join the slack</a>
     </div>
     <div class="stats">
       <ul>
@@ -490,14 +495,10 @@
       <p>Join our waitlist and we'll let you know when you can start building on Moov.</p>
       <form id="signup-form" method="post" action="https://formspree.io/xwkrwbnb" role="form">
         <div class="form-group">
-          <label for="signupname" class="sr-only">Your name</label>
-          <input type="text" placeholder="Your Name" class="form-control" name="name" id="signupname" required>
-        </div>
-        <div class="form-group">
           <label for="signupemail" class="sr-only">Your email</label>
           <input type="email" placeholder="Your Email" class="form-control" name="email" id="signupemail" required>
         </div>
-        <button type="submit" id="waitlist-submit" class="btn purple" value="Submit">Signup</button>
+        <button type="submit" id="waitlist-submit" class="btn purple" value="Submit">Sign up</button>
       </form>
       <div id="signup-status"></div>
     </div>
@@ -512,12 +513,13 @@
 
 
 
+
 <script type="text/javascript" src="/js/splide.min.cdcc4b59555e88e3c56b763bf93a6b6bcf1d67d72b498bd9b8f7dd033e04dfef4950680cb1fc0faef247b9589e94a604abb784c9093d881fb5d573251f26e150.js" integrity="sha512-zcxLWVVeiOPFa3Y7&#43;Tpra88dZ9crSYvZuPfdAz4E3&#43;9JUGgMsfwPrvJHuVielKYEq7eEyQk9iB&#43;11XMlHybhUA=="></script>
 
 
 
 
-<script type="text/javascript" src="/js/base.min.9b745f217f7bd582a20b0c72edfc0794693e857260498b524f9a301c18d82a17c3917ece2025573d7b489f68e8784f8c37a0008a63eb5feca4e3e2d258f144cc.js" integrity="sha512-m3RfIX971YKiCwxy7fwHlGk&#43;hXJgSYtST5owHBjYKhfDkX7OICVXPXtIn2joeE&#43;MN6AAimPrX&#43;yk4&#43;LSWPFEzA=="></script>
+<script type="text/javascript" src="/js/base.min.1ee5e5509ae267b42147b316202a9e3357d9a751bb840ddb80e39b837cbb883f5c76333302e1b626947e13be6372e5e6bcb7eb8f4386bf8bbb6e4403c703effe.js" integrity="sha512-HuXlUJriZ7QhR7MWICqeM1fZp1G7hA3bgOObg3y7iD9cdjMzAuG2JpR&#43;E75jcuXmvLfrj0OGv4u7bkQDxwPv/g=="></script>
 
 
 
