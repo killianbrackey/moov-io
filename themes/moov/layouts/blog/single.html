@@ -12,7 +12,7 @@
       <h1 class="post-title serif" itemprop="headline">{{ .Title }}</h1>
       <div class="sidebar">
         {{- range .Params.authors }}
-          {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .))}}
+          {{- with $.Site.GetPage "author" (printf "authors/%s" (urlize .))}}
             <figure class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
               <img src="{{ .Params.photo }}" alt="{{ .Title }}" />
               <figcaption>

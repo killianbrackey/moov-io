@@ -2,5 +2,14 @@
 publish = "public"
 command = "hugo"
 
+[context.deploy-preview]
+  command = "hugo --buildFuture"
+
 [context.production.environment]
+HUGO_VERSION = "0.74.1"
+
+[context.deploy-preview.environment]
+HUGO_VERSION = "0.72.0"
+
+[context.branch-deploy.environment]
 HUGO_VERSION = "0.72.0"
