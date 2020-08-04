@@ -1,8 +1,9 @@
-{{ if .IsHome }}
+
 {{ $waypoints := resources.Get "js/noframework.waypoints.min.js" }}
 {{ $secureWaypoints := $waypoints | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureWaypoints.RelPermalink }}" integrity="{{ $secureWaypoints.Data.Integrity }}"></script>
 
+{{ if .IsHome }}
 {{ $splide := resources.Get "js/splide.js" }}
 {{ $secureSplide := $splide | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureSplide.RelPermalink }}" integrity="{{ $secureSplide.Data.Integrity }}"></script>

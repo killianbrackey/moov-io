@@ -5,9 +5,73 @@
     <link>https://moov.io/</link>
     <description>Recent content on Moov | At The Core of Fintech</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 03 Aug 2020 19:24:51 +0800</lastBuildDate>
     
 	<atom:link href="https://moov.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Why I joined Moov - Walt Cox</title>
+      <link>https://moov.io/blog/news/why-i-joined-moov/</link>
+      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
+      
+      <guid>https://moov.io/blog/news/why-i-joined-moov/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Making Moov</title>
+      <link>https://moov.io/blog/news/making-moov/</link>
+      <pubDate>Mon, 03 Aug 2020 19:23:51 +0800</pubDate>
+      
+      <guid>https://moov.io/blog/news/making-moov/</guid>
+      <description>First of all, hi, we’re Moov. We’re a new company with a mission to bring joy to developers tasked with building on top of the United States banking and payments infrastructure.</description>
+    </item>
+    
+    <item>
+      <title>38 fintechs are the next generation of breakout B2B stars</title>
+      <link>https://moov.io/press/fintech-b2b-early-stage-business-investors-finance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/press/fintech-b2b-early-stage-business-investors-finance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Josh Sadler</title>
+      <link>https://moov.io/authors/josh-sadler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/authors/josh-sadler/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wade Arnold</title>
+      <link>https://moov.io/authors/wade-arnold/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/authors/wade-arnold/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Walt Cox</title>
+      <link>https://moov.io/authors/walt-cox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/authors/walt-cox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Why Services Are The Future Of Fintech Infrastructure</title>
+      <link>https://moov.io/press/why-services-are-the-future-of-fintech-infrastructure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/press/why-services-are-the-future-of-fintech-infrastructure/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

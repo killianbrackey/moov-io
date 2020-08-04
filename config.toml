@@ -4,8 +4,32 @@ title = "Moov | At The Core of Fintech"
 theme = "moov"
 disableHugoGeneratorInject=true
 googleAnalytics = "UA-118148273-1"
+summaryLength = 30
 
 ############################# Default Parameters ##########################
 [params]
 description = "At the core of fintech. Opensource Cloud Native Core processing for Fintechs, Startups, Banks & Credit Unions"
+[social]
+  twitter = "moov_io"
 
+[taxonomies]
+  author = "authors"
+  category = "categories"
+
+[menu]
+  [[menu.nav]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.nav]]
+    name = "About"
+    url = "/about/"
+    weight = 2
+  [[menu.nav]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+  [[menu.nav]]
+    name = "Careers"
+    url = "/careers/"
+    weight = 4

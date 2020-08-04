@@ -7,9 +7,17 @@
         <a href="{{ "/images/logos/press-kit.zip" | relURL }}" download class="btn purple">Download the press&nbsp;kit</a>
       </div>
     </div>
+    <div class="press-contain">
+      <h2 class="blog-h2">What others are saying</h2>
+      <div class="press-articles">
+        {{ range first 5 (where .Site.RegularPages "Section" "press")}}
+          {{ partial "news-article.html" . }}
+        {{ end }}
+      </div>
+    </div>
     <div class="press-hero-sub">
       <div class="contain">
-        <h2 class="serif">Looking for an individual asset? <sub>&#8628;</sub></h2>
+        <h2 class="serif">Looking for an individual asset?&nbsp;<sub>&#8628;</sub></h2>
         <div class="press-brand-story">
           <p>Our brand image aligns with our values. We think software should be beautiful. Not just in how it looks, but in how it works, even under the hood. Moov takes on the characteristics of what we want to communicate and what we stand behind. We’re a community, and want that community to be seen within our logo.</p>
           <p>Click on any image below to download it in PNG and SVG formats.</p>

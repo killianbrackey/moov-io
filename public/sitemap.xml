@@ -3,15 +3,94 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://moov.io/authors/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/authors/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://moov.io/categories/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://moov.io/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://moov.io/tags/</loc>
+    <loc>https://moov.io/categories/news/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/authors/walt-cox/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/news/why-i-joined-moov/</loc>
+    <lastmod>2020-08-03T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/authors/josh-sadler/</loc>
+    <lastmod>2020-08-03T19:23:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/news/making-moov/</loc>
+    <lastmod>2020-08-03T19:23:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/authors/wade-arnold/</loc>
+    <lastmod>2020-08-03T19:23:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/index.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/press/fintech-b2b-early-stage-business-investors-finance/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/authors/josh-sadler/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/press/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/press/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/authors/wade-arnold/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/authors/walt-cox/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/press/why-services-are-the-future-of-fintech-infrastructure/</loc>
   </url>
   
 </urlset>

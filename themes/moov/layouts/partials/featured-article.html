@@ -1,0 +1,33 @@
+<article class="featured-article">
+  <a href="{{ .Permalink }}" class="featured-article-image">
+    {{ $original := .Page.Resources.GetMatch "image" }}
+    {{ .Scratch.Set "image1x" ($original.Fill "900x400 Center") }}
+    {{ .Scratch.Set "image2x" ($original.Fill "1800x800 Center") }}
+    {{ $image1x := .Scratch.Get "image1x" }}
+    {{ $image2x := .Scratch.Get "image2x" }}
+    <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="featured-image" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="eager">
+  </a>
+  <div class="featured-article-meta">
+    <p class="category">{{ range .Params.categories }}{{ . }}{{ end }} &bull; {{ .ReadingTime }} minute read
+    </p>
+    <header>
+      <a href="{{ .Permalink }}" class="featured-article-title">{{ .Title}}</a>
+    </header>
+    <p class="summary">{{ .Summary }}</p>
+    <div class="article-authors">
+      {{- range .Params.authors }}
+        {{- with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .))}}
+          <figure class="author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <img src="{{ .Params.photo }}" alt="{{ .Title }}">
+            <figcaption>
+              <p class="author-name" itemprop="name">
+                <a href="{{ .Permalink }}" title="Posts by {{ .Title }}" rel="author">{{ .Title }}</a>
+              </p>
+              <p>{{ .Params.jobTitle }}, {{ .Params.company }}</p>
+            </figcaption>
+          </figure>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</article>
