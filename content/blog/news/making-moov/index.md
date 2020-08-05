@@ -3,7 +3,7 @@ title: "Making Moov"
 date: "2020-08-03T19:23:51+08:00"
 featured: true
 resources:
-- name: image
+- name: feature
   src: images/moov-line-logo.jpg
 categories: 
     - News & updates
@@ -67,6 +67,8 @@ The “co-creation of value” is a beautiful definition for open source and a c
 ## The brand
 
 Our brand image aligns with our values. We think software should be beautiful. Not just in how it looks, but in how it works, even under the hood. We designed a logo and identity that could grow and evolve with us.
+
+{{< tweet 1286648846852947969 >}}
 
 The logo is simple enough on its own but stands out among the crowd of other emerging fintechs and financial infrastructures companies. Moov takes on the characteristics of what we want to communicate and what we stand behind. We’re a community, and want that community to be seen within our logo.
 

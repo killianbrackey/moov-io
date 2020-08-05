@@ -1,6 +1,6 @@
 <article class="featured-article">
   <a href="{{ .RelPermalink }}" class="featured-article-image">
-    {{ $original := .Page.Resources.GetMatch "image" }}
+    {{ $original := .Page.Resources.GetMatch "feature" }}
     {{ .Scratch.Set "image1x" ($original.Fill "900x400 Center") }}
     {{ .Scratch.Set "image2x" ($original.Fill "1800x800 Center") }}
     {{ $image1x := .Scratch.Get "image1x" }}

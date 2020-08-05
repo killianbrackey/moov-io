@@ -1,6 +1,6 @@
 <article class="article-list-item fadeup">
   <a href="{{ .RelPermalink }}">
-    {{ $original := .Page.Resources.GetMatch "image" }}
+    {{ $original := .Page.Resources.GetMatch "feature" }}
     {{ .Scratch.Set "image1x" ($original.Fill "470x310 Center") }}
     {{ .Scratch.Set "image2x" ($original.Fill "940x620 Center") }}
     {{ $image1x := .Scratch.Get "image1x" }}

@@ -222,11 +222,10 @@ nav .active + .links {
 .nav-link {
   padding: .75rem 5%;
   font-size: 1.6rem;
-}
-.nav-link {
   color: #777;
   margin-right: 2rem;
   position: relative;
+  transition: color .2s ease;
 }
 .nav-link.active,
 .nav-link:hover,
@@ -2640,6 +2639,7 @@ footer h3 {
   object-position: center;
   max-height: 60vh;
   width: 100%;
+  max-width: 100%;
 }
 @media (min-width: 960px) {
   .post .contain {
@@ -2674,6 +2674,32 @@ footer h3 {
   font-size: 4rem;
   line-height: 1.2;
   color: #3ea66f;
+}
+.callout {
+  display: flex;
+  flex-direction: column;
+}
+/* specificity boost */
+.tweet-this,
+.callout .tweet-this {
+  display: inline-block;
+  margin: 0 auto 6rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #121212;
+  transition: color .2s ease;
+
+}
+.tweet-this svg {
+  vertical-align: middle;
+  fill: currentColor;
+  margin-right: .5rem;
+}
+.tweet-this:hover {
+  color: #0366d6;
 }
 .callout-arrow {
   position: absolute;
@@ -3350,4 +3376,10 @@ p.author-name {
     width: auto;
     max-width: 400px;
   }
+}
+
+.twitter-tweet {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5rem !important;
 }

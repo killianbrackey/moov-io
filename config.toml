@@ -9,6 +9,8 @@ summaryLength = 30
 ############################# Default Parameters ##########################
 [params]
 description = "At the core of fintech. Opensource Cloud Native Core processing for Fintechs, Startups, Banks & Credit Unions"
+images = ["/images/social/moov-share-image.png"]
+
 [social]
   twitter = "moov_io"
 

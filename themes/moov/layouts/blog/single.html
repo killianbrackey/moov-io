@@ -2,7 +2,7 @@
   <main class="post" role="main" itemscope itemprop="mainContentOfPage">
     <article class="contain" itemscope itemtype="https://schema.org/BlogPosting">
       <div class="post-image">
-        {{ $original := .Page.Resources.GetMatch "image" }}
+        {{ $original := .Page.Resources.GetMatch "feature" }}
         {{ .Scratch.Set "image1x" ($original.Resize "1520x") }}
         {{ .Scratch.Set "image2x" ($original.Resize "3040x") }}
         {{ $image1x := .Scratch.Get "image1x" }}
@@ -59,7 +59,7 @@
       <div class="contain">
         <a href="{{.RelPermalink}}">
           <figure>
-            {{ $original := .Page.Resources.GetMatch "image" }}
+            {{ $original := .Page.Resources.GetMatch "feature" }}
             {{ .Scratch.Set "image1x" ($original.Fill "470x310 Center") }}
             {{ .Scratch.Set "image2x" ($original.Fill "940x620 Center") }}
             {{ $image1x := .Scratch.Get "image1x" }}
