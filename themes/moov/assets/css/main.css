@@ -2692,7 +2692,7 @@ footer h3 {
   position: absolute;
   left: -2.75rem;
 }
-.post img:not(.post-image):not(.author img) {
+.post img:not(.post-image) {
   border-radius: 7px;
 }
 .post-title {
@@ -2750,7 +2750,7 @@ footer h3 {
   margin-right: 1.5rem;
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 .author figcaption {
   flex: 1 1 0;
