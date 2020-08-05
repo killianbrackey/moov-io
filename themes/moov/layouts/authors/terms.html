@@ -1,8 +1,18 @@
 {{ define "main" }}
-<h1>Authors</h1>
-<ul>
-{{ range .Data.Pages }}
-  <li><a href="{{ .Permalink }}">{{ .Params.Title }}</a></li>
-{{ end }}
-</ul>
+<div class="contain">
+  <h1 class="author-h2">Authors</h1>
+  <ul class="authors-list">
+  {{ range .Data.Pages }}
+    <li>
+      <a href="{{ .Permalink }}">
+        <img src="{{ .Params.photo }}" alt="{{ .Title }}">
+        <div>
+          <div class="author-list-name">{{ .Title }}</div>
+          <div class="author-list-meta">{{ .Params.jobTitle }}, {{ .Params.company }}</div>
+        </div>
+      </a>
+    </li>
+  {{ end }}
+  </ul>
+</div>
 {{ end }}

@@ -2839,6 +2839,64 @@ p.author-name {
     margin-left: 6rem;
   }
 }
+.authors-list li {
+  padding: 20px 0;
+}
+@media (min-width: 768px) {
+  .authors-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .authors-list li {
+    padding: 20px;
+    flex: 1 50%;
+    width: 50%;
+    max-width: 50%;
+    padding: 20px;
+  }
+}
+@media (min-width: 1150px) {
+  .authors-list li {
+    flex: 1 33%;
+    width: 33%;
+    max-width: 33%;
+    padding: 20px;
+  }
+}
+.authors-list a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #121212;
+}
+.authors-list img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+.authors-list a > div {
+  flex: 1 1 0;
+}
+.author-list-name {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01rem;
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+.author-list-meta {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.01rem;
+}
 
 .further-reading {
   background-color: #f2f2f2;
