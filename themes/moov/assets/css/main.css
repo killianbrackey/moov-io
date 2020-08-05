@@ -2780,6 +2780,65 @@ p.author-name {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+.author-page-header {
+  margin-bottom: 7rem;
+  text-align: center;
+}
+.author-title {
+  grid-area: n;
+  font-size: 3.6rem;
+  letter-spacing: -.04rem;
+  font-weight: 700;
+}
+.author-photo {
+  grid-area: p;
+  border-radius: 50%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  margin: auto;
+}
+.author-meta {
+  grid-area: j;
+}
+.author-meta a {
+  display: inline-block;
+  margin-left: 1rem;
+  vertical-align: middle;
+}
+.author-bio {
+  grid-area: b;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+.author-bio p {
+  line-height: 1.6;
+  font-size: 1.6rem;
+}
+.author-h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+@media (min-width: 700px) {
+  .author-page-header {
+    text-align: left;
+    display: grid;
+    grid-template-areas: "p n" "p j" "p b";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: min-content auto 1fr;
+    margin: 0 auto 5rem;
+    width: fit-content;
+  }
+  .author-title {
+    font-size: 4.5rem;
+  }
+  .author-title,
+  .author-meta,
+  .author-bio {
+    margin-left: 6rem;
+  }
+}
 
 .further-reading {
   background-color: #f2f2f2;
@@ -2895,6 +2954,7 @@ p.author-name {
 @media (min-width: 960px) {
   .post-meta {
     display: block;
+    margin-top: 5rem;
   }
 }
 

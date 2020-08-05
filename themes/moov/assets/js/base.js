@@ -74,7 +74,7 @@ if (typeof Waypoint === "function") {
 					this.element.classList.remove('in-view');
 				}
 			},
-			offset: '80%'
+			offset: '90%'
 		});
 	};
 
