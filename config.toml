@@ -18,6 +18,7 @@ description = "At the core of fintech. Opensource Cloud Native Core processing f
 
 [permalinks]
   authors = "/blog/authors/:title/"
+  categories = "/blog/categories/:title/"
 
 [menu]
   [[menu.nav]]

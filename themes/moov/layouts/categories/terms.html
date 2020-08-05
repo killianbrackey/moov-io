@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="contain">
+  <header class="category-page-header">
+    <h1 class="category-title">Categories</h1>
+  </header>
+  
+  <ul class="authors-list">
+  {{ range .Data.Pages }}
+    <li>
+      <a href="{{ .Permalink }}">
+        <div>
+          <div class="author-list-name">{{ .Title }}</div>
+        </div>
+      </a>
+    </li>
+  {{ end }}
+  </ul>
+</div>
+{{ end }}

@@ -5,7 +5,7 @@ resources:
 - name: image
   src: images/feature.jpg
 categories: 
-    - News
+    - News & updates
 authors: 
     - Graham McBain
 ---

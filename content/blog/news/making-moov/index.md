@@ -6,7 +6,7 @@ resources:
 - name: image
   src: images/moov-line-logo.jpg
 categories: 
-    - News
+    - News & updates
 authors: 
     - Josh Sadler
     - Wade Arnold

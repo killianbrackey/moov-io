@@ -8,7 +8,7 @@
     <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="featured-image" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="eager">
   </a>
   <div class="featured-article-meta">
-    <p class="category">{{ range .Params.categories }}{{ . }}{{ end }} &bull; {{ .ReadingTime }} minute read
+    <p class="category">{{ range .Params.categories }}<a href="/blog/categories/{{ . | urlize}}">{{ . }}</a>{{ end }} &bull; {{ .ReadingTime }} minute read
     </p>
     <header>
       <a href="{{ .RelPermalink }}" class="featured-article-title">{{ .Title}}</a>

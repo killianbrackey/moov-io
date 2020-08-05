@@ -7,7 +7,7 @@
     {{ $image2x := .Scratch.Get "image2x" }}
     <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="article-list-item-image" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="lazy">
   </a>
-  <p class="category">{{ range .Params.categories }}{{ . }}{{ end }} &bull; {{ .ReadingTime }} minute read
+  <p class="category">{{ range .Params.categories }}<a href="/blog/categories/{{ . | urlize}}">{{ . }}</a>{{ end }} &bull; {{ .ReadingTime }} minute read
   </p>
   <header>
     <a href="{{ .RelPermalink }}" class="article-list-item-title">{{ .Title}}</a>
