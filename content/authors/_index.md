@@ -1,5 +1,5 @@
 ---
 title: Authors
-url: "/authors"
+url: "/blog/authors/"
 description: ""
 ---
