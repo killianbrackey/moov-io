@@ -1267,7 +1267,6 @@ footer h3 {
 .mast {
   position: relative;
   display: flex;
-  align-items: font-size;
   flex-direction: column;
 }
 @media (min-width: 641px) {
@@ -3384,6 +3383,38 @@ p.author-name {
   margin-bottom: 5rem !important;
 }
 
+.mission-section {
+  margin-bottom: 0;
+}
+.mission-section .copy {
+  position: absolute;
+  z-index: 2;
+  max-width: 98rem;
+  top: 14rem;
+}
+.mission-section figure {
+  position: relative;
+  z-index: 1;
+  max-width: 58%;
+  margin-left: auto;
+}
+.mission-section svg {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+.mission-section figure img {
+  margin-top: 5rem;
+  object-fit: cover;
+  object-position: center;
+  height: 70vh;
+}
+.mission-section figure svg {
+  position: absolute;
+  top: 12.5rem;
+  width: 32rem;
+  height: auto;
+}
 .mission-section .top-text {
   font-size: 2rem;
   letter-spacing: .75rem;
@@ -3392,7 +3423,7 @@ p.author-name {
 }
 .mission-section p {
   display: block;
-  background-color: rgba(255,255,255,.6);
+  background-color: rgba(255,255,255,.9);
   padding: 2rem 0 6rem;
   font-weight: 300;
   font-size: 9.5vw;
@@ -3406,9 +3437,11 @@ p.author-name {
   }
   .mission-section p {
     font-size: 4.5rem;
-    font-weight: 500;
+    font-weight: 400;
     padding: 6rem 6rem 6rem 0;
-    max-width: 78%;
+  }
+  .mission-section svg {
+    display: block;
   }
 }
 .what-section {
@@ -3433,28 +3466,38 @@ p.author-name {
     max-width: 65%;
   }
 }
-
+.pillars-section {
+  position: relative;
+}
 .pillars {
   display: flex;
   flex-direction: column;
-  max-width: 96rem;
   margin: 0 auto 12rem;
   padding-top: 12rem;
+  max-width: 102rem;
+}
+.pillars-section > img {
+  width: 100%;
+  position: absolute;
 }
 .pillars li {
-  flex: 1 1 0;
+  flex: 1 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 6px 6px 12px rgba(0,0,0,0.08);
+  box-shadow: 8px 8px 20px rgba(0,0,0,0.1);
   margin: 1.5rem;
   text-align: center;
-  font-size: 1.6rem;
-  letter-spacing: 0.1rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  letter-spacing: .2rem;
+  font-weight: 700;
   text-transform: uppercase;
   padding: 1.5rem;
   position: relative;
-  height: 150px;
+  height: 200px;
 }
 .pillars li:first-child {
   color: #3EA66F;
@@ -3490,6 +3533,10 @@ p.author-name {
 .pillars li:last-child::after {
   display: none;
 }
+.pillars img {
+  width: 12rem;
+  height: 12rem;
+}
 @media (min-width: 1024px) {
   .pillars {
     flex-direction: row;
@@ -3502,7 +3549,9 @@ p.author-name {
 }
 
 .community-makeup-section {
-  background-color: #ccc;
+  background-image: url(../images/community-zoom.jpg);
+  background-size: cover;
+  background-position: right center;
   padding: 8rem 0;
 }
 .community-makeup-section p {
