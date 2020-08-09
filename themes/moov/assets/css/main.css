@@ -3386,17 +3386,10 @@ p.author-name {
 .mission-section {
   margin-bottom: 0;
 }
-.mission-section .copy {
-  position: absolute;
-  z-index: 2;
-  max-width: 98rem;
-  top: 14rem;
-}
 .mission-section figure {
   position: relative;
   z-index: 1;
-  max-width: 58%;
-  margin-left: auto;
+  margin-top: 0;
 }
 .mission-section svg {
   display: none;
@@ -3404,27 +3397,26 @@ p.author-name {
   top: 0;
 }
 .mission-section figure img {
-  margin-top: 5rem;
   object-fit: cover;
   object-position: center;
-  height: 70vh;
+  max-height: 80rem;
 }
 .mission-section figure svg {
   position: absolute;
-  top: 12.5rem;
-  width: 32rem;
+  top: 40%;
+  left: -10rem;
+  max-width: 32rem;
   height: auto;
 }
 .mission-section .top-text {
-  font-size: 2rem;
+  font-size: 1.6rem;
   letter-spacing: .75rem;
   font-weight: 700;
-  margin-top: 2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
 }
 .mission-section p {
   display: block;
-  background-color: rgba(255,255,255,.9);
-  padding: 2rem 0 6rem;
   font-weight: 300;
   font-size: 9.5vw;
   letter-spacing: -.1rem;
@@ -3435,17 +3427,42 @@ p.author-name {
   .top-text {
     margin-top: 10rem;
   }
+  .mission-section .copy {
+    position: absolute;
+    z-index: 2;
+    max-width: 98rem;
+    top: 14rem;
+  }
+  .mission-section .top-text {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
   .mission-section p {
+    background-color: rgba(255,255,255,.9);
+    padding: 2rem 0 6rem;
     font-size: 4.5rem;
     font-weight: 400;
     padding: 6rem 6rem 6rem 0;
   }
+  .mission-section figure {
+    max-width: 58%;
+    margin-left: auto;
+    margin-top: 5rem;
+  }
+  .mission-section figure img {
+    height: 70vh;
+  }
   .mission-section svg {
     display: block;
   }
+  .mission-section figure svg {
+    top: 12.5rem;
+    left: 0;
+  }
 }
 .what-section {
-  padding: 12rem 0;
+  padding: 8rem 0 4rem;
 }
 
 .what-section .serif {
@@ -3461,6 +3478,9 @@ p.author-name {
   margin-bottom: 3rem;
 }
 @media (min-width: 960px) {
+  .what-section {
+    padding: 12rem 0;
+  }
   .what-section .copy {
     margin-left: auto;
     max-width: 65%;
