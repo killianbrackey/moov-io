@@ -3674,6 +3674,7 @@ p.author-name {
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
   object-fit: cover;
   object-position: center;
   filter: saturate(0);
@@ -3716,7 +3717,10 @@ p.author-name {
 .moovers-grid svg {
   fill: #fff;
   width: 24px;
-  height: 20px;
+  height: auto;
+}
+.moovers-grid a + a {
+  margin-left: 1.5rem;
 }
 @media (min-width: 960px) {
   .moovers-grid figure {
