@@ -156,13 +156,6 @@ window.addEventListener('scroll', function(e) {
 			}
 		};
 
-		var mask_elements = document.querySelectorAll('.mask');
-		for (var i = 0; i < mask_elements.length; i++) {
-			if ( mask_elements[i].offsetTop + mask_elements[i].offsetHeight > window.scrollY ) {
-				mask_elements[i].style.transform = 'translateX(' + number * 5 + 'px)';
-			}
-		};
-
 	}
 	previousTop = currentTop;
 });
