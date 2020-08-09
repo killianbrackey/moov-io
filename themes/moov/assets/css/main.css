@@ -3423,10 +3423,13 @@ p.author-name {
   line-height: 1.3;
   margin-bottom: 8rem;
 }
-@media (min-width: 960px) {
-  .top-text {
-    margin-top: 10rem;
+@media (min-width: 641px) {
+  .mission-section p {
+    font-size: 4.5rem;
+    font-weight: 400;
   }
+}
+@media (min-width: 960px) {
   .mission-section .copy {
     position: absolute;
     z-index: 2;
@@ -3441,8 +3444,6 @@ p.author-name {
   .mission-section p {
     background-color: rgba(255,255,255,.9);
     padding: 2rem 0 6rem;
-    font-size: 4.5rem;
-    font-weight: 400;
     padding: 6rem 6rem 6rem 0;
   }
   .mission-section figure {
@@ -3501,7 +3502,7 @@ p.author-name {
   position: absolute;
 }
 .pillars li {
-  flex: 1 25%;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3557,9 +3558,22 @@ p.author-name {
   width: 12rem;
   height: 12rem;
 }
+@media (min-width: 641px) {
+  .pillars {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .pillars li {
+    flex: 1 40%;
+  }
+}
 @media (min-width: 1024px) {
   .pillars {
     flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .pillars li {
+    flex: 1 25%;
   }
   .pillars li::after {
     top: 50%;
@@ -3592,10 +3606,16 @@ p.author-name {
   }
 }
 
+.who-we-are-section .serif {
+  margin-bottom: 4rem;
+}
 .who-we-are-section-head {
   padding: 8rem 0 4rem;
 }
 @media (min-width: 1024px) {
+  .who-we-are-section .serif {
+    margin-bottom: 0;
+  }
   .who-we-are-section-head {
     display: flex;
     flex-direction: row;
