@@ -3717,6 +3717,30 @@ p.author-name {
   transition: opacity .2s ease;
   font-size: 1.4rem;
 }
+.moovers-grid figure:nth-child(1) figcaption {
+  background-color: rgba(228,76,53,.8);
+}
+.moovers-grid figure:nth-child(2) figcaption {
+  background-color: rgba(255,164,37,.8);
+}
+.moovers-grid figure:nth-child(3) figcaption {
+  background-color: rgba(102,81,161,.8);
+}
+.moovers-grid figure:nth-child(4) figcaption {
+  background-color: rgba(62,166,111,.8);
+}
+.moovers-grid figure:nth-child(5) figcaption {
+  background-color: rgba(180,171,134,.8);
+}
+.moovers-grid figure:nth-child(6) figcaption {
+  background-color: rgba(66,208,219,.8);
+}
+.moovers-grid figure:nth-child(7) figcaption {
+  background-color: rgba(237,69,81,.8);
+}
+.moovers-grid figure:nth-child(8) figcaption {
+  background-color: rgba(13,128,242,.8);
+}
 .moovers-grid figure:hover figcaption{
   opacity: 1;
 }
