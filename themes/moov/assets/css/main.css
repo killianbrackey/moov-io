@@ -3502,9 +3502,17 @@ p.author-name {
   }
 }
 .what-section {
+  position: relative;
   padding: 8rem 0 4rem;
 }
-
+.what-section figure {
+  display: none;
+  position: absolute;
+  top: 6rem;
+  left: -9%;
+  max-width: 45%;
+  width: 100%;
+}
 .what-section .serif {
   margin-bottom: 4rem;
 }
@@ -3520,10 +3528,20 @@ p.author-name {
 @media (min-width: 960px) {
   .what-section {
     padding: 12rem 0;
+    min-height: 60vh;
+  }
+  .what-section figure {
+    display: block;
   }
   .what-section .copy {
     margin-left: auto;
     max-width: 65%;
+  }
+}
+@media (min-width: 1680px) {
+  .what-section figure {
+    left: 0;
+    max-width: 35%;
   }
 }
 .pillars-section {
@@ -3846,6 +3864,7 @@ p.author-name {
   position: relative;
 }
 .benefits-section .graphic-right {
+  display: none;
   position: absolute;
   top: 12rem;
   left: 0;
@@ -3865,6 +3884,11 @@ p.author-name {
   .benefits-list {
     columns: 2;
     column-gap: 4rem;
+  }
+}
+@media (min-width: 860px) {
+  .benefits-section .graphic-right {
+    display: block;
   }
 }
 .benefits {
