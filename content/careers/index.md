@@ -1,7 +1,6 @@
 ---
 title: Careers
 type: page
-draft: true
+layout: careers
+description: Moov empowers creators to embed banking and payment functionality everywhere. Sound interesting? Join us!
 ---
-
-Work at Moov

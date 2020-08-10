@@ -1557,7 +1557,8 @@ footer h3 {
     padding: 0 3.8rem 2rem 0;
   }
 }
-.how-it-works .graphic-right {
+.how-it-works .graphic-right,
+.careers-section .graphic-right {
   position: absolute;
   top: 5rem;
   right: 0;
@@ -1565,20 +1566,24 @@ footer h3 {
   transform-origin: top right;
 }
 @media (min-width: 641px) {
-  .how-it-works .graphic-right {
+  .how-it-works .graphic-right,
+  .careers-section .graphic-right {
     top: 5.8rem;
   }
 }
-.how-it-works .graphic-right svg {
+.how-it-works .graphic-right svg,
+.careers-section .graphic-right svg {
   height: 35rem;
 }
 @media (min-width: 641px) {
-  .how-it-works .graphic-right svg {
+  .how-it-works .graphic-right svg,
+  .careers-section .graphic-right svg {
     height: 40rem;
   }
 }
 @media (min-width: 850px) {
-  .how-it-works .graphic-right {
+  .how-it-works .graphic-right,
+  .careers-section .graphic-right {
     height: initial;
     transform: none;
     top: -6rem;
@@ -2675,7 +2680,7 @@ footer h3 {
   font-family: "Playfair Display", serif;
 }
 .post .callout blockquote p {
-  font-size: 4rem;
+  font-size: 3rem;
   line-height: 1.2;
   color: #3ea66f;
 }
@@ -2683,6 +2688,12 @@ footer h3 {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 960px) {
+  .post .callout blockquote p {
+    font-size: 4rem;
+  }
+}
+
 /* specificity boost */
 .tweet-this,
 .callout .tweet-this {
@@ -2765,7 +2776,8 @@ footer h3 {
   grid-area: u;
   max-width: 70ch;
 }
-.main-content a {
+.main-content a,
+.centered a {
   font-weight: 500;
   color: #e44c35;
   text-decoration: underline;
@@ -3768,4 +3780,89 @@ p.author-name {
   .believe-footer {
     background: linear-gradient(180deg, rgba(255,255,255,1) 78%, rgba(34,34,34,1) 78%);
   }
+}
+
+.centered {
+  text-align: center;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+.centered .copy p {
+  margin: 4rem 0;
+  line-height: 1.75;
+}
+.openings {
+  max-width: 50rem;
+  margin: 0 auto 8rem;
+}
+.openings li a {
+  display: block;
+  border: 2px solid currentColor;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 7px;
+  text-decoration: none;
+  color: #222;
+  margin-bottom: 2rem;
+}
+.openings li a:hover {
+  color: #0366d6;
+}
+.benefits-section {
+  background-color: #6651a1;
+  color: #fff;
+  padding: 8rem 0;
+  position: relative;
+}
+.benefits-section .graphic-right {
+  position: absolute;
+  top: 12rem;
+  left: 0;
+}
+.benefits-section .graphic-right svg {
+  width: 48px;
+  height: 230px;
+}
+
+.benefits-list{
+  text-align: left;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 8rem 0 0;
+}
+@media (min-width: 768px) {
+  .benefits-list {
+    columns: 2;
+    column-gap: 4rem;
+  }
+}
+.benefits {
+  margin: 0;
+}
+.benefits dt {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+.benefits dd {
+  margin-left: 0;
+  margin-bottom: 4rem;
+  font-style: normal;
+}
+.careers-section {
+  position: relative;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+.careers-section h3 {
+  margin-top: 8rem;
+  margin-bottom: 1rem;
+}
+.footnote {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 8rem;
 }
