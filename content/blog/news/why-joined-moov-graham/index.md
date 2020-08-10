@@ -1,6 +1,6 @@
 ---
 title: "Why I joined Moov - Graham McBain"
-date: "2020-08-10T19:24:51+08:00"
+date: "2020-08-09T19:24:51+08:00"
 resources:
 - name: feature
   src: images/feature.jpg

@@ -2664,7 +2664,9 @@ footer h3 {
     grid-template-columns: 90px 2.5fr 1.5fr 90px;
   }
 }
-.post p {
+.post p,
+.post ul,
+.post ol {
   line-height: 1.8;
   margin-bottom: 4rem;
 }
@@ -2995,6 +2997,9 @@ p.author-name {
   margin-top: auto;
 }
 @media (min-width: 640px) {
+  .further-reading {
+    padding-bottom: 4rem;
+  }
   .further-reading a {
     display: flex;
     justify-content: space-between;
@@ -3588,8 +3593,9 @@ p.author-name {
   display: none;
 }
 .pillars img {
-  width: 12rem;
-  height: 12rem;
+  margin-bottom: 2rem;
+  object-fit: contain;
+  object-position: center;
 }
 @media (min-width: 641px) {
   .pillars {
