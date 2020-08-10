@@ -35,7 +35,3 @@ images = ["/images/social/moov-share-image.png"]
     name = "Blog"
     url = "/blog/"
     weight = 3
-  [[menu.nav]]
-    name = "Careers"
-    url = "/careers/"
-    weight = 4

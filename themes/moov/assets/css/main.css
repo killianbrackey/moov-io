@@ -2629,6 +2629,7 @@ footer h3 {
   background-color: #fff;
   color: #121212;
   font-size: 1.8rem;
+  margin-bottom: 5rem;
 }
 .post .contain {
   max-width: none;
@@ -2766,9 +2767,8 @@ footer h3 {
 }
 .main-content a {
   font-weight: 500;
-  color: inherit;
+  color: #e44c35;
   text-decoration: underline;
-  text-decoration-color: #e44c35;
 }
 .author {
   display: flex;
