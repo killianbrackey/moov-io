@@ -3508,7 +3508,6 @@ p.author-name {
 .what-section figure {
   display: none;
   position: absolute;
-  top: 6rem;
   left: -9%;
   max-width: 45%;
   width: 100%;
@@ -3536,6 +3535,11 @@ p.author-name {
   .what-section .copy {
     margin-left: auto;
     max-width: 65%;
+  }
+}
+@media (min-width: 1300px) {
+  .what-section figure {
+    top: 6rem;
   }
 }
 @media (min-width: 1680px) {
