@@ -13,3 +13,11 @@ HUGO_VERSION = "0.72.0"
 
 [context.branch-deploy.environment]
 HUGO_VERSION = "0.72.0"
+
+[[redirects]]
+  from = "/watchman"
+  to = "https://demo.moov.io/watchman/"
+
+[[redirects]]
+  from = "/soc2"
+  to = "https://docs.moov.io/soc2/"
