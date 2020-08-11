@@ -1,6 +1,7 @@
 ---
 title: "Making Moov"
 date: "2020-08-10T19:23:51+08:00"
+draft: true
 featured: true
 resources:
 - name: feature

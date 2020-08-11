@@ -1,6 +1,7 @@
 ---
 title: "How to contribute to Moov docs (Part 2)"
 date: "2020-08-10T19:24:51+08:00"
+featured: true
 resources:
 - name: feature
   src: images/cover.jpg
