@@ -5,90 +5,37 @@
     <link>https://moov.io/</link>
     <description>Recent content on Moov | At The Core of Fintech</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 04 Aug 2020 19:24:51 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2020 19:24:51 +0800</lastBuildDate>
     
 	<atom:link href="https://moov.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>F</title>
-      <link>https://moov.io/blog/news/f/</link>
-      <pubDate>Tue, 04 Aug 2020 19:24:51 +0800</pubDate>
+      <title>How to contribute to Moov docs (Part 2)</title>
+      <link>https://moov.io/blog/tutorials/how-to-contribute-to-moov-api-docs/</link>
+      <pubDate>Mon, 10 Aug 2020 19:24:51 +0800</pubDate>
       
-      <guid>https://moov.io/blog/news/f/</guid>
-      <description></description>
+      <guid>https://moov.io/blog/tutorials/how-to-contribute-to-moov-api-docs/</guid>
+      <description>In Part 1 we covered how to make a pull request against docs.moov.io on Github.
+The Moov documentation is here to serve the community. We’re always interested in feedback from those using the service and especially thankful to anyone willing to contribute to it.</description>
     </item>
     
     <item>
-      <title>A</title>
-      <link>https://moov.io/blog/news/a/</link>
-      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
+      <title>How to contribute to Moov docs (Part 1)</title>
+      <link>https://moov.io/blog/tutorials/how-to-contribute-to-moov-documentation/</link>
+      <pubDate>Mon, 10 Aug 2020 19:23:51 +0800</pubDate>
       
-      <guid>https://moov.io/blog/news/a/</guid>
-      <description></description>
+      <guid>https://moov.io/blog/tutorials/how-to-contribute-to-moov-documentation/</guid>
+      <description>The Moov documentation is here to serve the community. We’re always interested in feedback from those using the service and especially thankful to anyone willing to contribute to it. In an effort to make contributions as easy as possible in this guide we’ll map out how to quickly and easily suggest changes to our documentation.</description>
     </item>
     
     <item>
-      <title>B</title>
-      <link>https://moov.io/blog/news/b/</link>
-      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
+      <title>Why I joined Moov - Graham McBain</title>
+      <link>https://moov.io/blog/news/why-joined-moov-graham/</link>
+      <pubDate>Sun, 09 Aug 2020 19:24:51 +0800</pubDate>
       
-      <guid>https://moov.io/blog/news/b/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C</title>
-      <link>https://moov.io/blog/news/c/</link>
-      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
-      
-      <guid>https://moov.io/blog/news/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>D</title>
-      <link>https://moov.io/blog/news/d/</link>
-      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
-      
-      <guid>https://moov.io/blog/news/d/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>E</title>
-      <link>https://moov.io/blog/news/e/</link>
-      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
-      
-      <guid>https://moov.io/blog/news/e/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>G</title>
-      <link>https://moov.io/blog/news/g/</link>
-      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
-      
-      <guid>https://moov.io/blog/news/g/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Why I joined Moov - Walt Cox</title>
-      <link>https://moov.io/blog/news/why-i-joined-moov/</link>
-      <pubDate>Mon, 03 Aug 2020 19:24:51 +0800</pubDate>
-      
-      <guid>https://moov.io/blog/news/why-i-joined-moov/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Making Moov</title>
-      <link>https://moov.io/blog/news/making-moov/</link>
-      <pubDate>Mon, 03 Aug 2020 19:23:51 +0800</pubDate>
-      
-      <guid>https://moov.io/blog/news/making-moov/</guid>
-      <description>First of all, hi, we’re Moov. We’re a new company with a mission to bring joy to developers tasked with building on top of the United States banking and payments infrastructure.</description>
+      <guid>https://moov.io/blog/news/why-joined-moov-graham/</guid>
+      <description>Why did I join a Fintech company after spending so many years working in cryptocurrency? For many people this path seems backwards, if not downright heretical. After spending so much energy working to build a new financial system why did I choose to work on the old one?</description>
     </item>
     
     <item>
@@ -101,38 +48,20 @@
     </item>
     
     <item>
-      <title>Graham McBain</title>
-      <link>https://moov.io/authors/graham-mcbain/</link>
+      <title>About</title>
+      <link>https://moov.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://moov.io/authors/graham-mcbain/</guid>
+      <guid>https://moov.io/about/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Josh Sadler</title>
-      <link>https://moov.io/authors/josh-sadler/</link>
+      <title>Careers</title>
+      <link>https://moov.io/careers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://moov.io/authors/josh-sadler/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Wade Arnold</title>
-      <link>https://moov.io/authors/wade-arnold/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://moov.io/authors/wade-arnold/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Walt Cox</title>
-      <link>https://moov.io/authors/walt-cox/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://moov.io/authors/walt-cox/</guid>
+      <guid>https://moov.io/careers/</guid>
       <description></description>
     </item>
     
