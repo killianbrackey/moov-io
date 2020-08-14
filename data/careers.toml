@@ -1,4 +1,9 @@
 [[positions]]
-    name = "Software engineer"
-    role = "Engineering"
-    link = "https://angel.co/company/moov-financial/jobs"
+name = "Senior Software Engineer"
+role = "Engineering"
+link = "https://angel.co/company/moov-financial/jobs"
+
+[[positions]]
+name = "Software Engineer"
+role = "Engineering"
+link = "https://angel.co/company/moov-financial/jobs"
