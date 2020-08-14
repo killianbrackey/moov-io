@@ -5,9 +5,74 @@
     <link>https://moov.io/</link>
     <description>Recent content on Moov | At The Core of Fintech</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 10 Aug 2020 19:24:51 +0800</lastBuildDate>
     
 	<atom:link href="https://moov.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to contribute to Moov docs (Part 2)</title>
+      <link>https://moov.io/blog/tutorials/how-to-contribute-to-moov-api-docs/</link>
+      <pubDate>Mon, 10 Aug 2020 19:24:51 +0800</pubDate>
+      
+      <guid>https://moov.io/blog/tutorials/how-to-contribute-to-moov-api-docs/</guid>
+      <description>In Part 1 we covered how to make a pull request against docs.moov.io on Github.
+The Moov documentation is here to serve the community. We’re always interested in feedback from those using the service and especially thankful to anyone willing to contribute to it.</description>
+    </item>
+    
+    <item>
+      <title>How to contribute to Moov docs (Part 1)</title>
+      <link>https://moov.io/blog/tutorials/how-to-contribute-to-moov-documentation/</link>
+      <pubDate>Mon, 10 Aug 2020 19:23:51 +0800</pubDate>
+      
+      <guid>https://moov.io/blog/tutorials/how-to-contribute-to-moov-documentation/</guid>
+      <description>The Moov documentation is here to serve the community. We’re always interested in feedback from those using the service and especially thankful to anyone willing to contribute to it. In an effort to make contributions as easy as possible in this guide we’ll map out how to quickly and easily suggest changes to our documentation.</description>
+    </item>
+    
+    <item>
+      <title>Why I joined Moov - Graham McBain</title>
+      <link>https://moov.io/blog/news/why-joined-moov-graham/</link>
+      <pubDate>Sun, 09 Aug 2020 19:24:51 +0800</pubDate>
+      
+      <guid>https://moov.io/blog/news/why-joined-moov-graham/</guid>
+      <description>Why did I join a Fintech company after spending so many years working in cryptocurrency? For many people this path seems backwards, if not downright heretical. After spending so much energy working to build a new financial system why did I choose to work on the old one?</description>
+    </item>
+    
+    <item>
+      <title>38 fintechs are the next generation of breakout B2B stars</title>
+      <link>https://moov.io/press/fintech-b2b-early-stage-business-investors-finance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/press/fintech-b2b-early-stage-business-investors-finance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://moov.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Careers</title>
+      <link>https://moov.io/careers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/careers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Why Services Are The Future Of Fintech Infrastructure</title>
+      <link>https://moov.io/press/why-services-are-the-future-of-fintech-infrastructure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://moov.io/press/why-services-are-the-future-of-fintech-infrastructure/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

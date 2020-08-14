@@ -5,9 +5,28 @@
     <link>https://moov.io/categories/</link>
     <description>Recent content in Categories on Moov | At The Core of Fintech</description>
     <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 10 Aug 2020 19:24:51 +0800</lastBuildDate>
     
 	<atom:link href="https://moov.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tutorials</title>
+      <link>https://moov.io/blog/categories/tutorials/</link>
+      <pubDate>Mon, 10 Aug 2020 19:24:51 +0800</pubDate>
+      
+      <guid>https://moov.io/blog/categories/tutorials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>News &amp; updates</title>
+      <link>https://moov.io/blog/categories/news-updates/</link>
+      <pubDate>Sun, 09 Aug 2020 19:24:51 +0800</pubDate>
+      
+      <guid>https://moov.io/blog/categories/news-updates/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

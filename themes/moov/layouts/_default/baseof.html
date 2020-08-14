@@ -12,23 +12,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate icon" type="image/png" href="/favicon.png">
 
-    {{ if .IsHome -}}
-      <meta property="og:title" content="{{ .Site.Title }}">
-    {{- else -}}
-      <meta property="og:title" content="{{ .Title }} | Moov">
-    {{- end }}
-    <meta property="og:url" content="{{ .URL | absURL }}">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Moov">
-    <meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta property="og:image" content="{{ `/images/social/moov-share-image.png` | absURL }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <meta name="twitter.site" content="@moov_io">
-    <meta name="twitter:image" content="{{ `/images/social/moov-share-image.png` | absURL }}">
-    <meta name="twitter:image:alt" content="Let's Moov together.">
-    <meta name="twitter:card" content="summary_large_image">
+    {{ template "_internal/opengraph.html" . }}
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ range .Params.authors}}
+      {{ with $.Site.GetPage "taxonomyTerm" (printf "authors/%s" (urlize .))}}
+        <meta name="twitter:creator" content="@{{ .Params.twitter }}"/>
+      {{ end }}
+    {{ end }}
 
     <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.google-analytics.com">

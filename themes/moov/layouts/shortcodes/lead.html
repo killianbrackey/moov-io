@@ -1,0 +1,8 @@
+{{ $markdown := .Inner | markdownify }}
+<div class="lead">
+  {{ if not ( strings.Contains $markdown "<p>" ) }}
+      <p>{{ $markdown }}</p>
+  {{ else }}
+      {{ $markdown }}
+  {{ end }}
+</div>

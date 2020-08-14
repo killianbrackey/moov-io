@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="contain">
+  <header class="category-page-header">
+    <h1 class="category-title">{{ .Title }}</h1>
+  </header>
+
+  <h2 class="author-h2">Latest posts in {{ .Title }}</h2>
+  <div class="article-list">
+    {{ range .Data.Pages }}
+      {{ partial "article-list-item.html" . }}
+    {{ end}}
+  </div>
+</div>
+{{ end }}

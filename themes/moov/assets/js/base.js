@@ -74,7 +74,7 @@ if (typeof Waypoint === "function") {
 					this.element.classList.remove('in-view');
 				}
 			},
-			offset: '80%'
+			offset: '90%'
 		});
 	};
 
@@ -148,32 +148,11 @@ window.addEventListener('scroll', function(e) {
 	var currentTop = window.scrollY;
 	var number = currentTop / 30;
 	if(currentTop >= 20) {
-
-		if(document.querySelectorAll('nav').length) {
-			if(currentTop < previousTop) {
-				document.querySelector('nav').classList.add('show-nav');
-			} else {
-				document.querySelector('nav').classList.remove('show-nav');
-			}
-
-			if(currentTop === 0) {
-				document.querySelector('nav').classList.add('transparent');
-			} else {
-				document.querySelector('nav').classList.remove('transparent');
-			}
-		}
 		
 		var bgimg_elements = document.querySelectorAll('.bg-image');
 		for (var i = 0; i < bgimg_elements.length; i++) {
 			if ( bgimg_elements[i].offsetTop + bgimg_elements[i].offsetHeight > window.scrollY ) {
 				bgimg_elements[i].style.transform = 'translateX(' + number * 8 + 'px)';
-			}
-		};
-
-		var mask_elements = document.querySelectorAll('.mask');
-		for (var i = 0; i < mask_elements.length; i++) {
-			if ( mask_elements[i].offsetTop + mask_elements[i].offsetHeight > window.scrollY ) {
-				mask_elements[i].style.transform = 'translateX(' + number * 5 + 'px)';
 			}
 		};
 
@@ -229,6 +208,14 @@ function formPost(method, url, data, success, error) {
 	};
 	xhr.send(data);
 }
+
+// Mobile nav
+var menuButton = document.getElementById('menu-btn');
+
+menuButton.addEventListener('click', function(event) {
+	event.preventDefault();
+	menuButton.classList.toggle('active');
+});
 
 var signupForm = document.getElementById("signup-form");
 var signupStatus = document.getElementById("signup-status");
@@ -295,4 +282,24 @@ if (!isPressPage) {
 		pressDialogCloser.addEventListener('click', pressCloserHandler);
 		return false;
 	});
+}
+
+if ('IntersectionObserver' in window) {
+	var socialSection = document.querySelector('.social-section');
+	var socialObserver = new IntersectionObserver(function(entries) {
+		var item = entries[0];
+		if (item.isIntersecting) {
+			socialSection.classList.add('visible');
+		} else {
+			socialSection.classList.remove('visible');
+		}
+	}, {
+		root: null,
+		rootMargin: "0px 0px -75%",
+		threshold: 0
+	});
+	var blogSidebar = document.querySelector('.sidebar');
+	if (blogSidebar) {
+		socialObserver.observe(blogSidebar);
+	}
 }

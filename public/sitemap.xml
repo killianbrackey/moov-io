@@ -3,15 +3,85 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://moov.io/blog/authors/</loc>
+    <lastmod>2020-08-10T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/</loc>
+    <lastmod>2020-08-10T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://moov.io/categories/</loc>
+    <lastmod>2020-08-10T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/authors/graham-mcbain/</loc>
+    <lastmod>2020-08-10T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/tutorials/how-to-contribute-to-moov-api-docs/</loc>
+    <lastmod>2020-08-10T19:24:51+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://moov.io/</loc>
+    <lastmod>2020-08-10T19:24:51+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://moov.io/tags/</loc>
+    <loc>https://moov.io/blog/categories/tutorials/</loc>
+    <lastmod>2020-08-10T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/tutorials/how-to-contribute-to-moov-documentation/</loc>
+    <lastmod>2020-08-10T19:23:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/categories/news-updates/</loc>
+    <lastmod>2020-08-09T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/news/why-joined-moov-graham/</loc>
+    <lastmod>2020-08-09T19:24:51+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/press/fintech-b2b-early-stage-business-investors-finance/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/careers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/authors/josh-sadler/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/press/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/authors/wade-arnold/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/blog/authors/walt-cox/</loc>
+  </url>
+  
+  <url>
+    <loc>https://moov.io/press/why-services-are-the-future-of-fintech-infrastructure/</loc>
   </url>
   
 </urlset>
