@@ -3345,8 +3345,7 @@ p.author-name {
   color: rgba(255,255,255,0.6);
 }
 .cta .btn {
-  display: block;
-  width: 100%;
+  margin-top: 1.5rem;
   white-space: nowrap;
 }
 .cta .btn:hover {
