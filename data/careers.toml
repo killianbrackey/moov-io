@@ -1,14 +1,19 @@
 [[positions]]
-name = "Senior Software Engineer"
+name = "Senior Software Engineer (Backend)"
 role = "Engineering"
 link = "https://angel.co/company/moov-financial/jobs/936963-senior-software-engineer"
 
 [[positions]]
-name = "Software Engineer"
+name = "Software Engineer (Backend)"
 role = "Engineering"
 link = "https://angel.co/company/moov-financial/jobs/936964-software-engineer"
 
 [[positions]]
-name = "Junior Software Engineer"
+name = "Junior Software Engineer (Backend)"
 role = "Engineering"
 link = "https://angel.co/company/moov-financial/jobs/936965-junior-software-engineer"
+
+[[positions]]
+name = "Software Engineer (Frontend)"
+role = "Engineering"
+link = "https://angel.co/company/moov-financial/jobs/938799-software-engineer-frontend"
