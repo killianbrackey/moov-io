@@ -30,3 +30,7 @@ This round allows us to grow the Moov community and accelerate our product roadm
 {{< tweet 1295727269416247296 >}}
 
 {{< tweet 1295720432629428228 >}}
+
+{{< tweet 1295718951385735174 >}}
+
+{{< tweet 1295729978726854663 >}}
