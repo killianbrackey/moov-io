@@ -13,6 +13,8 @@ authors:
 
 Today, the news of our $5.5 million seed round became public! All of us at Moov have been looking forward to this day for a while, and we've internally referred to it as Moov-ing day. We're excited because we have the momentum and support of 7 institutional investors, led by Bain Capital, as well as 27 individual investors who believe in Moov's mission, who are generous with their time and their knowledge.
 
+[See our investors](/investors)
+
 This round allows us to grow the Moov community and accelerate our product roadmap.
 
 ## Read what others are saying
