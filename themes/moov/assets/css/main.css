@@ -3823,13 +3823,19 @@ p.author-name {
   margin-bottom: -10rem;
   margin-top: 0;
 }
+.believe-footer .quotes-contain {
+  margin-bottom: 12rem;
+}
 
 @media (min-width: 960px) {
   .moovers-join {
     padding: 24rem 0 8rem;
   }
   .believe-footer {
-    background: linear-gradient(180deg, rgba(255,255,255,1) 78%, rgba(34,34,34,1) 78%);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 84%, rgba(34,34,34,1) 84%);
+  }
+  .believe-footer .splide .contain {
+    max-width: 55%;
   }
 }
 

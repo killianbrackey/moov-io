@@ -3,18 +3,24 @@
 {{ $secureWaypoints := $waypoints | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureWaypoints.RelPermalink }}" integrity="{{ $secureWaypoints.Data.Integrity }}"></script>
 
-{{ if .IsHome }}
+{{ $base := resources.Get "js/base.js" }}
+{{ $secureBase := $base | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureBase.RelPermalink }}" integrity="{{ $secureBase.Data.Integrity }}"></script>
+
+{{ if or (isset .Params "hasquoteslider") (.IsHome) }}
 {{ $splide := resources.Get "js/splide.js" }}
 {{ $secureSplide := $splide | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureSplide.RelPermalink }}" integrity="{{ $secureSplide.Data.Integrity }}"></script>
 {{ end }}
 
-{{ $base := resources.Get "js/base.js" }}
-{{ $secureBase := $base | resources.Minify | resources.Fingerprint "sha512" }}
-<script type="text/javascript" src="{{ $secureBase.RelPermalink }}" integrity="{{ $secureBase.Data.Integrity }}"></script>
-
 {{ if .IsHome }}
 {{ $quotes := resources.Get "js/quotes.js" }}
 {{ $secureQuotes := $quotes | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $secureQuotes.RelPermalink }}" integrity="{{ $secureQuotes.Data.Integrity }}"></script>
+{{ end }}
+
+{{ if isset .Params "hasquoteslider" }}
+{{ $aboutQuotes := resources.Get "js/about-quotes.js" }}
+{{ $secureAboutQuotes := $aboutQuotes | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $secureAboutQuotes.RelPermalink }}" integrity="{{ $secureAboutQuotes.Data.Integrity }}"></script>
 {{ end }}

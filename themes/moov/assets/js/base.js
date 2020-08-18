@@ -303,3 +303,7 @@ if ('IntersectionObserver' in window) {
 		socialObserver.observe(blogSidebar);
 	}
 }
+
+if (window.console) {
+	console.log("%c👋🚚💰 https://moov.io/careers",  "font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; font-weight: 600; font-size: 50px");
+}
