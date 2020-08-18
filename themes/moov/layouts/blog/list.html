@@ -10,7 +10,7 @@
   <div class="news-section">
     <h2 class="blog-h2">News & Press</h2>
     <div class="news-articles">
-      {{ range first 3 (where .Site.RegularPages "Section" "press")}}
+      {{ range first 4 (where .Site.RegularPages "Section" "press")}}
         {{ partial "news-article.html" . }}
       {{ end }}
     </div>
