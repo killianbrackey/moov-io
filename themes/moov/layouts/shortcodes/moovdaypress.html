@@ -1,0 +1,8 @@
+<div class="press-articles">
+  {{ $date := $.Page.Date.Format "2006-01-02" }}
+  {{ range (where .Site.RegularPages "Section" "press")}}
+    {{ if eq (.Date.Format "2006-01-02") $date }}
+      {{ partial "news-article.html" . }}
+    {{ end }}
+  {{ end }}
+</div>
