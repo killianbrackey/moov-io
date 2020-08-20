@@ -1,5 +1,5 @@
 ---
-title: "How to build a NACHA compliant ACH file in NodeJS and Typescript"
+title: "How to build a NACHA compliant ACH file in Nodejs and Typescript"
 date: "2020-08-21T08:23:51+08:00"
 resources:
 - name: feature 
