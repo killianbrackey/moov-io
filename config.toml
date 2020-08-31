@@ -4,6 +4,7 @@ title = "Moov | At The Core of Fintech"
 theme = "moov"
 disableHugoGeneratorInject=true
 googleAnalytics = "UA-118148273-1"
+pygmentsUseClasses = true
 summaryLength = 30
 
 ############################# Default Parameters ##########################
