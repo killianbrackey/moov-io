@@ -3,11 +3,13 @@
     <article class="contain" itemscope itemtype="https://schema.org/BlogPosting">
       <div class="post-image">
         {{ $original := .Page.Resources.GetMatch "feature" }}
-        {{ .Scratch.Set "image1x" ($original.Resize "1520x") }}
-        {{ .Scratch.Set "image2x" ($original.Resize "3040x") }}
-        {{ $image1x := .Scratch.Get "image1x" }}
-        {{ $image2x := .Scratch.Get "image2x" }}
-        <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="post-image">
+        {{ if $original }}
+          {{ .Scratch.Set "image1x" ($original.Resize "1520x") }}
+          {{ .Scratch.Set "image2x" ($original.Resize "3040x") }}
+          {{ $image1x := .Scratch.Get "image1x" }}
+          {{ $image2x := .Scratch.Get "image2x" }}
+          <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="post-image">
+        {{ end }}
       </div>
       <h1 class="post-title serif" itemprop="headline">{{ .Title }}</h1>
       <div class="sidebar">
@@ -58,14 +60,16 @@
     <section class="further-reading">
       <div class="contain">
         <a href="{{.RelPermalink}}">
-          <figure>
-            {{ $original := .Page.Resources.GetMatch "feature" }}
-            {{ .Scratch.Set "image1x" ($original.Fill "470x310 Center") }}
-            {{ .Scratch.Set "image2x" ($original.Fill "940x620 Center") }}
-            {{ $image1x := .Scratch.Get "image1x" }}
-            {{ $image2x := .Scratch.Get "image2x" }}
-            <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="lazy">
-          </figure>
+          {{ if $original }}
+            <figure>
+              {{ $original := .Page.Resources.GetMatch "feature" }}
+              {{ .Scratch.Set "image1x" ($original.Fill "470x310 Center") }}
+              {{ .Scratch.Set "image2x" ($original.Fill "940x620 Center") }}
+              {{ $image1x := .Scratch.Get "image1x" }}
+              {{ $image2x := .Scratch.Get "image2x" }}
+              <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="lazy">
+            </figure>
+          {{ end }}
           <div>
             <div class="label">Next up</div>
             <div class="further-reading-title">{{.Title}}</div>

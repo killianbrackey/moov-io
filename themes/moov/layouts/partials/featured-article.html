@@ -1,12 +1,14 @@
 <article class="featured-article">
-  <a href="{{ .RelPermalink }}" class="featured-article-image">
-    {{ $original := .Page.Resources.GetMatch "feature" }}
-    {{ .Scratch.Set "image1x" ($original.Fill "900x400 Center") }}
-    {{ .Scratch.Set "image2x" ($original.Fill "1800x800 Center") }}
-    {{ $image1x := .Scratch.Get "image1x" }}
-    {{ $image2x := .Scratch.Get "image2x" }}
-    <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="featured-image" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="eager">
-  </a>
+  {{ $original := .Page.Resources.GetMatch "feature" }}
+  {{ if $original }}
+    <a href="{{ .RelPermalink }}" class="featured-article-image">
+      {{ .Scratch.Set "image1x" ($original.Fill "900x400 Center") }}
+      {{ .Scratch.Set "image2x" ($original.Fill "1800x800 Center") }}
+      {{ $image1x := .Scratch.Get "image1x" }}
+      {{ $image2x := .Scratch.Get "image2x" }}
+      <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="featured-image" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="eager">
+    </a>
+  {{ end }}
   <div class="featured-article-meta">
     <p class="category">{{ range .Params.categories }}<a href="/blog/categories/{{ . | urlize}}">{{ . }}</a>{{ end }} &bull; {{ .ReadingTime }} minute read
     </p>
