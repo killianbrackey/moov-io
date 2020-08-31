@@ -1,11 +1,13 @@
 <article class="article-list-item fadeup">
   <a href="{{ .RelPermalink }}">
     {{ $original := .Page.Resources.GetMatch "feature" }}
-    {{ .Scratch.Set "image1x" ($original.Fill "470x310 Center") }}
-    {{ .Scratch.Set "image2x" ($original.Fill "940x620 Center") }}
-    {{ $image1x := .Scratch.Get "image1x" }}
-    {{ $image2x := .Scratch.Get "image2x" }}
-    <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="article-list-item-image" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="lazy">
+    {{ if $original }}
+      {{ .Scratch.Set "image1x" ($original.Fill "470x310 Center") }}
+      {{ .Scratch.Set "image2x" ($original.Fill "940x620 Center") }}
+      {{ $image1x := .Scratch.Get "image1x" }}
+      {{ $image2x := .Scratch.Get "image2x" }}
+      <img src="{{ $image1x.RelPermalink }}" srcset="{{ $image2x.RelPermalink }} 2x" class="article-list-item-image" width="{{ $image1x.Width }}" height="{{ $image1x.Height }}" alt="" loading="lazy">
+    {{ end }}
   </a>
   <p class="category">{{ range .Params.categories }}<a href="/blog/categories/{{ . | urlize}}">{{ . }}</a>{{ end }} &bull; {{ .ReadingTime }} minute read
   </p>
