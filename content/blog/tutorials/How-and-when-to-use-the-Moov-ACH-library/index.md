@@ -14,17 +14,14 @@ The Moov team was founded by industry veterans who have been dealing with legacy
 
 With our ACH library and other projects, Moov has set out to build modular solutions that follow best practices and modern development techniques. By building clearly documented un-opinionated implementations of the core ACH spec we enable more people to use this powerful payment rail. Before we talk about who might want to use this powerful project, lets talk about the workflow that it covers. 
 
-ACH project workflow
+### ACH project workflow
 ACH is a versatile payment rail that has a wide range of use cases. We have found that one of the most difficult parts of the entire process is generating the notoriously persnickety ACH files themselves. These are their own proprietary format with a long list of rules. That’s why our ACH project is hyper focused on creating Nacha compliant ACH files. 
 
 Because of the wide range of uses for ACH we’ll describe how this project works in the context of one of the most common scenarios, payroll. In the example a company is trying to send out payroll via ACH to its employees. This requires that they deliver an ACH file to their bank with the appropriate information and in the compliant format. 
 
-When we essay “deliver” we’re referring to the fact that often Banks will have web portals where they allow customers with appropriate access to directly upload ACH files that are then forwarded on to the FED. Let’s assume that like many companies the payroll information is kept in an Excel file. That file’s data needs to be converted into a Nacha Compliant ACH file format and that’s where our ACH project comes in.
-
 ![](images/1.png)
 
-
-
+When we essay “deliver” we’re referring to the fact that often Banks will have web portals, or in some cases an API. Customers with appropriate access can directly upload ACH files that are then forwarded on to the FED. In the diagram above we assume that like many companies the payroll information is kept in an Excel file. That file’s data needs to be converted into a Nacha Compliant ACH file format and that’s where our ACH project comes in.
 
 ### Who is ACH for?
 We have found that the people who are interested in this project need to send a lot of ACH debits/credits. This may be companies that process payments for B2B customers, sometimes it’s challenger banks who are handling direct deposits for their customers. Whatever the use case it’s someone who has go to the trouble of getting programmatic access to send ACH files to their baking partner. In some cases they don’t have that access and are looking to use the project as a way to make the transition to programmatic access smoother. 
