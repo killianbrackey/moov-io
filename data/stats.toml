@@ -1,8 +1,8 @@
 # From slack #general room
-slackUsers = 695
+slackUsers = 746
 
 # From https://infra.moov.io/grafana/d/3WC-Ek4Gk/github-stats
-githubStars = 464
+githubStars = 474
 
 # From https://twitter.com/moov_io
-twitterFollowers = 903
+twitterFollowers = 919
